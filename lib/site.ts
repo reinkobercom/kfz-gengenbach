@@ -34,8 +34,6 @@ export const site = {
     kammer: "", // z. B. "Handwerkskammer Freiburg, Bismarckallee 6, 79098 Freiburg"
     handwerksrolle: "", // Eintragungsnummer der Handwerksrolle
   },
-  // Empfänger des Anfrageformulars (Server-seitig, per ENV überschreibbar)
-  leadRecipients: ["info@kfz-gengenbach.de", "leads@reinkober.agency"],
 } as const;
 
 export const telHref = `tel:${site.phone.replace(/\s/g, "")}`;
@@ -69,3 +67,17 @@ export const einzugsgebiet = [
   "Oberharmersbach",
   "Steinach",
 ] as const;
+
+/**
+ * Indexierung erst, wenn die Website unter der eigenen Domain läuft.
+ * Solange die Produktion nur unter *.vercel.app erreichbar ist, zeigen die Canonicals
+ * auf www.kfz-gengenbach.de, wo noch die alte Seite liegt – dann noindex.
+ * Nach dem Domain-Umzug genügt ein neues Deployment (VERCEL_PROJECT_PRODUCTION_URL
+ * wird zur Build-Zeit gesetzt). Lokal (ohne VERCEL_ENV) gilt: indexierbar.
+ */
+export const indexierbar = (() => {
+  if (!process.env.VERCEL_ENV) return true;
+  if (process.env.VERCEL_ENV !== "production") return false;
+  const host = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "";
+  return host.length > 0 && !host.endsWith(".vercel.app");
+})();

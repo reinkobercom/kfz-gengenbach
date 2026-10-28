@@ -18,7 +18,7 @@ export function businessSchema() {
     image: `${site.url}/opengraph-image.png`,
     telephone: site.phone,
     email: site.email,
-    founder: { "@type": "Person", name: site.owner },
+    founder: { "@type": "Person", "@id": ownerId, name: site.owner },
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -44,6 +44,56 @@ export function businessSchema() {
         itemOffered: { "@type": "Service", name: l.name, url: `${site.url}/leistungen/${l.slug}` },
       })),
     },
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    url: site.url,
+    name: site.brand,
+    inLanguage: "de-DE",
+    publisher: { "@id": businessId },
+  };
+}
+
+export const ownerId = `${site.url}/#inhaber`;
+
+/** Inhaber als Person – Autor der Ratgeber-Artikel (E-E-A-T) */
+export function ownerSchema() {
+  return {
+    "@type": "Person",
+    "@id": ownerId,
+    name: site.owner,
+    jobTitle: `Inhaber ${site.legalName}`,
+    worksFor: { "@id": businessId },
+    knowsAbout: ["Motorinstandsetzung", "Kfz-Diagnose", "Fahrzeugwartung"],
+  };
+}
+
+export function articleSchema(
+  a: { slug: string; titel: string; metaDescription: string; datePublished: string; dateModified: string; kategorie: string; keyword: string },
+  bild: string,
+) {
+  const url = `${site.url}/ratgeber/${a.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#artikel`,
+    mainEntityOfPage: url,
+    url,
+    headline: a.titel,
+    description: a.metaDescription,
+    image: bild,
+    datePublished: a.datePublished,
+    dateModified: a.dateModified,
+    inLanguage: "de-DE",
+    articleSection: a.kategorie,
+    keywords: a.keyword,
+    author: ownerSchema(),
+    publisher: { "@id": businessId },
   };
 }
 

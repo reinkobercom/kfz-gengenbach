@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
+import { getAttributionPayload } from "@/lib/attribution-client";
 import { anfrageLeistungen } from "@/lib/leistungen";
+import { Turnstile, turnstileAktiv } from "./Turnstile";
 import { einzugsgebiet, site, telHref, waHref } from "@/lib/site";
 
 type Daten = {
@@ -75,20 +77,26 @@ export function Konfigurator({
     website: "",
   });
   const startedAt = useRef<number>(0);
+  // Stabile ID je Anfrage: doppeltes Absenden erzeugt keine zweite Mail (Idempotenz)
+  const requestId = useRef<string>("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const panel = useRef<HTMLDivElement>(null);
-  const firstRender = useRef(true);
+  // Letzter fokussierter Zustand: Fokus nur bei echtem Wechsel, nie beim ersten Rendern
+  // (sonst springt die Seite zum Formular, wenn es weiter unten steht)
+  const letzterStand = useRef(`${step}-${status}`);
 
   useEffect(() => {
     startedAt.current = Date.now();
+    requestId.current = crypto.randomUUID();
   }, []);
 
   // Fokus beim Schrittwechsel auf die Überschrift setzen (Tastatur & Screenreader)
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
-    panel.current?.querySelector<HTMLElement>("[data-step-title]")?.focus();
+    const stand = `${step}-${status}`;
+    if (letzterStand.current === stand) return;
+    letzterStand.current = stand;
+    panel.current?.querySelector<HTMLElement>("[data-step-title]")?.focus({ preventScroll: true });
+    panel.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [step, status]);
 
   const set = <K extends keyof Daten>(k: K, v: Daten[K]) => setD((p) => ({ ...p, [k]: v }));
@@ -111,6 +119,7 @@ export function Konfigurator({
       if (d.rueckmeldung === "E-Mail" && !/^\S+@\S+\.\S+$/.test(d.email)) return "Für eine Antwort per E-Mail brauchen wir Ihre E-Mail-Adresse.";
       if (d.email && !/^\S+@\S+\.\S+$/.test(d.email)) return "Die E-Mail-Adresse scheint unvollständig zu sein.";
       if (!d.datenschutz) return "Bitte bestätigen Sie die Datenschutzhinweise.";
+      if (turnstileAktiv && !turnstileToken) return "Einen Moment bitte, die Sicherheitsprüfung läuft noch.";
     }
     return null;
   };
@@ -132,7 +141,13 @@ export function Konfigurator({
       const res = await fetch("/api/anfrage", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...d, leistungLabel, dauer: Date.now() - startedAt.current, seite: location.pathname }),
+        body: JSON.stringify({
+          ...d,
+          dauer: Date.now() - startedAt.current,
+          requestId: requestId.current,
+          turnstileToken,
+          attribution: getAttributionPayload(),
+        }),
       });
       if (!res.ok) throw new Error(String(res.status));
       track("anfrage_gesendet", { leistung: d.leistung, ort: d.ort });
@@ -466,6 +481,7 @@ export function Konfigurator({
                   .
                 </span>
               </label>
+              <Turnstile onToken={setTurnstileToken} />
             </fieldset>
           )}
 
@@ -473,8 +489,12 @@ export function Konfigurator({
             {fehler && <p className="mt-4 text-sm font-semibold text-[#b42318]">{fehler}</p>}
             {status === "error" && (
               <p className="mt-4 text-sm font-semibold text-[#b42318]">
-                Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt per{" "}
-                <a className="underline" href={waHref()}>
+                Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut, rufen Sie uns an unter{" "}
+                <a className="underline tabular-nums" href={telHref}>
+                  {site.phoneDisplay}
+                </a>{" "}
+                oder schreiben Sie per{" "}
+                <a className="underline" href={waHref()} target="_blank" rel="noopener">
                   WhatsApp
                 </a>
                 .

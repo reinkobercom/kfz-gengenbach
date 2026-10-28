@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
+import { AttributionTracker } from "@/components/AttributionTracker";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd, MobileBar } from "@/components/ui";
-import { businessSchema } from "@/lib/schema";
-import { site } from "@/lib/site";
+import { businessSchema, websiteSchema } from "@/lib/schema";
+import { indexierbar, site } from "@/lib/site";
 import "./globals.css";
 
 const body = localFont({
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     locale: "de_DE",
     siteName: site.brand,
   },
-  robots: { index: true, follow: true },
+  robots: indexierbar ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export const viewport: Viewport = {
@@ -64,7 +65,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <MobileBar />
-        <JsonLd data={businessSchema()} />
+        <JsonLd data={[businessSchema(), websiteSchema()]} />
+        <AttributionTracker />
         <Analytics />
       </body>
     </html>

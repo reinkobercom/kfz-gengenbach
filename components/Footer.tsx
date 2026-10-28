@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
+import { artikelListe } from "@/lib/ratgeber";
 import { mapsHref, site, telHref, waHref } from "@/lib/site";
 
 export function Footer() {
@@ -85,6 +86,21 @@ export function Footer() {
             <li>
               <Link href="/einzugsgebiet" className="hover:text-blue">
                 Alle Orte
+              </Link>
+            </li>
+          </ul>
+          <h2 className="mt-10 font-display text-xl">Ratgeber</h2>
+          <ul className="mt-4 space-y-1.5">
+            {artikelListe.map((a) => (
+              <li key={a.slug}>
+                <Link href={`/ratgeber/${a.slug}`} className="hover:text-blue">
+                  {a.titel.split(":")[0]}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/ratgeber" className="hover:text-blue">
+                Alle Artikel
               </Link>
             </li>
           </ul>

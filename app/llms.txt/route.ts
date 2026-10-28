@@ -1,5 +1,6 @@
 import { leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
+import { artikelListe } from "@/lib/ratgeber";
 import { einzugsgebiet, site } from "@/lib/site";
 
 // Kompakte Zusammenfassung für KI-Suchsysteme (llms.txt-Konvention)
@@ -24,6 +25,9 @@ ${leistungen.map((l) => `- [${l.name}](${site.url}/leistungen/${l.slug}): ${l.sh
 ${einzugsgebiet.join(", ")}
 
 ${orte.map((o) => `- [${o.name}](${site.url}/kfz-werkstatt/${o.slug})`).join("\n")}
+
+## Ratgeber
+${artikelListe.map((a) => `- [${a.titel}](${site.url}/ratgeber/${a.slug}): ${a.teaser}`).join("\n")}
 
 ## Anfrage
 - [Online-Anfrage](${site.url}/#anfrage): Leistung, Fahrzeug, Dringlichkeit und Kontakt in vier Schritten. Preise werden individuell nach Anfrage genannt.

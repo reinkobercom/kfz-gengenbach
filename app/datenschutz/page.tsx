@@ -57,8 +57,27 @@ export default function Datenschutz() {
           <p>
             Für den Versand der Anfrage per E-Mail nutzen wir den Dienst Resend (Resend, Inc., USA). Die Anfrage wird an
             unseren Betrieb sowie an unsere betreuende Marketingagentur (Reinkober) übermittelt, die uns bei der
-            Bearbeitung und Auswertung von Anfragen unterstützt. Mit beiden Dienstleistern bestehen bzw. werden
-            Auftragsverarbeitungsverträge geschlossen.
+            Bearbeitung und Auswertung von Anfragen unterstützt. Zusätzlich wird die Anfrage in das von Reinkober
+            betriebene Anfrageportal übertragen, in dem wir eingehende Anfragen verwalten. Mit den Dienstleistern bestehen
+            bzw. werden Auftragsverarbeitungsverträge geschlossen.
+          </p>
+          <p>
+            Herkunft der Anfrage: Damit wir nachvollziehen können, über welchen Weg Sie auf unsere Website gekommen sind
+            (zum Beispiel über eine Suchmaschine oder eine Anzeige), merkt sich Ihr Browser beim ersten Seitenaufruf
+            Kampagnenangaben aus der Adresszeile (utm-Parameter, Klick-Kennungen von Google bzw. Meta), die zuvor besuchte
+            Website (Referrer) und die Einstiegsseite. Diese Angaben liegen nur im Sitzungsspeicher Ihres Browsers
+            (sessionStorage, kein Cookie) und werden gelöscht, wenn Sie den Browser-Tab schließen. Übertragen werden sie
+            erst zusammen mit Ihrer Anfrage, ergänzt um die Seite des Formulars und die Geräteklasse (Smartphone, Tablet,
+            Desktop). Rechtsgrundlage ist unser berechtigtes Interesse, die Wirksamkeit unserer Werbung zu beurteilen (Art.
+            6 Abs. 1 lit. f DSGVO). Die Angaben werden gemeinsam mit der Anfrage gelöscht.
+          </p>
+          <p>
+            Schutz vor Missbrauch: Zum Schutz des Formulars vor automatisierten Eingaben (Spam) kann im letzten
+            Formularschritt der Dienst Cloudflare Turnstile (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107,
+            USA) eingesetzt werden. Dabei werden technische Daten wie IP-Adresse und Browsermerkmale an Cloudflare
+            übertragen, um zu prüfen, ob die Eingabe von einem Menschen stammt. Es werden keine Cookies zu Werbezwecken
+            gesetzt. Rechtsgrundlage ist unser berechtigtes Interesse am Schutz vor Missbrauch (Art. 6 Abs. 1 lit. f
+            DSGVO). Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert.
           </p>
           <p>
             Ihre Daten werden gelöscht, sobald die Anfrage abschließend bearbeitet ist und keine gesetzlichen
@@ -82,7 +101,8 @@ export default function Datenschutz() {
           <p>
             Die verwendeten Schriften sind lokal auf dieser Website eingebunden. Es wird keine Verbindung zu Google Fonts
             aufgebaut. Bilder werden über den Server dieser Website ausgeliefert. Der Link „Route planen“ öffnet Google
-            Maps erst nach einem Klick.
+            Maps erst nach einem Klick. Die Quellenangaben in unseren Ratgeber-Artikeln verlinken auf externe Websites, die
+            ebenfalls erst beim Anklicken aufgerufen werden.
           </p>
         </section>
 
