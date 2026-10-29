@@ -45,11 +45,10 @@ Offen vor der DNS-Umstellung:
 
 - [x] Resend in Vercel (Production): `RESEND_API_KEY` (nur Senden), `MAIL_FROM`, `MAIL_TO` = leads@reinkober.agency, info@kfz-gengenbach.de (29.10.2026)
 - [ ] Turnstile-Schlüssel in Vercel setzen
-- [ ] Leadportal-Kunde „KFZ Gengenbach“ mit Quelle „Website-Anfrage“ anlegen, Slug und Secret als Env setzen
-- [ ] Testanfrage auf der Vercel-URL: Mail kommt an, Lead im Portal
+- [x] Leadportal: Kunde `280. | KFZ Gengenbach`, Kampagne „Website-Anfragen“ (Standard Lead), Quelle „Anfrage-Konfigurator“; `LEADPORTAL_SLUG_ANFRAGE`/`LEADPORTAL_SECRET_ANFRAGE` gesetzt, Testlead im Portal angekommen (29.10.2026)
 - [ ] Impressum: Handwerkskammer, Handwerksrolle, Berufsbezeichnung, USt-ID in `lib/site.ts`
-- [ ] `kfz-gengenbach.de` und `www.kfz-gengenbach.de` in Vercel hinzufügen (www als Hauptdomain, Apex leitet weiter)
-- [ ] Beim DNS-Anbieter (cloudpit) nur A-Record und www-CNAME ändern, MX-Einträge (secure-mailgate) nicht anfassen
+- [x] `www.kfz-gengenbach.de` als Hauptdomain in Vercel, `kfz-gengenbach.de` leitet per 308 weiter (29.10.2026)
+- [ ] Beim DNS-Anbieter (cloudpit): A-Record `@` → `216.150.1.1`, CNAME `www` → `c72cabeb5c294cc0.vercel-dns-016.com.`; MX-Einträge (secure-mailgate) nicht anfassen
 - [ ] Nach der Umstellung neu deployen, robots.txt und Meta-Robots auf „index“ prüfen
 - [ ] Search Console: Property anlegen, Bestätigungscode einbauen, Sitemap einreichen
 
