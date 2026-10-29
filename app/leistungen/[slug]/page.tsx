@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Ampel, Arbeitsweise, Umfang, Vergleich, Wissen } from "@/components/leistung/Abschnitte";
+import { Ampel, Arbeitsweise, Symptome, Umfang, Vergleich, Wissen } from "@/components/leistung/Abschnitte";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand, Faq, JsonLd } from "@/components/ui";
+import { leistungSeiten } from "@/lib/leistung-seiten";
 import { getLeistung, leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
 import { serviceSchema } from "@/lib/schema";
@@ -45,7 +46,8 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
 
   const istTransporter = l.key === "transporter";
   const weitere = leistungen.filter((x) => x.slug !== l.slug).slice(0, 3);
-  const seite = l.seite;
+  const seite = leistungSeiten[l.slug];
+  const faq = [...l.faq, ...(seite?.faq ?? [])];
 
   // Abschnittsnummern fortlaufend, je nachdem welche Bausteine die Seite hat
   let n = 0;
@@ -76,7 +78,9 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
 
       <Umfang nr={nr()} name={l.name} bild={l.image} lead={seite?.umfangLead} punkte={l.umfang} etikett={seite?.bildEtikett} />
 
-      <Arbeitsweise nr={nr()} absaetze={l.text} schritte={seite?.ablauf ?? STANDARD_ABLAUF} />
+      {seite?.symptome && <Symptome nr={nr()} s={seite.symptome} />}
+
+      <Arbeitsweise nr={nr()} absaetze={seite?.arbeitsweise ?? l.text} schritte={seite?.ablauf ?? STANDARD_ABLAUF} />
 
       {seite?.vergleich && <Vergleich nr={nr()} v={seite.vergleich} />}
 
@@ -90,7 +94,7 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
 
       <section className="border-t border-line">
         <div className="section wrap">
-          <Faq items={l.faq} titel={`Fragen zu ${l.name}`} zentriert />
+          <Faq items={faq} titel={`Fragen zu ${l.name}`} zentriert />
         </div>
       </section>
 

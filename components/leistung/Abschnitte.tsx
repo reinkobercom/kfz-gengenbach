@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import type { LeistungSeite } from "@/lib/leistungen";
+import type { LeistungSeite } from "@/lib/leistung-seiten";
 
 /** Nummeriertes Abschnittslabel, z. B. „01 · Leistungsumfang“ – gliedert die Seite ohne Zusatzbilder */
 export function Label({ nr, children, hell = false, mittig = false }: { nr: string; children: ReactNode; hell?: boolean; mittig?: boolean }) {
@@ -125,9 +125,9 @@ export function Vergleich({ nr, v }: { nr: string; v: NonNullable<LeistungSeite[
         </div>
         <span
           aria-hidden="true"
-          className="absolute left-1/2 top-1/2 z-10 hidden size-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white font-display text-2xl font-bold text-blue shadow-md ring-1 ring-line md:grid"
+          className="absolute left-1/2 top-1/2 z-10 hidden h-12 min-w-12 -translate-x-1/2 px-3 -translate-y-1/2 place-items-center rounded-full bg-white font-display text-2xl font-bold text-blue shadow-md ring-1 ring-line md:grid"
         >
-          =
+          {v.mitte ?? "="}
         </span>
         <div className="rounded-2xl bg-navy p-7 text-white">
           <p className="font-display text-2xl font-bold">{v.rechts.titel}</p>
@@ -209,6 +209,41 @@ export function Ampel({ nr, a, bild }: { nr: string; a: NonNullable<LeistungSeit
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+/** „Woran Sie es merken“: Anzeichen links, optional Warnkasten rechts */
+export function Symptome({ nr, s }: { nr: string; s: NonNullable<LeistungSeite["symptome"]> }) {
+  return (
+    <section className="wrap pb-20 lg:pb-32">
+      <div className="grid gap-10 rounded-3xl border border-line p-6 sm:p-10 lg:grid-cols-12 lg:gap-14 lg:p-14">
+        <div className={s.warnung ? "lg:col-span-7" : "lg:col-span-12"}>
+          <Label nr={nr}>{s.kicker}</Label>
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl">{s.titel}</h2>
+          <p className="mt-4 max-w-xl text-lg text-muted">{s.lead}</p>
+          <ul className={`mt-8 grid gap-x-8 gap-y-3 ${s.warnung ? "sm:grid-cols-1" : "sm:grid-cols-2"}`}>
+            {s.punkte.map((p) => (
+              <li key={p} className="flex gap-3 border-b border-line pb-3 leading-snug">
+                <span className="mt-1.5 size-2 shrink-0 rounded-full bg-blue" aria-hidden="true" />
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {s.warnung && (
+          <aside className="self-start rounded-2xl border-l-4 border-[#d64545] bg-[#fdf1f1] p-6 lg:col-span-5">
+            <p className="flex items-center gap-2 font-display text-2xl font-bold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="text-[#d64545]">
+                <path d="M12 3l10 18H2L12 3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                <path d="M12 10v5M12 18v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              {s.warnung.titel}
+            </p>
+            <p className="mt-3 text-navy/85">{s.warnung.text}</p>
+          </aside>
+        )}
       </div>
     </section>
   );
