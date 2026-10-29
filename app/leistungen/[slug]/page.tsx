@@ -2,11 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Ampel, Arbeitsweise, Umfang, Vergleich, Wissen } from "@/components/leistung/Abschnitte";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand, Faq, JsonLd } from "@/components/ui";
 import { getLeistung, leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
 import { serviceSchema } from "@/lib/schema";
+
+/** Ablauf für Leistungen ohne eigenen */
+const STANDARD_ABLAUF = [
+  { titel: "Anfrage senden", text: "Leistung und Fahrzeug angeben. Das dauert etwa zwei Minuten." },
+  { titel: "Termin bekommen", text: "Wir melden uns per WhatsApp, Anruf oder E-Mail und schlagen einen Termin vor." },
+  { titel: "Befund per Video", text: "Fällt etwas auf, sehen Sie es im Video auf Ihrem Handy, mit unserer Einschätzung." },
+  { titel: "Freigeben und abholen", text: "Gemacht wird nur, was Sie freigeben. Danach holen Sie Ihr Fahrzeug ab." },
+];
+
+const AMPEL_BILD = {
+  src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=2000&q=70",
+  alt: "Mechaniker prüft den Motorraum eines Fahrzeugs",
+};
 
 export function generateStaticParams() {
   return leistungen.map((l) => ({ slug: l.slug }));
@@ -30,7 +44,12 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
   if (!l) notFound();
 
   const istTransporter = l.key === "transporter";
-  const weitere = leistungen.filter((x) => x.slug !== l.slug).slice(0, 4);
+  const weitere = leistungen.filter((x) => x.slug !== l.slug).slice(0, 3);
+  const seite = l.seite;
+
+  // Abschnittsnummern fortlaufend, je nachdem welche Bausteine die Seite hat
+  let n = 0;
+  const nr = () => String(++n).padStart(2, "0");
 
   return (
     <>
@@ -41,6 +60,7 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
         ]}
         h1={l.h1}
         intro={l.intro}
+        fakten={["Alle Marken", "Befund per Video", "Nur nach Ihrer Freigabe"]}
         defaultLeistung={istTransporter ? undefined : l.key}
         defaultFahrzeugTyp={istTransporter ? "Transporter bis 4,5 t" : undefined}
         titel={istTransporter ? "Was steht an Ihrem Transporter an?" : undefined}
@@ -52,70 +72,67 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
         )}
       </PageHero>
 
-      <div className="wrap">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-mist sm:aspect-[21/9]">
-          <Image src={l.image.src} alt={l.image.alt} fill sizes="(min-width: 1216px) 1152px, 100vw" className="object-cover" />
-        </div>
-      </div>
+      <div className="border-t border-line" />
 
-      <section className="section wrap grid gap-14 lg:grid-cols-12">
-        <div className="lg:col-span-6">
-          <h2 className="font-display text-4xl sm:text-5xl">Das gehört dazu</h2>
-          <ul className="mt-8 border-t border-line">
-            {l.umfang.map((u) => (
-              <li key={u} className="flex gap-4 border-b border-line py-4">
-                <svg className="mt-1 shrink-0 text-blue" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                  <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {u}
-              </li>
-            ))}
-          </ul>
+      <Umfang nr={nr()} name={l.name} bild={l.image} lead={seite?.umfangLead} punkte={l.umfang} etikett={seite?.bildEtikett} />
+
+      <Arbeitsweise nr={nr()} absaetze={l.text} schritte={seite?.ablauf ?? STANDARD_ABLAUF} />
+
+      {seite?.vergleich && <Vergleich nr={nr()} v={seite.vergleich} />}
+
+      {seite?.ampel && <Ampel nr={nr()} a={seite.ampel} bild={AMPEL_BILD} />}
+
+      {seite?.wissen && (
+        <div className={seite.ampel ? "pt-20 lg:pt-32" : undefined}>
+          <Wissen nr={nr()} w={seite.wissen} />
         </div>
-        <div className="lg:col-span-5 lg:col-start-8">
-          <h2 className="font-display text-4xl sm:text-5xl">So arbeiten wir</h2>
-          <div className="prose-k mt-8 text-lg text-muted">
-            {l.text.map((t) => (
-              <p key={t.slice(0, 20)}>{t}</p>
-            ))}
-          </div>
-          <a href="#anfrage" className="btn btn-primary mt-10">
-            Anfrage starten
-          </a>
+      )}
+
+      <section className="border-t border-line">
+        <div className="section wrap">
+          <Faq items={l.faq} titel={`Fragen zu ${l.name}`} zentriert />
         </div>
       </section>
 
       <section className="bg-mist">
-        <div className="section wrap grid gap-14 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <Faq items={l.faq} />
+        <div className="section wrap">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <h2 className="font-display text-4xl sm:text-5xl">Weitere Leistungen</h2>
+            <Link href="/leistungen" className="font-semibold text-blue hover:underline">
+              Alle Leistungen
+            </Link>
           </div>
-          <aside className="lg:col-span-4 lg:col-start-9">
-            <h2 className="font-display text-2xl">{l.name} auch für</h2>
-            <ul className="mt-4 space-y-2">
-              {orte.map((o) => (
-                <li key={o.slug}>
-                  <Link href={`/kfz-werkstatt/${o.slug}`} className="font-semibold hover:text-blue">
-                    {o.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h2 className="mt-10 font-display text-2xl">Weitere Leistungen</h2>
-            <ul className="mt-4 space-y-2">
-              {weitere.map((w) => (
-                <li key={w.slug}>
-                  <Link href={`/leistungen/${w.slug}`} className="font-semibold hover:text-blue">
-                    {w.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </aside>
+          <ul className="mt-10 grid gap-6 md:grid-cols-3">
+            {weitere.map((w) => (
+              <li key={w.slug}>
+                <Link href={`/leistungen/${w.slug}`} className="group block h-full overflow-hidden rounded-2xl bg-white ring-1 ring-line hover:ring-blue">
+                  <div className="relative aspect-[16/10] bg-mist">
+                    <Image src={w.image.src} alt={w.image.alt} fill sizes="(min-width: 768px) 370px, 100vw" className="object-cover" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-2xl group-hover:text-blue">{w.name}</h3>
+                    <p className="mt-2 text-[0.96rem] text-muted">{w.short}</p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-12 flex flex-wrap items-center gap-2">
+            <span className="mr-2 font-semibold">{l.name} auch für:</span>
+            {orte.map((o) => (
+              <Link
+                key={o.slug}
+                href={`/kfz-werkstatt/${o.slug}`}
+                className="rounded-full border-[1.5px] border-line bg-white px-4 py-1.5 text-sm font-semibold hover:border-blue hover:text-blue"
+              >
+                {o.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand titel={`${l.name}: Anfrage in zwei Minuten.`} />
       <JsonLd data={serviceSchema(l.name, `/leistungen/${l.slug}`, l.metaDescription)} />
     </>
   );

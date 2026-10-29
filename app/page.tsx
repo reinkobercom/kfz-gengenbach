@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Konfigurator } from "@/components/Konfigurator";
-import { CtaBand, Fakten, Faq } from "@/components/ui";
+import { CtaBand, Faq } from "@/components/ui";
 import { leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
 import { einzugsgebiet, mapsHref, site } from "@/lib/site";
@@ -37,6 +37,8 @@ const faq = [
   },
 ];
 
+const heroFakten = ["Befund per Video aufs Handy", "Antwort per WhatsApp, Anruf oder E-Mail", "Pkw und Transporter bis 4,5 t"];
+
 const ablauf = [
   { t: "Anfrage senden", d: "Leistung und Fahrzeug angeben. Das dauert etwa zwei Minuten." },
   { t: "Termin bekommen", d: "Wir melden uns per WhatsApp, Anruf oder E-Mail und schlagen einen Termin vor." },
@@ -47,44 +49,47 @@ const ablauf = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="wrap grid gap-8 pb-20 pt-8 sm:gap-12 sm:pt-16 lg:grid-cols-12 lg:gap-10 lg:pb-32 lg:pt-24">
-        <div className="lg:col-span-6 lg:pr-6">
-          <h1 className="font-display text-[2.9rem] font-extrabold leading-[0.95] sm:text-7xl lg:text-[5.75rem]">
-            Ihre <span className="whitespace-nowrap">Kfz-Werkstatt</span> in Gengenbach
-          </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted sm:mt-7 sm:text-xl">
-            Inspektion, HU/AU, Reifen und Reparatur für alle Marken. Unser Schwerpunkt ist die Motorinstandsetzung, auch
-            bei Transportern bis 4,5 t.
-          </p>
-          <div className="mt-10 hidden max-w-xl sm:block lg:mt-14">
-            <Fakten
-              items={["Befund per Video aufs Handy", "Antwort per WhatsApp, Anruf oder E-Mail", "Pkw und Transporter bis 4,5 t"]}
-            />
+      {/* Hero: Werkstattbild im Hintergrund, Text links, Anfrage rechts */}
+      <section className="relative isolate overflow-hidden bg-navy text-white">
+        <Image
+          src={img("1727893119356-1702fe921cf9")}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-navy/70 to-transparent" />
+        <div className="wrap grid gap-10 pb-16 pt-10 sm:gap-12 sm:pt-16 lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-28 lg:pt-24">
+          <div className="lg:col-span-6 lg:pr-6">
+            <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold backdrop-blur-sm">
+              <span className="size-2 rounded-full bg-blue" aria-hidden="true" />
+              Freie Kfz-Werkstatt · {site.address.city}
+            </p>
+            <h1 className="mt-6 font-display text-[2.9rem] font-extrabold leading-[0.95] sm:text-7xl lg:text-[5.5rem]">
+              Ihre <span className="whitespace-nowrap">Kfz-Werkstatt</span> in Gengenbach
+            </h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80 sm:mt-7 sm:text-xl">
+              Inspektion, HU/AU, Reifen und Reparatur für alle Marken. Unser Schwerpunkt ist die Motorinstandsetzung, auch
+              bei Transportern bis 4,5 t.
+            </p>
+            <ul className="mt-10 hidden max-w-xl gap-x-8 gap-y-3 sm:grid sm:grid-cols-3 lg:mt-14">
+              {heroFakten.map((t) => (
+                <li key={t} className="flex gap-2.5 text-[0.98rem] leading-snug text-white/90">
+                  <svg className="mt-0.5 shrink-0 text-blue" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-        <div className="lg:col-span-6">
-          <Konfigurator />
-          <div className="mt-8 sm:hidden">
-            <Fakten
-              items={["Befund per Video aufs Handy", "Antwort per WhatsApp, Anruf oder E-Mail", "Pkw und Transporter bis 4,5 t"]}
-            />
+          <div className="text-navy lg:col-span-6">
+            <Konfigurator />
           </div>
         </div>
       </section>
-
-      {/* Bildband */}
-      <div className="wrap">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-mist sm:aspect-[21/9]">
-          <Image
-            src={img("1727893119356-1702fe921cf9")}
-            alt="Helle Kfz-Werkstatt mit Fahrzeugen auf der Hebebühne"
-            fill
-            sizes="(min-width: 1216px) 1152px, 100vw"
-            className="object-cover"
-          />
-        </div>
-      </div>
 
       {/* Leistungen */}
       <section className="section wrap grid gap-12 lg:grid-cols-12">
@@ -200,14 +205,18 @@ export default function Home() {
 
       {/* Ablauf */}
       <section className="bg-mist">
-        <div className="section wrap">
-          <h2 className="max-w-2xl font-display text-5xl sm:text-6xl">So einfach kommen Sie zum Termin</h2>
-          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="section wrap text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.1em] text-blue">In vier Schritten</p>
+          <h2 className="mx-auto mt-3 max-w-2xl font-display text-5xl sm:text-6xl">So einfach kommen Sie zum Termin</h2>
+          <ol className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            <span aria-hidden="true" className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-0.5 bg-line lg:block" />
             {ablauf.map((s, i) => (
-              <li key={s.t} className="border-t-2 border-navy pt-5">
-                <span className="font-display text-xl font-bold text-blue">{i + 1}</span>
-                <h3 className="mt-2 font-display text-[1.75rem]">{s.t}</h3>
-                <p className="mt-2 text-muted">{s.d}</p>
+              <li key={s.t} className="relative flex flex-col items-center px-2">
+                <span className="grid size-14 place-items-center rounded-full bg-white font-display text-2xl font-bold text-blue shadow-[0_0_0_6px_var(--color-mist)] ring-1 ring-line">
+                  {i + 1}
+                </span>
+                <h3 className="mt-6 font-display text-[1.75rem]">{s.t}</h3>
+                <p className="mt-2 max-w-[16rem] text-muted">{s.d}</p>
               </li>
             ))}
           </ol>
@@ -218,68 +227,72 @@ export default function Home() {
       </section>
 
       {/* Einzugsgebiet + Werkstatt */}
-      <section className="section wrap grid gap-14 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <h2 className="font-display text-5xl sm:text-6xl">Für Gengenbach und das mittlere Kinzigtal</h2>
-          <p className="mt-6 max-w-xl text-lg text-muted">
+      <section className="section wrap">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.1em] text-blue">Einzugsgebiet</p>
+          <h2 className="mt-3 font-display text-5xl sm:text-6xl">Für Gengenbach und das mittlere Kinzigtal</h2>
+          <p className="mt-6 text-lg text-muted">
             Unsere Kundschaft kommt aus Gengenbach und den Ortsteilen, aus Offenburg, dem Harmersbachtal und dem Kinzigtal
             bis Steinach.
           </p>
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2">
-            {orte.map((o) => (
-              <li key={o.slug}>
-                <Link
-                  href={`/kfz-werkstatt/${o.slug}`}
-                  className="flex h-full items-center justify-between gap-4 rounded-xl border-[1.5px] border-line px-5 py-4 font-semibold hover:border-navy"
-                >
-                  {o.name}
-                  <span aria-hidden="true" className="text-blue">
-                    ›
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted">
-            Außerdem: {einzugsgebiet.filter((o) => o !== "Gengenbach").join(", ")}.{" "}
-            <Link href="/einzugsgebiet" className="font-semibold text-navy underline underline-offset-2">
-              Zum Einzugsgebiet
-            </Link>
-          </p>
         </div>
-        <aside className="lg:col-span-4 lg:col-start-9">
-          <div className="rounded-2xl bg-mist p-7">
-            <h2 className="font-display text-3xl">Die Werkstatt</h2>
-            <dl className="mt-5 space-y-4 text-[0.98rem]">
-              <div>
-                <dt className="text-sm text-muted">Adresse</dt>
-                <dd>
-                  {site.address.street}, {site.address.zip} {site.address.city}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-sm text-muted">Inhaber</dt>
-                <dd>{site.owner}</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-muted">Öffnungszeiten</dt>
-                {site.hours.map((h) => (
-                  <dd key={h.days} className="tabular-nums">
-                    {h.short} {h.opens}–{h.closes} Uhr
-                  </dd>
-                ))}
-              </div>
-            </dl>
-            <a href={mapsHref} target="_blank" rel="noopener" className="btn btn-ghost mt-6 w-full bg-white">
-              Route planen
-            </a>
+        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {orte.map((o) => (
+            <li key={o.slug}>
+              <Link
+                href={`/kfz-werkstatt/${o.slug}`}
+                className="group flex h-full flex-col justify-between gap-6 rounded-2xl border-[1.5px] border-line p-6 transition-colors hover:border-blue hover:bg-blue-tint/40"
+              >
+                <span>
+                  <span className="block font-display text-2xl font-bold leading-tight group-hover:text-blue">{o.name}</span>
+                  <span className="mt-2 block text-sm leading-snug text-muted">{o.orte.join(", ")}</span>
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-blue">
+                  Zur Ortsseite
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                    <path d="M4 10h12m-5-5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Werkstatt als ruhige Infoleiste statt Seitenkasten */}
+        <div className="mt-6 grid gap-6 rounded-2xl bg-navy p-6 text-white sm:p-8 lg:grid-cols-[1.2fr_1fr_1fr_auto] lg:items-center lg:gap-10">
+          <div>
+            <p className="text-sm text-white/60">Die Werkstatt</p>
+            <p className="mt-1 font-display text-2xl font-bold leading-tight">
+              {site.address.street}, {site.address.zip} {site.address.city}
+            </p>
           </div>
-        </aside>
+          <div>
+            <p className="text-sm text-white/60">Inhaber</p>
+            <p className="mt-1 font-semibold">{site.owner}</p>
+          </div>
+          <div>
+            <p className="text-sm text-white/60">Öffnungszeiten</p>
+            {site.hours.map((h) => (
+              <p key={h.days} className="mt-1 font-semibold tabular-nums">
+                {h.short} {h.opens}–{h.closes} Uhr
+              </p>
+            ))}
+          </div>
+          <a href={mapsHref} target="_blank" rel="noopener" className="btn bg-white text-navy hover:bg-blue-tint">
+            Route planen
+          </a>
+        </div>
+        <p className="mt-8 text-center text-sm leading-relaxed text-muted">
+          Außerdem: {einzugsgebiet.filter((o) => o !== "Gengenbach").join(", ")}.{" "}
+          <Link href="/einzugsgebiet" className="font-semibold text-navy underline underline-offset-2">
+            Ganzes Einzugsgebiet
+          </Link>
+        </p>
       </section>
 
-      <section className="wrap pb-24 lg:pb-36">
-        <div className="max-w-3xl">
-          <Faq items={faq} />
+      <section className="border-t border-line">
+        <div className="section wrap">
+          <Faq items={faq} zentriert />
         </div>
       </section>
 

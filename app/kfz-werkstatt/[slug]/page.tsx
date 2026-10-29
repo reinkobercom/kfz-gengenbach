@@ -100,27 +100,24 @@ export default async function OrtPage({ params }: PageProps<"/kfz-werkstatt/[slu
         </div>
       </section>
 
-      <section className="section wrap grid gap-14 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <Faq items={o.faq} />
-        </div>
-        <aside className="lg:col-span-4 lg:col-start-9">
-          <h2 className="font-display text-2xl">Weitere Orte</h2>
-          <ul className="mt-4 space-y-2">
-            <li>
-              <Link href="/" className="font-semibold hover:text-blue">
-                Gengenbach
-              </Link>
-            </li>
-            {andere.map((x) => (
-              <li key={x.slug}>
-                <Link href={`/kfz-werkstatt/${x.slug}`} className="font-semibold hover:text-blue">
+      <section className="section wrap">
+        <Faq items={o.faq} titel={`Häufige Fragen aus ${o.name}`} zentriert />
+        <div className="mx-auto mt-16 max-w-3xl text-center">
+          <h2 className="font-display text-2xl">Weitere Orte im Einzugsgebiet</h2>
+          <ul className="mt-5 flex flex-wrap justify-center gap-2">
+            {[{ slug: "", name: "Gengenbach" }, ...andere].map((x) => (
+              <li key={x.name}>
+                <Link
+                  href={x.slug ? `/kfz-werkstatt/${x.slug}` : "/"}
+                  className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-line px-4 py-2 font-semibold hover:border-blue hover:text-blue"
+                >
                   {x.name}
+                  <span aria-hidden="true" className="text-blue">›</span>
                 </Link>
               </li>
             ))}
           </ul>
-        </aside>
+        </div>
       </section>
 
       <CtaBand titel={`Anfrage aus ${o.name}`} />

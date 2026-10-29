@@ -94,7 +94,7 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
           </div>
         </details>
 
-        <article className="text-[1.0625rem] leading-[1.75] lg:col-span-8 lg:max-w-[44rem] [&_p]:text-navy/85">
+        <article className="text-[1.0625rem] leading-[1.75] lg:col-span-8 lg:max-w-[44rem]">
           <div className="rounded-2xl bg-blue-tint p-6 sm:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.08em] text-blue">Kurze Antwort</p>
             <p className="mt-2 text-lg leading-relaxed text-navy">
@@ -128,7 +128,7 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
                 <aside className="mt-12 flex flex-col gap-5 rounded-2xl bg-navy p-6 text-white sm:p-8">
                   <div>
                     <p className="font-display text-2xl font-bold leading-tight sm:text-3xl">{a.zwischenCta.titel}</p>
-                    <p className="mt-2 text-white/80 [&]:text-white/80">{a.zwischenCta.text}</p>
+                    <p className="mt-2 text-white/80">{a.zwischenCta.text}</p>
                   </div>
                   <div className="flex flex-wrap gap-3">
                     <a href="#anfrage" className="btn btn-primary">
@@ -202,7 +202,7 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
                 </p>
               </div>
             </div>
-            <p className="mt-6 text-sm leading-relaxed text-white/70 [&]:text-white/70">
+            <p className="mt-6 text-sm leading-relaxed text-white/70">
               Hinweis: Dieser Beitrag dient der allgemeinen Information und ersetzt keine Diagnose am Fahrzeug. Genannte Preise sind
               Richtwerte der angegebenen Quellen, keine Angebote von {site.brand}. Was an Ihrem Fahrzeug zu tun ist und was es kostet,
               klären wir nach der Prüfung.

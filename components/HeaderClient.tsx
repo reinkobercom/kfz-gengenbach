@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
-import type { NavData, NavGruppe, NavLink } from "@/lib/navigation";
+import type { NavData } from "@/lib/navigation";
 import { site, telHref, waHref } from "@/lib/site";
 
-type MenuKey = "leistungen" | "einzugsgebiet" | "ratgeber";
+type MenuKey = "leistungen";
 
 const Chevron = ({ offen }: { offen: boolean }) => (
   <svg
@@ -45,28 +45,8 @@ export function HeaderClient({ nav }: { nav: NavData }) {
 
   const aktiv = (prefix: string[]) => prefix.some((p) => pathname.startsWith(p));
 
-  const hatRatgeber = nav.ratgeber.length > 0;
-
   const eintraege: { key: MenuKey; href: string; label: string; prefix: string[]; panel: ReactNode }[] = [
     { key: "leistungen", href: "/leistungen", label: "Leistungen", prefix: ["/leistungen"], panel: <LeistungenPanel nav={nav} /> },
-    {
-      key: "einzugsgebiet",
-      href: "/einzugsgebiet",
-      label: "Einzugsgebiet",
-      prefix: ["/einzugsgebiet", "/kfz-werkstatt"],
-      panel: <OrtePanel orte={nav.orte} />,
-    },
-    ...(hatRatgeber
-      ? [
-          {
-            key: "ratgeber" as const,
-            href: "/ratgeber",
-            label: "Ratgeber",
-            prefix: ["/ratgeber"],
-            panel: <RatgeberPanel gruppen={nav.ratgeber} />,
-          },
-        ]
-      : []),
   ];
 
   return (
@@ -198,83 +178,6 @@ function LeistungenPanel({ nav }: { nav: NavData }) {
   );
 }
 
-function OrtePanel({ orte }: { orte: NavLink[] }) {
-  return (
-    <div className="grid grid-cols-[1fr_17rem] gap-10">
-      <div>
-        <SpaltenTitel>Kfz-Werkstatt für</SpaltenTitel>
-        <ul className="mt-4 grid grid-cols-3 gap-x-6 gap-y-1">
-          {orte.map((o) => (
-            <li key={o.href}>
-              <Link href={o.href} className="group -mx-3 block rounded-lg px-3 py-2.5 hover:bg-mist">
-                <span className="block font-display text-xl font-bold leading-tight group-hover:text-blue">{o.label}</span>
-                {o.text && <span className="mt-1 block text-sm leading-snug text-muted">{o.text}</span>}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Link href="/einzugsgebiet" className="mt-6 inline-flex items-center gap-2 font-semibold text-blue hover:underline">
-          Ganzes Einzugsgebiet ansehen <Pfeil />
-        </Link>
-      </div>
-      <div className="rounded-2xl bg-mist p-6">
-        <SpaltenTitel>Werkstatt</SpaltenTitel>
-        <address className="mt-3 not-italic leading-relaxed">
-          {site.legalName}
-          <br />
-          {site.address.street}, {site.address.zip} {site.address.city}
-        </address>
-        <dl className="mt-4 space-y-1 text-sm">
-          {site.hours.map((h) => (
-            <div key={h.days} className="flex justify-between gap-4">
-              <dt>{h.short}</dt>
-              <dd className="tabular-nums">
-                {h.opens}–{h.closes} Uhr
-              </dd>
-            </div>
-          ))}
-        </dl>
-        <a href={telHref} className="mt-4 block font-semibold tabular-nums hover:text-blue">
-          {site.phoneDisplay}
-        </a>
-      </div>
-    </div>
-  );
-}
-
-function RatgeberPanel({ gruppen }: { gruppen: NavGruppe[] }) {
-  return (
-    <div className="grid grid-cols-[1fr_17rem] gap-10">
-      <div className="grid grid-cols-3 gap-10">
-        {gruppen.map((g) => (
-          <div key={g.titel}>
-            <SpaltenTitel>{g.titel}</SpaltenTitel>
-            <ul className="mt-4 space-y-1">
-              {g.links.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-snug hover:bg-mist hover:text-blue">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-col justify-between rounded-2xl bg-mist p-6">
-        <div>
-          <SpaltenTitel>Ratgeber</SpaltenTitel>
-          <p className="mt-3 font-display text-2xl font-bold leading-tight">Wissen aus der Werkstatt</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted">Symptome erkennen, Kosten einordnen, richtig entscheiden.</p>
-        </div>
-        <Link href="/ratgeber" className="mt-6 inline-flex items-center gap-2 font-semibold text-blue hover:underline">
-          Alle Artikel <Pfeil />
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 function MobilGruppe({ titel, href, children }: { titel: string; href: string; children: ReactNode }) {
   return (
     <details className="group border-b border-line">
@@ -314,35 +217,6 @@ function MobilMenue({ nav }: { nav: NavData }) {
             </div>
           ))}
         </MobilGruppe>
-        <MobilGruppe titel="Einzugsgebiet" href="/einzugsgebiet">
-          <ul>
-            {nav.orte.map((o) => (
-              <li key={o.href}>
-                <Link href={o.href} className="block py-2 text-lg hover:text-blue">
-                  {o.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </MobilGruppe>
-        {nav.ratgeber.length > 0 && (
-          <MobilGruppe titel="Ratgeber" href="/ratgeber">
-            {nav.ratgeber.map((g) => (
-              <div key={g.titel} className="mt-3">
-                <SpaltenTitel>{g.titel}</SpaltenTitel>
-                <ul className="mt-1">
-                  {g.links.map((l) => (
-                    <li key={l.href}>
-                      <Link href={l.href} className="block py-2 text-lg leading-snug hover:text-blue">
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </MobilGruppe>
-        )}
         <Link href="/kontakt" className="block border-b border-line py-3 font-display text-3xl font-bold">
           Kontakt
         </Link>

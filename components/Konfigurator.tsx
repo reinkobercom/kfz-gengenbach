@@ -167,25 +167,27 @@ export function Konfigurator({
       ref={panel}
       className="relative w-full overflow-hidden rounded-2xl bg-white shadow-[0_1px_0_#e2e7ef,0_24px_60px_-28px_rgba(13,35,64,0.35)] ring-1 ring-line"
     >
-      {/* Kopf im Stil der Logo-Leiste: blau | navy */}
+      {/* Kopf im Stil der Logo-Leiste: blau | navy, Fortschritt im navy-Teil */}
       <div className="flex items-stretch text-white">
-        <div className="bg-blue px-5 py-3.5 font-display text-lg font-bold tracking-wide">Anfrage</div>
-        <div className="flex flex-1 items-center justify-between gap-3 bg-navy px-5 py-3.5">
-          <span className="text-sm text-white/80">
-            {status === "done" ? "Gesendet" : `Schritt ${step + 1} von 4: ${schritte[step]}`}
-          </span>
-          <span className="hidden text-sm text-white/80 sm:inline">ohne Preisangaben, unverbindlich</span>
+        <div className="grid place-items-center bg-blue px-5 font-display text-lg font-bold tracking-wide">Anfrage</div>
+        <div className="flex-1 bg-navy px-5 pb-3 pt-3.5">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-white/80">
+              {status === "done" ? "Gesendet" : `Schritt ${step + 1} von 4: ${schritte[step]}`}
+            </span>
+            <span className="hidden text-sm text-white/80 sm:inline">ohne Preisangaben, unverbindlich</span>
+          </div>
+          <div className="mt-2.5 flex gap-1" aria-hidden="true">
+            {schritte.map((s, i) => (
+              <span
+                key={s}
+                className={`h-1 flex-1 rounded-full transition-colors ${
+                  status === "done" || i <= step ? "bg-blue" : "bg-white/15"
+                }`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="flex gap-1 bg-navy px-5 pb-3" aria-hidden="true">
-        {schritte.map((s, i) => (
-          <span
-            key={s}
-            className={`h-1 flex-1 rounded-full transition-colors ${
-              status === "done" || i <= step ? "bg-blue" : "bg-white/15"
-            }`}
-          />
-        ))}
       </div>
 
       {status === "done" ? (
