@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Kfz-Ratgeber: Symptome, Kosten, Prüfungen | KFZ Gengenbach",
   description:
-    "Ratgeber aus der Kfz-Werkstatt in Gengenbach: Steuerkette, Zylinderkopfdichtung, Achsvermessung, abgelaufener TÜV. Symptome erkennen, Kosten einordnen, richtig entscheiden.",
+    "Ratgeber aus der Kfz-Werkstatt in Gengenbach: Steuerkette, Zylinderkopfdichtung, Achsvermessung, abgelaufener TÜV. Symptome erkennen, Kosten einordnen.",
   alternates: { canonical: "/ratgeber" },
 };
 
@@ -22,10 +22,9 @@ export default function RatgeberPage() {
       <section className="relative isolate overflow-hidden bg-navy text-white">
         {titelbild && <Image src={titelbild.src} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-70" />}
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
-        <div className="wrap pb-16 pt-8 lg:pb-24 lg:pt-12 [&_nav]:text-white/70 [&_nav_a:hover]:text-white [&_nav_[aria-current]]:text-white">
-          <Breadcrumbs items={[{ name: "Ratgeber", href: "/ratgeber" }]} />
-          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.1em] text-white/60">Wissen aus der Werkstatt</p>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl font-extrabold leading-[0.97] sm:text-6xl lg:text-7xl">Kfz-Ratgeber</h1>
+        <div className="wrap pb-16 pt-8 lg:pb-24 lg:pt-12">
+          <Breadcrumbs items={[{ name: "Ratgeber", href: "/ratgeber" }]} hell />
+          <h1 className="mt-8 max-w-4xl font-display text-5xl font-extrabold leading-[0.97] sm:text-6xl lg:text-7xl">Kfz-Ratgeber</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
             Woran Sie ein Problem erkennen, was eine Reparatur ungefähr kostet und wann sie sich lohnt. Geschrieben von{" "}
             {site.owner}, Inhaber der freien Kfz-Werkstatt {site.brand} in {site.address.city}.
@@ -44,14 +43,12 @@ export default function RatgeberPage() {
         </div>
       </section>
 
-      <div className="h-14 lg:h-20" />
-
       {kategorien.map((k) => {
         const liste = artikelListe.filter((a) => a.kategorie === k);
         if (!liste.length) return null;
         const kid = kategorieId(k);
         return (
-          <section key={k} className="wrap pb-20 lg:pb-28" aria-labelledby={kid}>
+          <section key={k} className="section wrap" aria-labelledby={kid}>
             <h2 id={kid} className="border-b border-line pb-4 font-display text-3xl">
               {k}
             </h2>

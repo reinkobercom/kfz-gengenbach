@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/ui";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  description: "Datenschutzerklärung der KFZ Technik Michael Jakob: welche Daten die Website verarbeitet, zu welchem Zweck und welche Rechte Sie haben.",
   title: "Datenschutzerklärung | KFZ Gengenbach",
   alternates: { canonical: "/datenschutz" },
   robots: { index: false, follow: true },

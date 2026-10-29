@@ -12,21 +12,21 @@ export function JsonLd({ data }: { data: object | object[] }) {
   );
 }
 
-export function Breadcrumbs({ items }: { items: { name: string; href: string }[] }) {
+export function Breadcrumbs({ items, hell = false }: { items: { name: string; href: string }[]; hell?: boolean }) {
   const all = [{ name: "Startseite", href: "/" }, ...items];
   return (
     <>
-      <nav aria-label="Brotkrümelnavigation" className="text-sm text-muted">
+      <nav aria-label="Brotkrümelnavigation" className={`text-sm ${hell ? "text-white/65" : "text-muted"}`}>
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
           {all.map((it, i) => (
             <li key={it.href} className="flex items-center gap-2">
               {i > 0 && <span aria-hidden="true">/</span>}
               {i === all.length - 1 ? (
-                <span aria-current="page" className="text-navy">
+                <span aria-current="page" className={hell ? "text-white" : "text-navy"}>
                   {it.name}
                 </span>
               ) : (
-                <Link href={it.href} className="hover:text-navy">
+                <Link href={it.href} className={hell ? "hover:text-white" : "hover:text-navy"}>
                   {it.name}
                 </Link>
               )}
@@ -123,10 +123,9 @@ export function CtaBand({
     <section className="relative isolate overflow-hidden bg-navy text-white">
       {/* dezente Linien im Hintergrund, angelehnt an die Logo-Leiste */}
       <div aria-hidden="true" className="absolute -right-24 top-0 -z-10 hidden h-full w-[38rem] skew-x-[-18deg] bg-gradient-to-b from-blue/25 to-transparent lg:block" />
-      <div className="wrap grid gap-12 py-20 lg:grid-cols-12 lg:items-center lg:py-28">
+      <div className="section wrap grid gap-12 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.1em] text-white/60">Unverbindlich und kostenlos</p>
-          <h2 className="mt-4 font-display text-5xl sm:text-6xl">{titel}</h2>
+          <h2 className="font-display text-5xl sm:text-6xl">{titel}</h2>
           <p className="mt-5 max-w-lg text-lg text-white/75">{text}</p>
         </div>
         <div className="lg:col-span-5 lg:col-start-8">
@@ -166,11 +165,11 @@ export function CtaBand({
 }
 
 /** Kompakte Fakten-Leiste (auch für KI-Suchsysteme gut lesbar) */
-export function Fakten({ items }: { items: string[] }) {
+export function Fakten({ items, hell = false }: { items: string[]; hell?: boolean }) {
   return (
     <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-3">
       {items.map((t) => (
-        <li key={t} className="flex gap-3 text-[0.98rem] leading-snug">
+        <li key={t} className={`flex gap-3 text-[0.98rem] leading-snug ${hell ? "text-white/90" : ""}`}>
           <svg className="mt-0.5 shrink-0 text-blue" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

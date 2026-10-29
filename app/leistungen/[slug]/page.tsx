@@ -9,6 +9,7 @@ import { leistungSeiten } from "@/lib/leistung-seiten";
 import { getLeistung, leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
 import { serviceSchema } from "@/lib/schema";
+import { ogBasis } from "@/lib/site";
 
 /** Ablauf für Leistungen ohne eigenen */
 const STANDARD_ABLAUF = [
@@ -35,7 +36,13 @@ export async function generateMetadata({ params }: PageProps<"/leistungen/[slug]
     title: l.metaTitle,
     description: l.metaDescription,
     alternates: { canonical: `/leistungen/${l.slug}` },
-    openGraph: { title: l.metaTitle, description: l.metaDescription, url: `/leistungen/${l.slug}` },
+    openGraph: {
+      ...ogBasis,
+      title: l.metaTitle,
+      description: l.metaDescription,
+      url: `/leistungen/${l.slug}`,
+      images: [{ url: l.image.src.replace("w=1600", "w=1200&h=630"), width: 1200, height: 630, alt: l.image.alt }],
+    },
   };
 }
 
@@ -49,10 +56,6 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
   const seite = leistungSeiten[l.slug];
   const faq = [...l.faq, ...(seite?.faq ?? [])];
 
-  // Abschnittsnummern fortlaufend, je nachdem welche Bausteine die Seite hat
-  let n = 0;
-  const nr = () => String(++n).padStart(2, "0");
-
   return (
     <>
       <PageHero
@@ -62,40 +65,33 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
         ]}
         h1={l.h1}
         intro={l.intro}
+        bild={l.image.src}
         fakten={["Alle Marken", "Befund per Video", "Nur nach Ihrer Freigabe"]}
         defaultLeistung={istTransporter ? undefined : l.key}
         defaultFahrzeugTyp={istTransporter ? "Transporter bis 4,5 t" : undefined}
         titel={istTransporter ? "Was steht an Ihrem Transporter an?" : undefined}
       >
         {l.partner && (
-          <p className="mt-8 max-w-xl rounded-xl bg-mist px-5 py-4 text-[0.98rem]">
+          <p className="mt-8 max-w-xl rounded-xl bg-white/10 px-5 py-4 text-[0.98rem] backdrop-blur-sm">
             Diese Arbeiten führt unser Partnerbetrieb aus. Sie haben trotzdem nur einen Ansprechpartner: uns.
           </p>
         )}
       </PageHero>
 
-      <div className="border-t border-line" />
+      <Umfang name={l.name} bild={seite?.umfangBild ?? l.image} lead={seite?.umfangLead} punkte={l.umfang} etikett={seite?.bildEtikett} />
 
-      <Umfang nr={nr()} name={l.name} bild={l.image} lead={seite?.umfangLead} punkte={l.umfang} etikett={seite?.bildEtikett} />
+      {seite?.symptome && <Symptome s={seite.symptome} />}
 
-      {seite?.symptome && <Symptome nr={nr()} s={seite.symptome} />}
+      <Arbeitsweise absaetze={seite?.arbeitsweise ?? l.text} schritte={seite?.ablauf ?? STANDARD_ABLAUF} />
 
-      <Arbeitsweise nr={nr()} absaetze={seite?.arbeitsweise ?? l.text} schritte={seite?.ablauf ?? STANDARD_ABLAUF} />
+      {seite?.vergleich && <Vergleich v={seite.vergleich} />}
 
-      {seite?.vergleich && <Vergleich nr={nr()} v={seite.vergleich} />}
+      {seite?.ampel && <Ampel a={seite.ampel} bild={AMPEL_BILD} />}
 
-      {seite?.ampel && <Ampel nr={nr()} a={seite.ampel} bild={AMPEL_BILD} />}
+      {seite?.wissen && <Wissen w={seite.wissen} />}
 
-      {seite?.wissen && (
-        <div className={seite.ampel ? "pt-20 lg:pt-32" : undefined}>
-          <Wissen nr={nr()} w={seite.wissen} />
-        </div>
-      )}
-
-      <section className="border-t border-line">
-        <div className="section wrap">
-          <Faq items={faq} titel={`Fragen zu ${l.name}`} zentriert />
-        </div>
+      <section className="section wrap">
+        <Faq items={faq} titel={`Fragen zu ${l.name}`} zentriert />
       </section>
 
       <section className="bg-mist">

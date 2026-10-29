@@ -81,3 +81,11 @@ export const indexierbar = (() => {
   const host = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "";
   return host.length > 0 && !host.endsWith(".vercel.app");
 })();
+
+/**
+ * Gemeinsame Open-Graph-Angaben. Next.js ersetzt openGraph einer Unterseite
+ * komplett, deshalb wird die Basis überall mitgegeben.
+ */
+export const ogBasis = { type: "website", locale: "de_DE", siteName: site.brand } as const;
+/** Standard-Vorschaubild (app/opengraph-image.png) */
+export const ogStandardBild = { url: "/opengraph-image.png", width: 1200, height: 630 };

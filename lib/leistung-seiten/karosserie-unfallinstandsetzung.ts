@@ -3,8 +3,8 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Technik und Koordination übernehmen wir, die Karosseriearbeiten führt unser Partnerbetrieb aus. Dazu gehören:",
   bildEtikett: { titel: "Ein Ansprechpartner", text: "Von der Schadensaufnahme bis zur Rückgabe: wir." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },
   symptome: {
-    kicker: "Nach dem Unfall",
     titel: "Was jetzt zu tun ist",
     lead: "Erst die Unfallstelle sichern, dann den Schaden festhalten. Die Schritte folgen den Empfehlungen des ADAC.",
     punkte: [
@@ -28,7 +28,6 @@ export const seite: LeistungSeite = {
     { titel: "Abstimmung und Rückgabe", text: "Während der Reparatur halten wir Sie auf dem Laufenden. Zurück bekommen Sie das Fahrzeug von uns." },
   ],
   vergleich: {
-    kicker: "Versicherung",
     titel: "Haftpflicht- oder Kaskoschaden?",
     lead: "Wer den Schaden zahlt, hängt davon ab, wer den Unfall verursacht hat. Bei Teilschuld werden beide Haftpflichtversicherungen einbezogen. Ein Überblick nach ADAC, keine Rechtsberatung.",
     links: {

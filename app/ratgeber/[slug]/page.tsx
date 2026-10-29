@@ -9,7 +9,7 @@ import { Breadcrumbs, Faq, JsonLd } from "@/components/ui";
 import { getLeistung } from "@/lib/leistungen";
 import { artikelBild, artikelListe, getArtikel, lesezeit } from "@/lib/ratgeber";
 import { articleSchema } from "@/lib/schema";
-import { site, waHref } from "@/lib/site";
+import { ogBasis, site, waHref } from "@/lib/site";
 
 export function generateStaticParams() {
   return artikelListe.map((a) => ({ slug: a.slug }));
@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps<"/ratgeber/[slug]">
     alternates: { canonical: `/ratgeber/${a.slug}` },
     authors: [{ name: site.owner }],
     openGraph: {
+      ...ogBasis,
       type: "article",
       title: a.metaTitle,
       description: a.metaDescription,
@@ -63,12 +64,13 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
       <section className="relative isolate overflow-hidden bg-navy text-white">
         <Image src={bild.src} alt="" fill priority sizes="100vw" className="-z-10 object-cover opacity-30" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/50" aria-hidden="true" />
-        <div className="wrap pb-16 pt-8 lg:pb-24 lg:pt-12 [&_nav]:text-white/70 [&_nav_a:hover]:text-white [&_nav_[aria-current]]:text-white">
+        <div className="wrap pb-16 pt-8 lg:pb-24 lg:pt-12">
           <Breadcrumbs
             items={[
               { name: "Ratgeber", href: "/ratgeber" },
               { name: a.titel, href: `/ratgeber/${a.slug}` },
             ]}
+            hell
           />
           <p className="mt-10 inline-flex rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">{a.kategorie}</p>
           <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[0.98] sm:text-6xl">{a.titel}</h1>
@@ -85,7 +87,7 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
         </div>
       </section>
 
-      <div className="wrap grid gap-12 py-14 lg:grid-cols-12 lg:gap-10 lg:py-20">
+      <div className="section wrap grid gap-12 lg:grid-cols-12 lg:gap-10">
         {/* Mobil: Inhaltsverzeichnis einklappbar über dem Artikel */}
         <details className="rounded-xl bg-mist p-5 lg:hidden">
           <summary className="cursor-pointer font-semibold">Inhalt dieses Artikels</summary>

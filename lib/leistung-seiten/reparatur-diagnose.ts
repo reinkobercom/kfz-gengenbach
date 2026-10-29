@@ -3,8 +3,8 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Erst suchen wir die Ursache, dann reparieren wir, was wirklich defekt ist. Dazu gehören:",
   bildEtikett: { titel: "Erst prüfen, dann tauschen", text: "Bauteile werden geprüft, bevor wir sie ersetzen." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet am Motor eines Fahrzeugs" },
   symptome: {
-    kicker: "Anzeichen",
     titel: "Woran Sie es merken",
     lead: "Viele Defekte kündigen sich an. Mit diesen Anzeichen sollten Sie vorbeikommen:",
     punkte: [
@@ -28,7 +28,6 @@ export const seite: LeistungSeite = {
     { titel: "Reparatur nach Freigabe", text: "Erst nach Ihrem Okay reparieren wir, mit Teilen in Erstausrüster- oder gleichwertiger Qualität." },
   ],
   vergleich: {
-    kicker: "Entscheidung",
     titel: "Reparieren oder tauschen?",
     lead: "Nicht jedes defekte Bauteil muss komplett ersetzt werden. Anhand des Befunds sagen wir Ihnen, was technisch sinnvoll ist.",
     mitte: "oder",

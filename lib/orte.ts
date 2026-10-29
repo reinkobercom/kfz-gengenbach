@@ -23,7 +23,7 @@ export const orte: Ort[] = [
     h1: "Ihre Kfz-Werkstatt für Offenburg, Durbach und Hohberg",
     metaTitle: "Kfz-Werkstatt für Offenburg | Motorinstandsetzung & Service",
     metaDescription:
-      "Kfz-Werkstatt für Offenburg, Durbach, Ebersweier und Hohberg: Inspektion, HU/AU, Reparatur und Motorinstandsetzung in Gengenbach. Persönlich, schnell, mit Video-Befund.",
+      "Kfz-Werkstatt für Offenburg, Durbach, Ebersweier und Hohberg: Inspektion, HU/AU, Reparatur und Motorinstandsetzung in Gengenbach, mit Video-Befund.",
     intro:
       "In Offenburg gibt es viele Werkstätten. Zu uns nach Gengenbach kommen Kundinnen und Kunden aus Offenburg, Durbach und Hohberg, weil sie einen festen Ansprechpartner wollen und bei Motorproblemen eine Werkstatt, die darauf spezialisiert ist.",
     anfahrt:

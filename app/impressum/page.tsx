@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/ui";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  description: "Impressum der KFZ Technik Michael Jakob, Am Winzerkeller 1, 77723 Gengenbach.",
   title: "Impressum | KFZ Gengenbach",
   alternates: { canonical: "/impressum" },
   robots: { index: false, follow: true },

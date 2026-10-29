@@ -1,17 +1,5 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
 import type { LeistungSeite } from "@/lib/leistung-seiten";
-
-/** Nummeriertes Abschnittslabel, z. B. „01 · Leistungsumfang“ – gliedert die Seite ohne Zusatzbilder */
-export function Label({ nr, children, hell = false, mittig = false }: { nr: string; children: ReactNode; hell?: boolean; mittig?: boolean }) {
-  return (
-    <p className={`flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.1em] ${hell ? "text-white/60" : "text-muted"} ${mittig ? "justify-center" : ""}`}>
-      <span className={`font-display text-base tabular-nums ${hell ? "text-white" : "text-blue"}`}>{nr}</span>
-      <span aria-hidden="true" className={`h-px w-8 ${hell ? "bg-white/30" : "bg-line"}`} />
-      {children}
-    </p>
-  );
-}
 
 const Haken = ({ className = "" }: { className?: string }) => (
   <svg className={`shrink-0 ${className}`} width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -21,14 +9,12 @@ const Haken = ({ className = "" }: { className?: string }) => (
 
 /** Bild links, Leistungsumfang rechts */
 export function Umfang({
-  nr,
   name,
   bild,
   lead,
   punkte,
   etikett,
 }: {
-  nr: string;
   name: string;
   bild: { src: string; alt: string };
   lead?: string;
@@ -52,13 +38,12 @@ export function Umfang({
         )}
       </div>
       <div className="lg:col-span-7">
-        <Label nr={nr}>Leistungsumfang</Label>
-        <h2 className="mt-4 font-display text-4xl sm:text-5xl">Das gehört bei {name} dazu</h2>
+        <h2 className="font-display text-4xl sm:text-5xl">Das gehört bei {name} dazu</h2>
         {lead && <p className="mt-5 max-w-xl text-lg text-muted">{lead}</p>}
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {punkte.map((p) => (
-            <li key={p} className="flex gap-3 rounded-xl border border-line bg-white p-4 leading-snug">
-              <Haken className="mt-0.5 text-blue" />
+            <li key={p} className="flex gap-3 rounded-xl bg-blue px-4 py-3.5 font-medium leading-snug text-white sm:p-4">
+              <Haken className="mt-0.5 text-white" />
               {p}
             </li>
           ))}
@@ -69,15 +54,12 @@ export function Umfang({
 }
 
 /** „So arbeiten wir“: mittig, kurzer Text, Schritte als Reihe */
-export function Arbeitsweise({ nr, absaetze, schritte }: { nr: string; absaetze: string[]; schritte: { titel: string; text: string }[] }) {
+export function Arbeitsweise({ absaetze, schritte }: { absaetze: string[]; schritte: { titel: string; text: string }[] }) {
   return (
     <section className="bg-mist">
       <div className="section wrap">
         <div className="mx-auto max-w-2xl text-center">
-          <Label nr={nr} mittig>
-            Ablauf
-          </Label>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl">So arbeiten wir</h2>
+          <h2 className="font-display text-4xl sm:text-5xl">So arbeiten wir</h2>
           <div className="prose-k mt-6 text-lg text-muted">
             {absaetze.map((t) => (
               <p key={t.slice(0, 24)}>{t}</p>
@@ -86,12 +68,14 @@ export function Arbeitsweise({ nr, absaetze, schritte }: { nr: string; absaetze:
         </div>
         <ol className={`mt-14 grid gap-4 sm:grid-cols-2 ${schritte.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {schritte.map((s, i) => (
-            <li key={s.titel} className="relative rounded-2xl bg-white p-6 ring-1 ring-line">
-              <span className="font-display text-5xl font-extrabold leading-none text-blue-tint" aria-hidden="true">
-                {String(i + 1).padStart(2, "0")}
+            <li key={s.titel} className="flex gap-4 rounded-2xl bg-white p-5 ring-1 ring-line sm:block sm:p-6">
+              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-blue font-display text-xl font-bold text-white sm:size-12" aria-hidden="true">
+                {i + 1}
               </span>
-              <h3 className="mt-4 font-display text-2xl">{s.titel}</h3>
-              <p className="mt-2 text-[0.98rem] text-muted">{s.text}</p>
+              <div>
+                <h3 className="font-display text-2xl sm:mt-5">{s.titel}</h3>
+                <p className="mt-2 text-[0.98rem] text-muted">{s.text}</p>
+              </div>
             </li>
           ))}
         </ol>
@@ -101,14 +85,11 @@ export function Arbeitsweise({ nr, absaetze, schritte }: { nr: string; absaetze:
 }
 
 /** Gegenüberstellung in zwei Karten mit „=“-Marke in der Mitte */
-export function Vergleich({ nr, v }: { nr: string; v: NonNullable<LeistungSeite["vergleich"]> }) {
+export function Vergleich({ v }: { v: NonNullable<LeistungSeite["vergleich"]> }) {
   return (
     <section className="section wrap">
       <div className="mx-auto max-w-2xl text-center">
-        <Label nr={nr} mittig>
-          {v.kicker}
-        </Label>
-        <h2 className="mt-4 font-display text-4xl sm:text-5xl">{v.titel}</h2>
+        <h2 className="font-display text-4xl sm:text-5xl">{v.titel}</h2>
         <p className="mt-5 text-lg text-muted">{v.lead}</p>
       </div>
       <div className="relative mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2 md:gap-6">
@@ -154,24 +135,19 @@ export function Vergleich({ nr, v }: { nr: string; v: NonNullable<LeistungSeite[
 }
 
 /** Kurzwissen als drei Karten */
-export function Wissen({ nr, w }: { nr: string; w: NonNullable<LeistungSeite["wissen"]> }) {
+export function Wissen({ w }: { w: NonNullable<LeistungSeite["wissen"]> }) {
   return (
-    <section className="wrap pb-20 lg:pb-32">
+    <section className="section wrap">
       <div className="rounded-3xl bg-blue-tint/60 p-6 sm:p-10 lg:p-14">
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <Label nr={nr}>{w.kicker}</Label>
-            <h2 className="mt-4 font-display text-4xl">{w.titel}</h2>
-          </div>
-          <ul className="grid gap-4 sm:grid-cols-3 lg:col-span-8">
+        <h2 className="font-display text-4xl sm:text-5xl">{w.titel}</h2>
+        <ul className="mt-10 grid gap-4 md:grid-cols-3">
             {w.karten.map((k) => (
               <li key={k.titel} className="rounded-2xl bg-white p-6">
                 <p className="font-display text-xl font-bold">{k.titel}</p>
                 <p className="mt-2 text-[0.96rem] text-muted">{k.text}</p>
               </li>
             ))}
-          </ul>
-        </div>
+        </ul>
       </div>
     </section>
   );
@@ -184,17 +160,14 @@ const AMPEL = {
 } as const;
 
 /** Dringlichkeit der Befunde als Ampel, dunkles Band mit Bild */
-export function Ampel({ nr, a, bild }: { nr: string; a: NonNullable<LeistungSeite["ampel"]>; bild: { src: string; alt: string } }) {
+export function Ampel({ a, bild }: { a: NonNullable<LeistungSeite["ampel"]>; bild: { src: string; alt: string } }) {
   return (
     <section className="relative isolate overflow-hidden bg-navy text-white">
       <Image src={bild.src} alt="" fill sizes="100vw" className="-z-20 object-cover opacity-20" />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-navy/80 to-navy" />
       <div className="section wrap">
         <div className="max-w-2xl">
-          <Label nr={nr} hell>
-            Befund per Video
-          </Label>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl">{a.titel}</h2>
+          <h2 className="font-display text-4xl sm:text-5xl">{a.titel}</h2>
           <p className="mt-5 text-lg text-white/75">{a.lead}</p>
         </div>
         <ul className="mt-12 grid gap-4 md:grid-cols-3">
@@ -215,13 +188,12 @@ export function Ampel({ nr, a, bild }: { nr: string; a: NonNullable<LeistungSeit
 }
 
 /** „Woran Sie es merken“: Anzeichen links, optional Warnkasten rechts */
-export function Symptome({ nr, s }: { nr: string; s: NonNullable<LeistungSeite["symptome"]> }) {
+export function Symptome({ s }: { s: NonNullable<LeistungSeite["symptome"]> }) {
   return (
-    <section className="wrap pb-20 lg:pb-32">
+    <section className="section wrap">
       <div className="grid gap-10 rounded-3xl border border-line p-6 sm:p-10 lg:grid-cols-12 lg:gap-14 lg:p-14">
         <div className={s.warnung ? "lg:col-span-7" : "lg:col-span-12"}>
-          <Label nr={nr}>{s.kicker}</Label>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl">{s.titel}</h2>
+          <h2 className="font-display text-4xl sm:text-5xl">{s.titel}</h2>
           <p className="mt-4 max-w-xl text-lg text-muted">{s.lead}</p>
           <ul className={`mt-8 grid gap-x-8 gap-y-3 ${s.warnung ? "sm:grid-cols-1" : "sm:grid-cols-2"}`}>
             {s.punkte.map((p) => (

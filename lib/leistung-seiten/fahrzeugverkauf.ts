@@ -3,8 +3,8 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Jedes Fahrzeug, das wir anbieten, prüfen wir vorher technisch. Zum Angebot gehören:",
   bildEtikett: { titel: "Technisch geprüft", text: "Jedes Fahrzeug vor dem Verkauf." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker prüft einen Motorraum bei geöffneter Haube" },
   symptome: {
-    kicker: "Suchauftrag",
     titel: "Das sollten Sie uns sagen",
     lead: "Je genauer die Anfrage, desto besser passen die Angebote. Diese Angaben helfen uns:",
     punkte: [
@@ -28,7 +28,6 @@ export const seite: LeistungSeite = {
     { titel: "Übergabe", text: "Auf Wunsch bekommen Sie das Fahrzeug mit frischem Service und gepflegtem Serviceheft." },
   ],
   wissen: {
-    kicker: "Gut zu wissen",
     titel: "Worauf beim Gebrauchtwagen achten",
     karten: [
       { titel: "Wartungsnachweis", text: "Serviceheft oder digitaler Wartungsnachweis zeigen, ob nach Herstellerplan gewartet wurde. Lücken sollten sich mit Rechnungen erklären lassen." },

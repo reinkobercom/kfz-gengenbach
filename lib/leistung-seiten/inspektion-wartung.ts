@@ -3,6 +3,7 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Wir arbeiten den Wartungsplan Ihres Fahrzeugs ab, nicht eine Pauschalliste. Dazu gehören je nach Intervall:",
   bildEtikett: { titel: "Eintrag ins Serviceheft", text: "Jede Inspektion wird dokumentiert." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker prüft einen Motorraum bei geöffneter Haube" },
   ablauf: [
     { titel: "Umfang klären", text: "Marke, Modell und Kilometerstand reichen. Wir prüfen vorab, welcher Service laut Hersteller dran ist." },
     { titel: "Inspektion nach Plan", text: "Gewartet wird nach Herstellervorgabe, mit freigegebenem Öl und passenden Teilen." },
@@ -10,7 +11,6 @@ export const seite: LeistungSeite = {
     { titel: "Freigabe und Abholung", text: "Zusätzliche Arbeiten nur nach Ihrem Okay. Das Serviceheft ist beim Abholen gepflegt." },
   ],
   vergleich: {
-    kicker: "Garantie",
     titel: "Freie Werkstatt, Garantie bleibt",
     lead: "Sie müssen für die Inspektion nicht in die Vertragswerkstatt. Laut ADAC muss der Hersteller in der Garantiezeit akzeptieren, dass eine freie Werkstatt die Inspektion macht, wenn nach seinen Vorgaben gearbeitet wird.",
     links: {
@@ -24,7 +24,6 @@ export const seite: LeistungSeite = {
     quelle: { titel: "ADAC: Vertrags- oder freie Werkstatt?", url: "https://www.adac.de/rund-ums-fahrzeug/reparatur-pflege-wartung/werkstatt-tipps/richtige-autowerkstatt-finden/" },
   },
   wissen: {
-    kicker: "Gut zu wissen",
     titel: "Wann ist die Inspektion fällig?",
     karten: [
       { titel: "Serviceanzeige", text: "Viele Fahrzeuge melden den nächsten Service im Display, oft mit Restkilometern oder Tagen." },

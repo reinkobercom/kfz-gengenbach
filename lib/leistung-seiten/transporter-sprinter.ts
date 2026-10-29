@@ -3,6 +3,7 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Vom Ölservice bis zum Motor: An Transportern bis 4,5 t zulässiges Gesamtgewicht übernehmen wir unter anderem:",
   bildEtikett: { titel: "Bis 4,5 t Gesamtgewicht", text: "Transporter, Sprinter und Wohnmobile." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet im Motorraum eines Fahrzeugs" },
   ablauf: [
     { titel: "Fahrzeug nennen", text: "Modell, Gesamtgewicht und Kilometerstand reichen, dazu kurz, was ansteht." },
     { titel: "Standzeit abstimmen", text: "Schreiben Sie dazu, wann der Transporter verfügbar ist. Danach richten wir den Termin aus." },
@@ -10,7 +11,6 @@ export const seite: LeistungSeite = {
     { titel: "Freigabe und Abholung", text: "Gemacht wird nur, was Sie freigeben. Wir melden uns, sobald der Transporter fertig ist." },
   ],
   vergleich: {
-    kicker: "3,5-t-Grenze",
     titel: "Was sich über 3,5 t ändert",
     lead: "Ob die HU jedes Jahr oder alle zwei Jahre fällig ist, hängt bei Transportern und Wohnmobilen am zulässigen Gesamtgewicht. Wir arbeiten an beiden Varianten bis 4,5 t.",
     links: {
@@ -33,7 +33,6 @@ export const seite: LeistungSeite = {
     quelle: { titel: "Anlage VIII StVZO, Nr. 2.1.4 und 2.1.6 (Untersuchungsfristen)", url: "https://www.gesetze-im-internet.de/stvzo_2012/anlage_viii.html" },
   },
   wissen: {
-    kicker: "Gut zu wissen",
     titel: "Kurz vor der Anfrage",
     karten: [
       { titel: "Wo steht das Gewicht?", text: "In der Zulassungsbescheinigung Teil I unter F.2. Feld 5 zeigt, ob das Fahrzeug als Lkw, Pkw oder Wohnmobil zugelassen ist." },

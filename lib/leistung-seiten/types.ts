@@ -8,15 +8,16 @@ export type LeistungSeite = {
   umfangLead: string;
   /** Kurzes Etikett auf dem Bild */
   bildEtikett: { titel: string; text: string };
+  /** Bild neben dem Leistungsumfang; das Leistungsbild selbst steht schon im Hero */
+  umfangBild: { src: string; alt: string };
   /** „Woran Sie es merken“: Anzeichen als Checkliste, optional mit Warnkasten */
-  symptome?: { kicker: string; titel: string; lead: string; punkte: string[]; warnung?: { titel: string; text: string } };
+  symptome?: { titel: string; lead: string; punkte: string[]; warnung?: { titel: string; text: string } };
   /** Ersetzt die Absätze unter „So arbeiten wir“ (Standard: text aus lib/leistungen.ts) */
   arbeitsweise?: string[];
   /** Ablauf „So arbeiten wir“, 3–4 Schritte */
   ablauf: { titel: string; text: string }[];
   /** Gegenüberstellung in zwei Karten, z. B. „Instandsetzen oder tauschen?“ */
   vergleich?: {
-    kicker: string;
     titel: string;
     lead: string;
     links: { titel: string; punkte: string[] };
@@ -28,7 +29,7 @@ export type LeistungSeite = {
   /** Einordnung der Befunde nach Dringlichkeit (Ampel) */
   ampel?: { titel: string; lead: string; stufen: { stufe: "rot" | "gelb" | "gruen"; titel: string; text: string; beispiel: string }[] };
   /** Kurzwissen als drei Karten */
-  wissen?: { kicker: string; titel: string; karten: { titel: string; text: string }[] };
+  wissen?: { titel: string; karten: { titel: string; text: string }[] };
   /** Zusätzliche FAQ, werden an die FAQ aus lib/leistungen.ts angehängt */
   faq?: { q: string; a: string }[];
 };

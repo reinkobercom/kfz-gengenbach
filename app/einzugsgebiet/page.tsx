@@ -5,9 +5,9 @@ import { CtaBand } from "@/components/ui";
 import { orte } from "@/lib/orte";
 
 export const metadata: Metadata = {
-  title: "Einzugsgebiet: Kfz-Werkstatt für Gengenbach, Offenburg & Kinzigtal",
+  title: "Einzugsgebiet: Werkstatt für Gengenbach, Offenburg & Kinzigtal",
   description:
-    "Unsere Werkstatt in Gengenbach betreut Kundschaft aus Offenburg, Ortenberg, Ohlsbach, Berghaupten, Biberach, Steinach, Zell a. H., Nordrach, Oberharmersbach und Umgebung.",
+    "Kfz-Werkstatt in Gengenbach für Offenburg, Ortenberg, Ohlsbach, Berghaupten, Biberach, Steinach, Zell a. H., Nordrach und Oberharmersbach.",
   alternates: { canonical: "/einzugsgebiet" },
 };
 
@@ -22,8 +22,8 @@ export default function EinzugsgebietPage() {
         intro="Die Werkstatt liegt in Gengenbach an der B33. Zu uns kommen Kundinnen und Kunden aus der Stadt und den Ortsteilen, aus Offenburg, dem Harmersbachtal und dem Kinzigtal bis Steinach."
       />
 
-      <section className="wrap pb-24 lg:pb-36">
-        <h2 className="border-t border-line pt-12 font-display text-3xl">Wählen Sie Ihren Ort</h2>
+      <section className="section wrap">
+        <h2 className="font-display text-4xl sm:text-5xl">Wählen Sie Ihren Ort</h2>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { href: "/", name: "Gengenbach", orte: gengenbach, hinweis: "Hier ist die Werkstatt" },

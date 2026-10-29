@@ -3,8 +3,8 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Vorabcheck, Reparatur und Prüfung folgen in einem Termin aufeinander. Dazu gehören:",
   bildEtikett: { titel: "Vorabcheck vor der HU", text: "Mängel finden, bevor geprüft wird." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1760317890314-e964ffd7e6a6?auto=format&fit=crop&w=1200&q=70", alt: "Nahaufnahme einer Bremsscheibe mit Bremssattel" },
   symptome: {
-    kicker: "Vorher selbst prüfen",
     titel: "Das können Sie vor dem Termin checken",
     lead: "Einen Teil der häufigen HU-Mängel sehen Sie in wenigen Minuten selbst. Den Rest prüfen wir auf der Hebebühne.",
     punkte: [
@@ -28,7 +28,6 @@ export const seite: LeistungSeite = {
     { titel: "Hauptuntersuchung", text: "Die Prüfung nimmt eine amtlich anerkannte Prüforganisation ab. Ohne erhebliche Mängel gibt es die neue Plakette." },
   ],
   vergleich: {
-    kicker: "Vorabcheck",
     titel: "Mit Vorabcheck oder direkt zur Prüfung?",
     lead: "Ein Vorabcheck ist keine Pflicht. Er senkt das Risiko, dass das Fahrzeug durchfällt und ein zweiter Termin nötig wird.",
     mitte: "oder",
@@ -52,7 +51,6 @@ export const seite: LeistungSeite = {
     quelle: { titel: "Anlage VIII StVZO: Untersuchungsfristen und Mängelklassen", url: "https://www.gesetze-im-internet.de/stvzo_2012/anlage_viii.html" },
   },
   wissen: {
-    kicker: "Gut zu wissen",
     titel: "Wann muss Ihr Fahrzeug zur HU?",
     karten: [
       { titel: "Plakette lesen", text: "Fällig ist die HU bis zum Ende des Monats, der oben auf der Plakette steht. Eine Kulanzfrist gibt es nicht." },

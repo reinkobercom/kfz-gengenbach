@@ -18,7 +18,7 @@ export default function Kontakt() {
     >
       <dl className="mt-12 grid max-w-xl gap-8 sm:grid-cols-2">
         <div>
-          <dt className="text-sm text-muted">Adresse</dt>
+          <dt className="text-sm text-white/60">Adresse</dt>
           <dd className="mt-1 font-semibold">
             {site.legalName}
             <br />
@@ -27,13 +27,13 @@ export default function Kontakt() {
             {site.address.zip} {site.address.city}
           </dd>
           <dd className="mt-2">
-            <a href={mapsHref} target="_blank" rel="noopener" className="text-sm font-semibold text-blue hover:underline">
+            <a href={mapsHref} target="_blank" rel="noopener" className="text-sm font-semibold text-white underline underline-offset-4 hover:text-blue-tint">
               Route planen
             </a>
           </dd>
         </div>
         <div>
-          <dt className="text-sm text-muted">Öffnungszeiten</dt>
+          <dt className="text-sm text-white/60">Öffnungszeiten</dt>
           {site.hours.map((h) => (
             <dd key={h.days} className="mt-1 tabular-nums">
               {h.days}: {h.opens}–{h.closes} Uhr
@@ -41,22 +41,22 @@ export default function Kontakt() {
           ))}
         </div>
         <div>
-          <dt className="text-sm text-muted">Telefon und WhatsApp</dt>
+          <dt className="text-sm text-white/60">Telefon und WhatsApp</dt>
           <dd className="mt-1">
-            <a href={telHref} className="font-semibold hover:text-blue">
+            <a href={telHref} className="font-semibold hover:text-blue-tint">
               {site.phoneDisplay}
             </a>
           </dd>
           <dd className="mt-2">
-            <a href={waHref()} target="_blank" rel="noopener" className="text-sm font-semibold text-blue hover:underline">
+            <a href={waHref()} target="_blank" rel="noopener" className="text-sm font-semibold text-white underline underline-offset-4 hover:text-blue-tint">
               WhatsApp öffnen
             </a>
           </dd>
         </div>
         <div>
-          <dt className="text-sm text-muted">E-Mail</dt>
+          <dt className="text-sm text-white/60">E-Mail</dt>
           <dd className="mt-1">
-            <a href={`mailto:${site.email}`} className="font-semibold hover:text-blue">
+            <a href={`mailto:${site.email}`} className="font-semibold hover:text-blue-tint">
               {site.email}
             </a>
           </dd>

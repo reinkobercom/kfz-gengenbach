@@ -22,7 +22,7 @@ export default function LeistungenPage() {
         fakten={["Alle Marken", "Wartung nach Herstellervorgaben", "Befund per Video"]}
       />
 
-      <section className="wrap pb-24 lg:pb-36">
+      <section className="section wrap">
         <ul className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
           {leistungen.map((l) => (
             <li key={l.slug}>

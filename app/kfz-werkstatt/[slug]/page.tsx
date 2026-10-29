@@ -6,7 +6,7 @@ import { CtaBand, Faq, JsonLd } from "@/components/ui";
 import { getLeistung, leistungen } from "@/lib/leistungen";
 import { getOrt, orte } from "@/lib/orte";
 import { serviceSchema } from "@/lib/schema";
-import { mapsHref, site } from "@/lib/site";
+import { mapsHref, ogBasis, ogStandardBild, site } from "@/lib/site";
 
 export function generateStaticParams() {
   return orte.map((o) => ({ slug: o.slug }));
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<"/kfz-werkstatt/[sl
     title: o.metaTitle,
     description: o.metaDescription,
     alternates: { canonical: `/kfz-werkstatt/${o.slug}` },
-    openGraph: { title: o.metaTitle, description: o.metaDescription, url: `/kfz-werkstatt/${o.slug}` },
+    openGraph: { ...ogBasis, title: o.metaTitle, description: o.metaDescription, url: `/kfz-werkstatt/${o.slug}`, images: [ogStandardBild] },
   };
 }
 
@@ -45,7 +45,7 @@ export default async function OrtPage({ params }: PageProps<"/kfz-werkstatt/[slu
         defaultOrt={o.formOrt}
       />
 
-      <section className="section wrap grid gap-14 border-t border-line lg:grid-cols-12">
+      <section className="section wrap grid gap-14 lg:grid-cols-12">
         <div className="lg:col-span-6">
           <h2 className="font-display text-4xl sm:text-5xl">Warum Kundschaft aus {o.name} zu uns kommt</h2>
           <div className="prose-k mt-8 text-lg text-muted">

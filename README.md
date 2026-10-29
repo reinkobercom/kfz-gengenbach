@@ -8,6 +8,7 @@ Website der Kfz-Werkstatt KFZ Gengenbach (KFZ Technik Michael Jakob), Next.js 16
 | --- | --- |
 | Stammdaten, Öffnungszeiten, Impressumsangaben | `lib/site.ts` |
 | Leistungsseiten (Texte, Bilder, FAQ) | `lib/leistungen.ts` |
+| Zusatzbausteine je Leistung (Vergleich, Anzeichen, Ampel, Wissen, Bild neben dem Umfang) | `lib/leistung-seiten/` |
 | Ortsseiten | `lib/orte.ts` |
 | Ratgeber-Artikel (eine Datei je Artikel, Format in `types.ts`) | `lib/ratgeber/` |
 | Megamenü-Gruppen der Leistungen | `lib/navigation.ts` |
@@ -35,6 +36,21 @@ Umgebungsvariablen in Vercel: siehe `.env.example`.
 ## Indexierung
 
 `lib/site.ts → indexierbar`: Solange die Produktion nur unter `*.vercel.app` läuft, ist die Seite auf noindex. Nach dem Aufschalten von `kfz-gengenbach.de` in Vercel einmal neu deployen, dann wird indexiert.
+
+## Go-Live-Checkliste (Stand 29.10.2026)
+
+Technik geprüft: alle 23 Seiten 200, je eine h1, Titel ≤ 65 und Beschreibungen ≤ 160 Zeichen, keine Dopplungen, Canonicals, Open Graph mit Bild, JSON-LD gültig, alle internen und 28 externen Links erreichbar, Sicherheits-Header gesetzt.
+
+Offen vor der DNS-Umstellung:
+
+- [ ] Env-Variablen in Vercel setzen (Stand 29.10.: keine einzige gesetzt, das Formular würde live fehlschlagen)
+- [ ] Leadportal-Kunde „KFZ Gengenbach“ mit Quelle „Website-Anfrage“ anlegen, Slug und Secret als Env setzen
+- [ ] Testanfrage auf der Vercel-URL: Mail kommt an, Lead im Portal
+- [ ] Impressum: Handwerkskammer, Handwerksrolle, Berufsbezeichnung, USt-ID in `lib/site.ts`
+- [ ] `kfz-gengenbach.de` und `www.kfz-gengenbach.de` in Vercel hinzufügen (www als Hauptdomain, Apex leitet weiter)
+- [ ] Beim DNS-Anbieter (cloudpit) nur A-Record und www-CNAME ändern, MX-Einträge (secure-mailgate) nicht anfassen
+- [ ] Nach der Umstellung neu deployen, robots.txt und Meta-Robots auf „index“ prüfen
+- [ ] Search Console: Property anlegen, Bestätigungscode einbauen, Sitemap einreichen
 
 ## Entwicklung
 

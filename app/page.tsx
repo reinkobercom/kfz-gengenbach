@@ -59,9 +59,9 @@ export default function Home() {
           sizes="100vw"
           className="-z-20 object-cover"
         />
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-navy/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-navy lg:via-navy/85 lg:to-navy/40" />
         <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-navy/70 to-transparent" />
-        <div className="wrap grid gap-10 pb-16 pt-10 sm:gap-12 sm:pt-16 lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-28 lg:pt-24">
+        <div className="wrap grid gap-10 pb-16 pt-10 sm:gap-12 sm:pt-16 lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-24 lg:pt-24">
           <div className="lg:col-span-6 lg:pr-6">
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold backdrop-blur-sm">
               <span className="size-2 rounded-full bg-blue" aria-hidden="true" />
@@ -131,7 +131,7 @@ export default function Home() {
 
       {/* Schwerpunkt Motor */}
       <section className="bg-navy text-white">
-        <div className="wrap grid gap-12 py-20 lg:grid-cols-12 lg:items-center lg:gap-16 lg:py-32">
+        <div className="section wrap grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-6">
             <h2 className="font-display text-5xl sm:text-6xl">Motorschaden heißt nicht automatisch neuer Motor.</h2>
             <p className="mt-6 max-w-xl text-lg text-white/75">
@@ -206,13 +206,12 @@ export default function Home() {
       {/* Ablauf */}
       <section className="bg-mist">
         <div className="section wrap text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.1em] text-blue">In vier Schritten</p>
-          <h2 className="mx-auto mt-3 max-w-2xl font-display text-5xl sm:text-6xl">So einfach kommen Sie zum Termin</h2>
+          <h2 className="mx-auto max-w-2xl font-display text-5xl sm:text-6xl">So einfach kommen Sie zum Termin</h2>
           <ol className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             <span aria-hidden="true" className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-0.5 bg-line lg:block" />
             {ablauf.map((s, i) => (
               <li key={s.t} className="relative flex flex-col items-center px-2">
-                <span className="grid size-14 place-items-center rounded-full bg-white font-display text-2xl font-bold text-blue shadow-[0_0_0_6px_var(--color-mist)] ring-1 ring-line">
+                <span className="grid size-14 place-items-center rounded-full bg-blue font-display text-2xl font-bold text-white shadow-[0_0_0_6px_var(--color-mist)]">
                   {i + 1}
                 </span>
                 <h3 className="mt-6 font-display text-[1.75rem]">{s.t}</h3>
@@ -229,8 +228,7 @@ export default function Home() {
       {/* Einzugsgebiet + Werkstatt */}
       <section className="section wrap">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.1em] text-blue">Einzugsgebiet</p>
-          <h2 className="mt-3 font-display text-5xl sm:text-6xl">Für Gengenbach und das mittlere Kinzigtal</h2>
+          <h2 className="font-display text-5xl sm:text-6xl">Für Gengenbach und das mittlere Kinzigtal</h2>
           <p className="mt-6 text-lg text-muted">
             Unsere Kundschaft kommt aus Gengenbach und den Ortsteilen, aus Offenburg, dem Harmersbachtal und dem Kinzigtal
             bis Steinach.
@@ -290,10 +288,8 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="border-t border-line">
-        <div className="section wrap">
-          <Faq items={faq} zentriert />
-        </div>
+      <section className="section wrap">
+        <Faq items={faq} zentriert />
       </section>
 
       <CtaBand />

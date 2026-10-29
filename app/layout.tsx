@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd, MobileBar } from "@/components/ui";
 import { businessSchema, websiteSchema } from "@/lib/schema";
-import { indexierbar, site } from "@/lib/site";
+import { indexierbar, ogBasis, site } from "@/lib/site";
 import "./globals.css";
 
 const body = localFont({
@@ -36,15 +36,11 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Ihre freie Kfz-Werkstatt in Gengenbach: Inspektion, HU/AU, Reifen, Reparatur und Motorinstandsetzung für Pkw und Transporter bis 4,5 t. Befund per Video. Jetzt unverbindlich anfragen.",
+    "Freie Kfz-Werkstatt in Gengenbach: Inspektion, HU/AU, Reifen, Reparatur und Motorinstandsetzung für Pkw und Transporter bis 4,5 t. Befund per Video.",
   applicationName: site.brand,
   authors: [{ name: site.legalName }],
   formatDetection: { telephone: true },
-  openGraph: {
-    type: "website",
-    locale: "de_DE",
-    siteName: site.brand,
-  },
+  openGraph: ogBasis,
   robots: indexierbar ? { index: true, follow: true } : { index: false, follow: false },
 };
 

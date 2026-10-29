@@ -3,8 +3,8 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Wir setzen gezielt die Baugruppe instand, die den Schaden verursacht. Typische Arbeiten am Motor:",
   bildEtikett: { titel: "Zustand dokumentiert", text: "Foto und Video vom geöffneten Motor." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet im Motorraum eines Fahrzeugs" },
   symptome: {
-    kicker: "Anzeichen",
     titel: "Woran Sie es merken",
     lead: "Ein Motorschaden kündigt sich oft an. Diese Anzeichen sollten Sie prüfen lassen:",
     punkte: [
@@ -32,7 +32,6 @@ export const seite: LeistungSeite = {
     { titel: "Freigabe, dann Reparatur", text: "Instand gesetzt wird erst nach Ihrem Okay und nur im freigegebenen Umfang." },
   ],
   vergleich: {
-    kicker: "Entscheidung",
     titel: "Instandsetzen oder Austauschmotor?",
     lead: "Welcher Weg passt, hängt vom Schaden, vom Fahrzeug und von Ihren Plänen damit ab. Nach dem Befund gehen wir diese Punkte mit Ihnen durch.",
     mitte: "oder",
@@ -56,7 +55,6 @@ export const seite: LeistungSeite = {
     },
   },
   wissen: {
-    kicker: "Gut zu wissen",
     titel: "Begriffe rund um den Motor",
     karten: [
       {

@@ -9,7 +9,7 @@ export const artikel: Artikel = {
   titel: "Zylinderkopfdichtung defekt: Symptome, Kosten und was jetzt zu tun ist",
   metaTitle: "Zylinderkopfdichtung defekt: Symptome & Kosten",
   metaDescription:
-    "Weißer Rauch, Kühlmittelverlust, Schaum am Öldeckel: So erkennen Sie eine defekte Zylinderkopfdichtung, was der Wechsel laut Fachpresse kostet und wann Sie stehen bleiben sollten.",
+    "Weißer Rauch, Kühlmittelverlust, Schaum am Öldeckel: So erkennen Sie eine defekte Zylinderkopfdichtung und was der Wechsel laut Fachpresse kostet.",
   teaser:
     "Weißer Rauch und sinkender Kühlmittelstand deuten auf die Zylinderkopfdichtung hin, beweisen sie aber nicht. Welche Symptome harmlos sein können, wie die Werkstatt prüft und was der Wechsel kostet.",
   leistung: "motorinstandsetzung",

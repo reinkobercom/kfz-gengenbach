@@ -3,6 +3,7 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Ob punktuell ausgebessert oder das Bauteil lackiert wird, entscheidet der Schaden. Über unseren Partnerbetrieb möglich sind:",
   bildEtikett: { titel: "Foto genügt", text: "Ein Bild vom Schaden reicht für die erste Einschätzung." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1632605170384-c3f4d89162a3?auto=format&fit=crop&w=1200&q=70", alt: "Fahrzeug in einer Karosseriewerkstatt" },
   ablauf: [
     { titel: "Foto schicken", text: "Per WhatsApp oder im Anfrageformular, am besten bei Tageslicht." },
     { titel: "Einschätzung vorab", text: "Anhand des Fotos schätzen wir ein, ob Smart Repair infrage kommt oder lackiert werden muss." },
@@ -10,7 +11,6 @@ export const seite: LeistungSeite = {
     { titel: "Ein Ansprechpartner", text: "Fragen und Absprachen laufen über uns, vom Foto bis zur Rückgabe." },
   ],
   vergleich: {
-    kicker: "Entscheidung",
     titel: "Smart Repair oder Lackierung?",
     lead: "Es kommt auf Größe, Lage und Tiefe des Schadens an. Eine grobe Orientierung, im Einzelfall entscheidet der Blick auf den Schaden.",
     links: {
@@ -32,7 +32,6 @@ export const seite: LeistungSeite = {
     mitte: "oder",
   },
   wissen: {
-    kicker: "Gut zu wissen",
     titel: "Kurz erklärt",
     karten: [
       {

@@ -3,8 +3,8 @@ import type { LeistungSeite } from "./types";
 export const seite: LeistungSeite = {
   umfangLead: "Für Pkw und Transporter bis 4,5 t, vom saisonalen Radwechsel bis zur Spureinstellung:",
   bildEtikett: { titel: "Achsen vermessen", text: "Für sauberen Geradeauslauf." },
+  umfangBild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },
   symptome: {
-    kicker: "Woran Sie es merken",
     titel: "Anzeichen an Reifen und Lenkung",
     lead: "Diese Anzeichen deuten auf verstellte Achsen, eine Unwucht oder verschlissene Reifen hin. Was dahintersteckt, klären wir am Fahrzeug.",
     punkte: [
@@ -32,7 +32,6 @@ export const seite: LeistungSeite = {
     { titel: "Achsen vermessen", text: "Bei Anzeichen oder nach Fahrwerksarbeiten vermessen wir die Achsen und stellen die Spur ein." },
   ],
   vergleich: {
-    kicker: "Ursache",
     titel: "Auswuchten oder Achsvermessung?",
     lead: "Nicht jedes Problem am Lenkrad hat mit der Spur zu tun. Diese Einordnung hilft als erste Orientierung, geprüft wird am Fahrzeug.",
     mitte: "oder",
@@ -51,7 +50,6 @@ export const seite: LeistungSeite = {
     },
   },
   wissen: {
-    kicker: "Gut zu wissen",
     titel: "Profil, Saison und Reifenalter",
     karten: [
       {

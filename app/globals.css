@@ -79,12 +79,21 @@
       padding-inline: 2rem;
     }
   }
+  /* Einheitlicher Abschnittsabstand. Folgen zwei helle Abschnitte direkt
+     aufeinander, entfällt der obere Abstand des zweiten, sonst stünde dort
+     der doppelte Abstand. Farbige Bänder tragen .section im inneren Element. */
   .section {
     padding-block: 5rem;
   }
+  .section + .section {
+    padding-top: 0;
+  }
   @media (min-width: 1024px) {
     .section {
-      padding-block: 9rem;
+      padding-block: 8rem;
+    }
+    .section + .section {
+      padding-top: 0;
     }
   }
   .prose-k p + p {
