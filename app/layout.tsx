@@ -41,6 +41,8 @@ export const metadata: Metadata = {
   applicationName: site.brand,
   authors: [{ name: site.legalName }],
   formatDetection: { telephone: true },
+  // Google Search Console (Property www.kfz-gengenbach.de)
+  verification: { google: "zEiSRfcgw1fSAMciSidiJSepOWyAkMUS8kQU5-MyMxM" },
   openGraph: ogBasis,
   robots: indexierbar ? { index: true, follow: true } : { index: false, follow: false },
 };
