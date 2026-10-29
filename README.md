@@ -48,9 +48,10 @@ Offen vor der DNS-Umstellung:
 - [x] Leadportal: Kunde `280. | KFZ Gengenbach`, Kampagne „Website-Anfragen“ (Standard Lead), Quelle „Anfrage-Konfigurator“; `LEADPORTAL_SLUG_ANFRAGE`/`LEADPORTAL_SECRET_ANFRAGE` gesetzt, Testlead im Portal angekommen (29.10.2026)
 - [ ] Impressum: Name des Inhabers bestätigen, Rechtsform, Handwerkskammer, Handwerksrolle (Grundlage der Eintragung), ggf. Handelsregister und USt-ID in `lib/site.ts`. Verantwortlich nach § 18 MStV ist eingetragen.
 - [x] `www.kfz-gengenbach.de` als Hauptdomain in Vercel, `kfz-gengenbach.de` leitet per 308 weiter (29.10.2026)
-- [ ] Beim DNS-Anbieter (cloudpit): A-Record `@` → `216.150.1.1`, CNAME `www` → `c72cabeb5c294cc0.vercel-dns-016.com.`; MX-Einträge (secure-mailgate) nicht anfassen
-- [ ] Nach der Umstellung neu deployen, robots.txt und Meta-Robots auf „index“ prüfen
-- [ ] Search Console: Property anlegen, Bestätigungscode einbauen, Sitemap einreichen
+- [x] DNS bei cloudpit umgestellt (A `@` → `216.150.1.1`, CNAME `www` → Vercel), MX unverändert, HTTPS und Weiterleitung geprüft (29.10.2026)
+- [x] robots.txt und Meta-Robots stehen auf „index“
+- [x] Search Console: Bestätigungscode eingebaut (`app/layout.tsx`)
+- [ ] Search Console: „Bestätigen“ klicken, `/sitemap.xml` einreichen
 
 ## Entwicklung
 
