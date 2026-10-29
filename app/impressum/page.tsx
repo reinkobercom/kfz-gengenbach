@@ -69,6 +69,16 @@ export default function Impressum() {
           </section>
         )}
         <section>
+          <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+          <p>
+            {site.owner}
+            <br />
+            {site.address.street}
+            <br />
+            {site.address.zip} {site.address.city}
+          </p>
+        </section>
+        <section>
           <h2>Verbraucherstreitbeilegung</h2>
           <p>
             Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer

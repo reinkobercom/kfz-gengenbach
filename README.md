@@ -44,9 +44,9 @@ Technik geprüft: alle 23 Seiten 200, je eine h1, Titel ≤ 65 und Beschreibunge
 Offen vor der DNS-Umstellung:
 
 - [x] Resend in Vercel (Production): `RESEND_API_KEY` (nur Senden), `MAIL_FROM`, `MAIL_TO` = leads@reinkober.agency, info@kfz-gengenbach.de (29.10.2026)
-- [ ] Turnstile-Schlüssel in Vercel setzen
+- [ ] Turnstile: zurückgestellt (29.10.2026), Spamschutz vorerst Honeypot + Mindest-Ausfüllzeit, live geprüft
 - [x] Leadportal: Kunde `280. | KFZ Gengenbach`, Kampagne „Website-Anfragen“ (Standard Lead), Quelle „Anfrage-Konfigurator“; `LEADPORTAL_SLUG_ANFRAGE`/`LEADPORTAL_SECRET_ANFRAGE` gesetzt, Testlead im Portal angekommen (29.10.2026)
-- [ ] Impressum: Handwerkskammer, Handwerksrolle, Berufsbezeichnung, USt-ID in `lib/site.ts`
+- [ ] Impressum: Name des Inhabers bestätigen, Rechtsform, Handwerkskammer, Handwerksrolle (Grundlage der Eintragung), ggf. Handelsregister und USt-ID in `lib/site.ts`. Verantwortlich nach § 18 MStV ist eingetragen.
 - [x] `www.kfz-gengenbach.de` als Hauptdomain in Vercel, `kfz-gengenbach.de` leitet per 308 weiter (29.10.2026)
 - [ ] Beim DNS-Anbieter (cloudpit): A-Record `@` → `216.150.1.1`, CNAME `www` → `c72cabeb5c294cc0.vercel-dns-016.com.`; MX-Einträge (secure-mailgate) nicht anfassen
 - [ ] Nach der Umstellung neu deployen, robots.txt und Meta-Robots auf „index“ prüfen
