@@ -125,9 +125,9 @@ export function CtaBand({
       {/* dezente Linien im Hintergrund, angelehnt an die Logo-Leiste */}
       <div aria-hidden="true" className="absolute -right-24 top-0 -z-10 hidden h-full w-[38rem] skew-x-[-18deg] bg-gradient-to-b from-blue/25 to-transparent lg:block" />
       <div className="section wrap grid gap-12 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-6">
+        <div className="text-center lg:col-span-6 lg:text-left">
           <h2 className="font-display text-5xl sm:text-6xl">{titel}</h2>
-          <p className="mt-5 max-w-lg text-lg text-white/75">{text}</p>
+          <p className="mx-auto mt-5 max-w-lg text-lg text-white/75 lg:mx-0">{text}</p>
         </div>
         <div className="lg:col-span-5 lg:col-start-8">
           <div className="rounded-2xl bg-white p-3 text-navy shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">

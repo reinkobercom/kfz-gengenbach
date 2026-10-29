@@ -23,8 +23,9 @@ export function Umfang({
   etikett?: { titel: string; text: string };
 }) {
   return (
-    <section className="section wrap grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-mist lg:col-span-5 lg:aspect-[4/5]">
+    <section className="section wrap grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+      {/* Bild streckt sich auf die Höhe der Textspalte (kein Leerraum neben dem Text) */}
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-mist lg:col-span-5 lg:aspect-auto lg:min-h-[18rem]">
         <Image src={bild.src} alt={bild.alt} fill sizes="(min-width: 1024px) 460px, 100vw" className="object-cover" />
         {etikett && (
           <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm sm:inset-x-6 sm:bottom-6">
@@ -38,10 +39,10 @@ export function Umfang({
           </div>
         )}
       </div>
-      <div className="lg:col-span-7">
+      <div className="lg:col-span-7 lg:self-center">
         <h2 className="font-display text-4xl sm:text-5xl">{name}: das gehört dazu</h2>
         {lead && <p className="mt-5 max-w-xl text-lg text-muted">{lead}</p>}
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+        <ul className="mt-8 grid gap-2.5 sm:grid-cols-2 sm:gap-3">
           {punkte.map((p) => (
             <li key={p} className="flex gap-3 rounded-xl bg-blue px-4 py-3.5 font-medium leading-snug text-white sm:p-4">
               <Haken className="mt-0.5 text-white" />
@@ -67,16 +68,14 @@ export function Arbeitsweise({ absaetze, schritte }: { absaetze: string[]; schri
             ))}
           </div>
         </div>
-        <ol className={`mt-14 grid gap-4 sm:grid-cols-2 ${schritte.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
+        <ol className={`wischleiste mt-12 sm:grid-cols-2 sm:gap-4 ${schritte.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {schritte.map((s, i) => (
-            <li key={s.titel} className="flex gap-4 rounded-2xl bg-white p-5 ring-1 ring-line sm:block sm:p-6">
-              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-blue font-display text-xl font-bold text-white sm:size-12" aria-hidden="true">
+            <li key={s.titel} className="rounded-2xl bg-white p-6 ring-1 ring-line">
+              <span className="grid size-12 place-items-center rounded-full bg-blue font-display text-xl font-bold text-white" aria-hidden="true">
                 {i + 1}
               </span>
-              <div>
-                <h3 className="font-display text-2xl sm:mt-5">{s.titel}</h3>
-                <p className="mt-2 text-[0.98rem] text-muted">{s.text}</p>
-              </div>
+              <h3 className="mt-5 font-display text-2xl">{s.titel}</h3>
+              <p className="mt-2 text-[0.98rem] text-muted">{s.text}</p>
             </li>
           ))}
         </ol>
@@ -135,19 +134,19 @@ export function Vergleich({ v }: { v: NonNullable<LeistungSeite["vergleich"]> })
   );
 }
 
-/** Kurzwissen als drei Karten */
+/** Kurzwissen: blaues Band, Überschrift mittig, drei Karten (mobil wischbar) */
 export function Wissen({ w }: { w: NonNullable<LeistungSeite["wissen"]> }) {
   return (
-    <section className="section wrap">
-      <div className="rounded-3xl bg-blue-tint/60 p-6 sm:p-10 lg:p-14">
-        <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(w.titel)}</h2>
-        <ul className="mt-10 grid gap-4 md:grid-cols-3">
-            {w.karten.map((k) => (
-              <li key={k.titel} className="rounded-2xl bg-white p-6">
-                <p className="font-display text-xl font-bold">{k.titel}</p>
-                <p className="mt-2 text-[0.96rem] text-muted">{k.text}</p>
-              </li>
-            ))}
+    <section className="bg-blue text-white">
+      <div className="section wrap">
+        <h2 className="mx-auto max-w-3xl text-center font-display text-4xl sm:text-5xl">{ohneWitwe(w.titel)}</h2>
+        <ul className="wischleiste mx-auto mt-12 max-w-5xl sm:gap-4 md:grid-cols-3">
+          {w.karten.map((k) => (
+            <li key={k.titel} className="rounded-2xl bg-white p-6 text-navy">
+              <p className="font-display text-xl font-bold">{k.titel}</p>
+              <p className="mt-2 text-[0.96rem] text-muted">{k.text}</p>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
@@ -188,36 +187,38 @@ export function Ampel({ a, bild }: { a: NonNullable<LeistungSeite["ampel"]>; bil
   );
 }
 
-/** „Woran Sie es merken“: Anzeichen links, optional Warnkasten rechts */
+/** „Woran Sie es merken“: Kopf mittig, Anzeichen als Kacheln, Warnhinweis als Leiste darunter */
 export function Symptome({ s }: { s: NonNullable<LeistungSeite["symptome"]> }) {
   return (
     <section className="section wrap">
-      <div className="grid gap-10 rounded-3xl border border-line p-6 sm:p-10 lg:grid-cols-12 lg:gap-14 lg:p-14">
-        <div className={s.warnung ? "lg:col-span-7" : "lg:col-span-12"}>
-          <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(s.titel)}</h2>
-          <p className="mt-4 max-w-xl text-lg text-muted">{s.lead}</p>
-          <ul className={`mt-8 grid gap-x-8 gap-y-3 ${s.warnung ? "sm:grid-cols-1" : "sm:grid-cols-2"}`}>
-            {s.punkte.map((p) => (
-              <li key={p} className="flex gap-3 border-b border-line pb-3 leading-snug">
-                <span className="mt-1.5 size-2 shrink-0 rounded-full bg-blue" aria-hidden="true" />
-                {p}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {s.warnung && (
-          <aside className="self-start rounded-2xl border-l-4 border-[#d64545] bg-[#fdf1f1] p-6 lg:col-span-5">
-            <p className="flex items-center gap-2 font-display text-2xl font-bold">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="text-[#d64545]">
-                <path d="M12 3l10 18H2L12 3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M12 10v5M12 18v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              {s.warnung.titel}
-            </p>
-            <p className="mt-3 text-navy/85">{s.warnung.text}</p>
-          </aside>
-        )}
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(s.titel)}</h2>
+        <p className="mt-5 text-lg text-muted">{s.lead}</p>
       </div>
+      {/* Umbrechende Reihe, letzte Reihe mittig: keine einzelne Kachel am linken Rand */}
+      <ul className="mx-auto mt-12 flex max-w-5xl flex-wrap justify-center gap-2.5 sm:gap-3">
+        {s.punkte.map((p) => (
+          <li
+            key={p}
+            className="flex w-full gap-3 rounded-xl bg-blue-tint px-4 py-3.5 font-medium leading-snug sm:w-[calc(50%-0.375rem)] sm:p-4 lg:w-[calc((100%-1.5rem)/3)]"
+          >
+            <span className="mt-1.5 size-2 shrink-0 rounded-full bg-blue" aria-hidden="true" />
+            {p}
+          </li>
+        ))}
+      </ul>
+      {s.warnung && (
+        <aside className="mx-auto mt-6 flex max-w-5xl gap-4 rounded-2xl bg-[#c53030] p-6 text-white sm:items-center sm:p-7">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
+            <path d="M12 3l10 18H2L12 3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+            <path d="M12 10v5M12 18v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          <p>
+            <span className="block font-display text-2xl font-bold">{s.warnung.titel}</span>
+            <span className="mt-1 block text-white/90">{s.warnung.text}</span>
+          </p>
+        </aside>
+      )}
     </section>
   );
 }

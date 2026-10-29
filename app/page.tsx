@@ -110,17 +110,18 @@ export default function Home() {
             <li key={l.slug} className="border-b border-line">
               <Link
                 href={`/leistungen/${l.slug}`}
-                className="group grid grid-cols-1 gap-2 py-7 sm:grid-cols-[minmax(0,15rem)_1fr_auto] sm:items-baseline sm:gap-8"
+                className="group flex items-center justify-between gap-4 py-4 sm:grid sm:grid-cols-[minmax(0,15rem)_1fr_auto] sm:items-baseline sm:gap-8 sm:py-7"
               >
-                <h3 className="font-display text-[1.75rem] leading-tight group-hover:text-blue">
+                <h3 className="font-display text-2xl leading-tight group-hover:text-blue sm:text-[1.75rem]">
                   {l.name}
                   {l.key === "motor" && <span className="ml-3 align-middle font-sans text-sm font-semibold text-blue">Schwerpunkt</span>}
                 </h3>
-                <p className="text-muted">
+                {/* Kurzbeschreibung erst ab 640 px, mobil reicht der Name */}
+                <p className="hidden text-muted sm:block">
                   {l.short}
                   {l.partner && <span className="block text-sm">Über unseren Partnerbetrieb</span>}
                 </p>
-                <span aria-hidden="true" className="hidden text-2xl text-line transition-colors group-hover:text-blue sm:block">
+                <span aria-hidden="true" className="text-2xl text-blue transition-colors sm:text-line sm:group-hover:text-blue">
                   ›
                 </span>
               </Link>
@@ -131,8 +132,8 @@ export default function Home() {
 
       {/* Schwerpunkt Motor */}
       <section className="bg-navy text-white">
-        <div className="section wrap grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
-          <div className="lg:col-span-6">
+        <div className="section wrap grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6 lg:self-center">
             <h2 className="font-display text-5xl sm:text-6xl">Motorschaden heißt nicht automatisch neuer Motor.</h2>
             <p className="mt-6 max-w-xl text-lg text-white/75">
               Steuerkette, Zylinderkopf, Turbolader oder Ölverbrauch: Oft lässt sich die betroffene Baugruppe gezielt
@@ -155,7 +156,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-navy-soft lg:col-span-6">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-navy-soft lg:col-span-6 lg:aspect-auto lg:min-h-[18rem]">
             <Image
               src={img("1615906655593-ad0386982a0f", 1200)}
               alt="Mechaniker arbeitet am Motor eines Fahrzeugs"
@@ -168,8 +169,8 @@ export default function Home() {
       </section>
 
       {/* Video-Befund */}
-      <section className="section wrap grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
-        <div className="relative order-2 aspect-square overflow-hidden rounded-2xl bg-mist lg:order-1 lg:col-span-5">
+      <section className="section wrap grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-2xl bg-mist lg:order-1 lg:col-span-5 lg:aspect-auto lg:min-h-[18rem]">
           <Image
             src={img("1625047509248-ec889cbff17f", 1200)}
             alt="Mechaniker prüft den Motorraum eines Fahrzeugs"
@@ -193,7 +194,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="order-1 lg:order-2 lg:col-span-6 lg:col-start-7">
+        <div className="order-1 lg:order-2 lg:col-span-6 lg:col-start-7 lg:self-center">
           <h2 className="font-display text-5xl sm:text-6xl">Sie sehen, was wir sehen.</h2>
           <div className="prose-k mt-6 max-w-xl text-lg text-muted">
             <p>
@@ -209,11 +210,11 @@ export default function Home() {
       <section className="bg-mist">
         <div className="section wrap text-center">
           <h2 className="mx-auto max-w-2xl font-display text-5xl sm:text-6xl">So einfach kommen Sie zum Termin</h2>
-          <ol className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <ol className="wischleiste relative mt-12 sm:mt-16 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4 lg:gap-6">
             <span aria-hidden="true" className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-0.5 bg-line lg:block" />
             {ablauf.map((s, i) => (
-              <li key={s.t} className="relative flex flex-col items-center px-2">
-                <span className="grid size-14 place-items-center rounded-full bg-blue font-display text-2xl font-bold text-white shadow-[0_0_0_6px_var(--color-mist)]">
+              <li key={s.t} className="relative flex flex-col items-center rounded-2xl bg-white p-6 sm:bg-transparent sm:p-0 sm:px-2">
+                <span className="grid size-14 place-items-center rounded-full bg-blue font-display text-2xl font-bold text-white sm:shadow-[0_0_0_6px_var(--color-mist)]">
                   {i + 1}
                 </span>
                 <h3 className="mt-6 font-display text-[1.75rem]">{s.t}</h3>
@@ -221,7 +222,7 @@ export default function Home() {
               </li>
             ))}
           </ol>
-          <a href="#anfrage" className="btn btn-primary mt-14">
+          <a href="#anfrage" className="btn btn-primary mt-10 sm:mt-14">
             Anfrage starten
           </a>
         </div>
@@ -236,7 +237,7 @@ export default function Home() {
             bis Steinach.
           </p>
         </div>
-        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="wischleiste mt-12 sm:mt-14 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {orte.map((o) => (
             <li key={o.slug}>
               <Link

@@ -180,7 +180,7 @@ export const artikel: Artikel = {
     },
     {
       id: "wann-lohnt-sich-der-steuerkettenwechsel",
-      titel: "Wann lohnt sich der Steuerkettenwechsel noch?",
+      titel: "Lohnt sich der Steuerkettenwechsel?",
       blocks: [
         {
           type: "p",

@@ -102,7 +102,7 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
               Alle Leistungen
             </Link>
           </div>
-          <ul className="mt-10 grid gap-6 md:grid-cols-3">
+          <ul className="wischleiste mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {weitere.map((w) => (
               <li key={w.slug}>
                 <Link href={`/leistungen/${w.slug}`} className="group block h-full overflow-hidden rounded-2xl bg-white ring-1 ring-line hover:ring-blue">

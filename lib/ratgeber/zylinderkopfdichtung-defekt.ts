@@ -222,7 +222,7 @@ export const artikel: Artikel = {
     },
     {
       id: "lohnt-sich-die-reparatur-der-zylinderkopfdichtung",
-      titel: "Lohnt sich die Reparatur der Zylinderkopfdichtung noch?",
+      titel: "Wann lohnt sich die Reparatur der Zylinderkopfdichtung?",
       blocks: [
         {
           type: "p",

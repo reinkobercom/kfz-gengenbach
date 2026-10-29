@@ -24,8 +24,8 @@ const Titel = ({ children }: { children: ReactNode }) => <h2 className="font-dis
 export function Footer() {
   return (
     <footer className="border-t border-line bg-white pb-24 text-navy/75 lg:pb-0">
-      <div className="wrap grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_0.8fr_1.1fr] lg:py-20">
-        <div>
+      <div className="wrap grid grid-cols-2 gap-x-6 gap-y-12 py-16 lg:grid-cols-[1.2fr_1fr_0.8fr_1.1fr] lg:py-20">
+        <div className="col-span-2 lg:col-span-1">
           <LogoLink className="inline-block" label={`${site.brand}, zur Startseite`}>
             <Image src="/brand/logo-bar.png" alt={site.brand} width={1000} height={196} className="h-10 w-auto" />
           </LogoLink>
@@ -64,7 +64,7 @@ export function Footer() {
           </ul>
         </nav>
 
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <Titel>Kontakt</Titel>
           <ul className="mt-4 space-y-4 text-sm">
             <li>
