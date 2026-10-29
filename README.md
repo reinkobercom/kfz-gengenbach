@@ -43,7 +43,8 @@ Technik geprüft: alle 23 Seiten 200, je eine h1, Titel ≤ 65 und Beschreibunge
 
 Offen vor der DNS-Umstellung:
 
-- [ ] Env-Variablen in Vercel setzen (Stand 29.10.: keine einzige gesetzt, das Formular würde live fehlschlagen)
+- [x] Resend in Vercel (Production): `RESEND_API_KEY` (nur Senden), `MAIL_FROM`, `MAIL_TO` = leads@reinkober.agency, info@kfz-gengenbach.de (29.10.2026)
+- [ ] Turnstile-Schlüssel in Vercel setzen
 - [ ] Leadportal-Kunde „KFZ Gengenbach“ mit Quelle „Website-Anfrage“ anlegen, Slug und Secret als Env setzen
 - [ ] Testanfrage auf der Vercel-URL: Mail kommt an, Lead im Portal
 - [ ] Impressum: Handwerkskammer, Handwerksrolle, Berufsbezeichnung, USt-ID in `lib/site.ts`
