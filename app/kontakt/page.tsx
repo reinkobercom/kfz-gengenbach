@@ -5,7 +5,7 @@ import { mapsHref, site, telHref, waHref } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Kontakt & Anfahrt | KFZ Gengenbach, Am Winzerkeller 1",
   description:
-    "KFZ Gengenbach, Am Winzerkeller 1, 77723 Gengenbach. Telefon und WhatsApp 01516 7844565. Mo–Fr 8–17 Uhr, Sa 8–13 Uhr. Jetzt Anfrage senden.",
+    "KFZ Gengenbach, Am Winzerkeller 1, 77723 Gengenbach. Telefon und WhatsApp 01516 7844565. Mo–Fr 8–17 Uhr, Sa 8–13 Uhr. Jetzt Anfrage senden.",
   alternates: { canonical: "/kontakt" },
 };
 
@@ -36,7 +36,7 @@ export default function Kontakt() {
           <dt className="text-sm text-white/60">Öffnungszeiten</dt>
           {site.hours.map((h) => (
             <dd key={h.days} className="mt-1 tabular-nums">
-              {h.days}: {h.opens}–{h.closes} Uhr
+              {h.days}: {h.opens}–{h.closes} Uhr
             </dd>
           ))}
         </div>

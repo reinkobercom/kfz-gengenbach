@@ -16,10 +16,10 @@ export const artikel: Artikel = {
   dateModified: "2026-10-28",
 
   antwort:
-    "Ein Steuerkettenwechsel kostet laut Vergleichsportalen meist zwischen rund 600 und 2.500 Euro, je nach Motor und Einbaulage. Teuer ist vor allem die Arbeitszeit: drei bis vier Stunden im günstigen Fall, über 20 Stunden, wenn der Motor ausgebaut werden muss. Typisches Warnzeichen ist ein Rasseln in den ersten Sekunden nach dem Kaltstart.",
+    "Ein Steuerkettenwechsel kostet laut Vergleichsportalen meist zwischen rund 600 und 2.500 Euro, je nach Motor und Einbaulage. Teuer ist vor allem die Arbeitszeit: drei bis vier Stunden im günstigen Fall, über 20 Stunden, wenn der Motor ausgebaut werden muss. Typisches Warnzeichen ist ein Rasseln in den ersten Sekunden nach dem Kaltstart.",
 
   kernpunkte: [
-    "**Kosten:** Die Kette selbst kostet oft unter 100 bis rund 150 Euro, den Großteil der Rechnung macht die Arbeitszeit aus.",
+    "**Kosten:** Die Kette selbst kostet oft unter 100 bis rund 150 Euro, den Großteil der Rechnung macht die Arbeitszeit aus.",
     "**Symptome:** Rasseln nach dem Kaltstart, unruhiger Motorlauf, Motorkontrollleuchte und Fehlercodes zur Korrelation von Kurbel- und Nockenwelle.",
     "**Umfang:** Gewechselt wird in der Regel der komplette Satz mit Spanner, Gleit- und Spannschienen und Kettenrädern.",
     "**Risiko:** Springt die Kette über, treffen bei den meisten modernen Motoren Ventile und Kolben aufeinander. Das ist ein Motorschaden.",
@@ -33,7 +33,7 @@ export const artikel: Artikel = {
       blocks: [
         {
           type: "p",
-          text: "Der Steuerkettenwechsel kostet laut den großen Werkstatt-Vergleichsportalen bei den meisten Pkw zwischen etwa 600 und 2.000 Euro, bei aufwendigen Motoren auch mehr. Repareo nennt eine Spanne ab etwa 500 bis rund 2.500 Euro, FairGarage Gesamtbeispiele zwischen gut 600 und gut 1.700 Euro. Die Unterschiede entstehen fast vollständig durch den Arbeitsaufwand, nicht durch das Material.",
+          text: "Der Steuerkettenwechsel kostet laut den großen Werkstatt-Vergleichsportalen bei den meisten Pkw zwischen etwa 600 und 2.000 Euro, bei aufwendigen Motoren auch mehr. Repareo nennt eine Spanne ab etwa 500 bis rund 2.500 Euro, FairGarage Gesamtbeispiele zwischen gut 600 und gut 1.700 Euro. Die Unterschiede entstehen fast vollständig durch den Arbeitsaufwand, nicht durch das Material.",
         },
         {
           type: "table",
@@ -41,17 +41,17 @@ export const artikel: Artikel = {
             "Marktübliche Richtwerte aus öffentlichen Quellen, inklusive Mehrwertsteuer. Keine Preise von KFZ Gengenbach.",
           head: ["Position", "Richtwert", "Quelle (Stand)"],
           rows: [
-            ["Steuerkette allein", "unter 100 bis ca. 150 €", "Auto Bild (07/2024), FairGarage (08/2026)"],
-            ["Kompletter Steuerkettensatz", "ca. 200 bis 900 €, je nach Marke", "repareo, FairGarage (08/2026)"],
-            ["Arbeitskosten", "ca. 200 bis über 600 €", "FairGarage (08/2026)"],
-            ["Arbeitszeit", "3–4 Std. bis über 20 Std.", "Auto Bild (07/2024)"],
-            ["Gesamt, Beispiele Pkw", "ca. 590 bis 1.990 €", "repareo, Werkstätten um Berlin (undatiert)"],
-            ["Gesamt, Beispiele Pkw", "ab ca. 630 bis 1.750 €", "FairGarage (08/2026)"],
+            ["Steuerkette allein", "unter 100 bis ca. 150 €", "Auto Bild (07/2024), FairGarage (08/2026)"],
+            ["Kompletter Steuerkettensatz", "ca. 200 bis 900 €, je nach Marke", "repareo, FairGarage (08/2026)"],
+            ["Arbeitskosten", "ca. 200 bis über 600 €", "FairGarage (08/2026)"],
+            ["Arbeitszeit", "3–⁠4 Std. bis über 20 Std.", "Auto Bild (07/2024)"],
+            ["Gesamt, Beispiele Pkw", "ca. 590 bis 1.990 €", "repareo, Werkstätten um Berlin (undatiert)"],
+            ["Gesamt, Beispiele Pkw", "ab ca. 630 bis 1.750 €", "FairGarage (08/2026)"],
           ],
         },
         {
           type: "p",
-          text: "Ein Beispiel für die Streuung: Repareo gibt für einen BMW 320d (2010) rund 12 Stunden Arbeitszeit an, für einen Mercedes C 220 CDI (2010) 3,5 Stunden. Boxer- und V-Motoren haben laut Auto Bild zwei Steuerketten, bei einigen Audi-V-Motoren sitzt die Kette hinten am Motor, der dafür ausgebaut werden muss.",
+          text: "Ein Beispiel für die Streuung: Repareo gibt für einen BMW 320d (2010) rund 12 Stunden Arbeitszeit an, für einen Mercedes C 220 CDI (2010) 3,5 Stunden. Boxer- und V-Motoren haben laut Auto Bild zwei Steuerketten, bei einigen Audi-V-Motoren sitzt die Kette hinten am Motor, der dafür ausgebaut werden muss.",
         },
         {
           type: "hinweis",
@@ -94,7 +94,7 @@ export const artikel: Artikel = {
         },
         {
           type: "p",
-          text: "Grundsätzlich gilt die Steuerkette als wartungsfrei und hat anders als der Zahnriemen kein festes Wechselintervall. Wie lange sie hält, hängt vor allem an der Schmierung. Auto Bild nennt als Belastungsfaktoren häufige Kurzstrecken und überaltertes Öl mit Abrieb und Verkokungsrückständen. Viele Experten sehen laut dem Artikel lange, variable Longlife-Intervalle kritisch und raten je nach Nutzung zum Ölwechsel alle 10.000 bis spätestens 15.000 Kilometer.",
+          text: "Grundsätzlich gilt die Steuerkette als wartungsfrei und hat anders als der Zahnriemen kein festes Wechselintervall. Wie lange sie hält, hängt vor allem an der Schmierung. Auto Bild nennt als Belastungsfaktoren häufige Kurzstrecken und überaltertes Öl mit Abrieb und Verkokungsrückständen. Viele Experten sehen laut dem Artikel lange, variable Longlife-Intervalle kritisch und raten je nach Nutzung zum Ölwechsel alle 10.000 bis spätestens 15.000 Kilometer.",
         },
         {
           type: "p",
@@ -112,7 +112,7 @@ export const artikel: Artikel = {
       blocks: [
         {
           type: "p",
-          text: "Springt die Steuerkette über einen oder mehrere Zähne, stimmen die Steuerzeiten nicht mehr, und bei den meisten modernen Motoren treffen Ventile und Kolben aufeinander. Die Ventile stehen dann noch offen, während der Kolben nach oben fährt. Verbogene Ventile, beschädigte Kolben und ein Schaden am Zylinderkopf sind die Folge. Repareo beziffert die Kosten eines solchen Motorschadens je nach Modell auf 1.000 bis 20.000 Euro.",
+          text: "Springt die Steuerkette über einen oder mehrere Zähne, stimmen die Steuerzeiten nicht mehr, und bei den meisten modernen Motoren treffen Ventile und Kolben aufeinander. Die Ventile stehen dann noch offen, während der Kolben nach oben fährt. Verbogene Ventile, beschädigte Kolben und ein Schaden am Zylinderkopf sind die Folge. Repareo beziffert die Kosten eines solchen Motorschadens je nach Modell auf 1.000 bis 20.000 Euro.",
         },
         {
           type: "p",
@@ -135,7 +135,7 @@ export const artikel: Artikel = {
       blocks: [
         {
           type: "p",
-          text: "Ein Steuerkettenwechsel ist eine Arbeit am geöffneten Motor und dauert je nach Motor einen bis mehrere Werkstatttage. Die reine Arbeitszeit liegt laut Auto Bild bei drei bis vier Stunden im günstigsten Fall und bei über 20 Stunden, wenn der Motor für die Reparatur ausgebaut werden muss. Hinzu kommt die Zeit für die Teilebeschaffung.",
+          text: "Ein Steuerkettenwechsel ist eine Arbeit am geöffneten Motor und dauert je nach Motor einen bis mehrere Werkstatttage. Die reine Arbeitszeit liegt laut Auto Bild bei drei bis vier Stunden im günstigsten Fall und bei über 20 Stunden, wenn der Motor für die Reparatur ausgebaut werden muss. Hinzu kommt die Zeit für die Teilebeschaffung.",
         },
         {
           type: "ol",
@@ -149,7 +149,7 @@ export const artikel: Artikel = {
         },
         {
           type: "p",
-          text: "Bei der [Motorinstandsetzung](/leistungen/motorinstandsetzung) bei KFZ Gengenbach in Gengenbach wird nur so weit zerlegt wie nötig, der Zustand der ausgebauten Teile wird per Foto und Video dokumentiert. Weiter geht es erst nach Ihrer Freigabe. Das gilt für Pkw ebenso wie für Transporter bis 4,5 Tonnen.",
+          text: "Bei der [Motorinstandsetzung](/leistungen/motorinstandsetzung) bei KFZ Gengenbach in Gengenbach wird nur so weit zerlegt wie nötig, der Zustand der ausgebauten Teile wird per Foto und Video dokumentiert. Weiter geht es erst nach Ihrer Freigabe. Das gilt für Pkw ebenso wie für Transporter bis 4,5 Tonnen.",
         },
       ],
     },
@@ -236,7 +236,7 @@ export const artikel: Artikel = {
         {
           type: "ol",
           items: [
-            "**Kaltstart filmen:** Fahrzeug über Nacht stehen lassen, Motorhaube öffnen, Handy in die Nähe der Stirnseite des Motors halten, ohne Riemen oder Lüfter zu nahe zu kommen, und die ersten 10 bis 15 Sekunden nach dem Start aufnehmen.",
+            "**Kaltstart filmen:** Fahrzeug über Nacht stehen lassen, Motorhaube öffnen, Handy in die Nähe der Stirnseite des Motors halten, ohne Riemen oder Lüfter zu nahe zu kommen, und die ersten 10 bis 15 Sekunden nach dem Start aufnehmen.",
             "**Dauer notieren:** Wie lange hält das Geräusch an? Nur beim Start, oder auch bei warmem Motor?",
             "**Warnleuchten fotografieren:** Motorkontrollleuchte, Öldruckleuchte, Meldungen im Display.",
             "**Kilometerstand und Ölwechsel:** Wann war der letzte Ölwechsel, mit welchem Intervall wird gefahren?",
@@ -261,7 +261,7 @@ export const artikel: Artikel = {
   faq: [
     {
       q: "Bei welchem Kilometerstand muss die Steuerkette gewechselt werden?",
-      a: "Für die Steuerkette gibt es bei den meisten Herstellern kein festes Wechselintervall, sie ist für die Lebensdauer des Motors ausgelegt. In der Praxis hängt die Haltbarkeit stark von Motor, Ölqualität und Nutzung ab. FairGarage nennt für Einfachketten etwa 80.000 bis 120.000 Kilometer, für Duplexketten deutlich mehr. Gewechselt wird nach Befund, also wenn Geräusche, Fehlercodes oder gemessene Steuerzeiten auf Verschleiß hindeuten, oder wenn der Hersteller für einen bestimmten Motor etwas anderes vorgibt.",
+      a: "Für die Steuerkette gibt es bei den meisten Herstellern kein festes Wechselintervall, sie ist für die Lebensdauer des Motors ausgelegt. In der Praxis hängt die Haltbarkeit stark von Motor, Ölqualität und Nutzung ab. FairGarage nennt für Einfachketten etwa 80.000 bis 120.000 Kilometer, für Duplexketten deutlich mehr. Gewechselt wird nach Befund, also wenn Geräusche, Fehlercodes oder gemessene Steuerzeiten auf Verschleiß hindeuten, oder wenn der Hersteller für einen bestimmten Motor etwas anderes vorgibt.",
     },
     {
       q: "Wie lange kann ich mit einer rasselnden Steuerkette noch fahren?",
@@ -282,7 +282,7 @@ export const artikel: Artikel = {
   ],
 
   fazit:
-    "Eine gelängte Steuerkette kündigt sich fast immer an, meist durch Rasseln in den ersten Sekunden nach dem Kaltstart oder einen Korrelationsfehler im Fehlerspeicher. Wer dann zeitnah handelt, bezahlt einen Steuerkettensatz plus Arbeitszeit, laut Vergleichsportalen meist zwischen rund 600 und 2.000 Euro. Wer wartet, riskiert, dass die Kette überspringt und aus einer planbaren Reparatur ein Motorschaden wird. Ein Video vom Kaltstart und eine Diagnose am Motor klären, welcher Fall vorliegt und ob sich die Reparatur für Ihr Fahrzeug lohnt.",
+    "Eine gelängte Steuerkette kündigt sich fast immer an, meist durch Rasseln in den ersten Sekunden nach dem Kaltstart oder einen Korrelationsfehler im Fehlerspeicher. Wer dann zeitnah handelt, bezahlt einen Steuerkettensatz plus Arbeitszeit, laut Vergleichsportalen meist zwischen rund 600 und 2.000 Euro. Wer wartet, riskiert, dass die Kette überspringt und aus einer planbaren Reparatur ein Motorschaden wird. Ein Video vom Kaltstart und eine Diagnose am Motor klären, welcher Fall vorliegt und ob sich die Reparatur für Ihr Fahrzeug lohnt.",
 
   quellen: [
     {

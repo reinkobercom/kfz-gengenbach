@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { LogoLink } from "@/components/LogoLink";
 import { leistungen } from "@/lib/leistungen";
 import { mapsHref, site, telHref, waHref } from "@/lib/site";
 
@@ -25,9 +26,11 @@ export function Footer() {
     <footer className="border-t border-line bg-white pb-24 text-navy/75 lg:pb-0">
       <div className="wrap grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_0.8fr_1.1fr] lg:py-20">
         <div>
-          <Image src="/brand/logo-bar.png" alt={site.brand} width={1000} height={196} className="h-10 w-auto" />
+          <LogoLink className="inline-block" label={`${site.brand}, zur Startseite`}>
+            <Image src="/brand/logo-bar.png" alt={site.brand} width={1000} height={196} className="h-10 w-auto" />
+          </LogoLink>
           <p className="mt-6 max-w-xs text-sm leading-relaxed">
-            Freie Kfz-Werkstatt in {site.address.city} für Pkw aller Marken und Transporter bis 4,5 t. Schwerpunkt
+            Freie Kfz-Werkstatt in {site.address.city} für Pkw aller Marken und Transporter bis 4,5 t. Schwerpunkt
             Motorinstandsetzung, Befund per Video aufs Handy.
           </p>
           <Link href="/#anfrage" className="btn btn-primary mt-6 min-h-11 text-[0.95rem]">
@@ -114,7 +117,7 @@ export function Footer() {
                   <div key={h.days}>
                     <dt className="font-semibold text-navy">{h.days}</dt>
                     <dd className="tabular-nums">
-                      {h.opens}–{h.closes} Uhr
+                      {h.opens}–{h.closes} Uhr
                     </dd>
                   </div>
                 ))}

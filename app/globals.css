@@ -50,8 +50,30 @@
     letter-spacing: -0.005em;
     text-wrap: balance;
   }
-  p {
+  /* Kein einzelnes Wort allein in der letzten Zeile, überall außer in Überschriften (dort balance) */
+  body {
     text-wrap: pretty;
+    /* Sicherheitsnetz: überlange Wörter brechen um, statt die Seite zu verbreitern */
+    overflow-wrap: break-word;
+  }
+  /* Lange deutsche Komposita (Motorinstandsetzung, Datenschutzerklärung) auf
+     schmalen Bildschirmen trennen, statt sie allein auf eine Zeile zu stellen */
+  @media (max-width: 639px) {
+    h1,
+    h2,
+    h3 {
+      hyphens: auto;
+    }
+  }
+  /* Kurze Texte in schmalen Feldern gleichmäßig auf die Zeilen verteilen */
+  th,
+  td,
+  button,
+  label,
+  summary,
+  dt,
+  figcaption {
+    text-wrap: balance;
   }
   :focus-visible {
     outline: 3px solid var(--color-blue);

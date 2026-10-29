@@ -17,7 +17,7 @@ const img = (id: string, w = 2000) => `https://images.unsplash.com/photo-${id}?a
 const faq = [
   {
     q: "Welche Fahrzeuge reparieren Sie?",
-    a: "Pkw aller Marken sowie Transporter, Sprinter und Wohnmobile bis 4,5 t zulässiges Gesamtgewicht. Lkw nehmen wir nicht an.",
+    a: "Pkw aller Marken sowie Transporter, Sprinter und Wohnmobile bis 4,5 t zulässiges Gesamtgewicht. Lkw nehmen wir nicht an.",
   },
   {
     q: "Was kostet die Reparatur?",
@@ -33,11 +33,11 @@ const faq = [
   },
   {
     q: "Wo finde ich die Werkstatt?",
-    a: `${site.address.street}, ${site.address.zip} ${site.address.city}. Geöffnet Montag bis Freitag 8–17 Uhr und Samstag 8–13 Uhr.`,
+    a: `${site.address.street}, ${site.address.zip} ${site.address.city}. Geöffnet Montag bis Freitag 8–⁠17 Uhr und Samstag 8–⁠13 Uhr.`,
   },
 ];
 
-const heroFakten = ["Befund per Video aufs Handy", "Antwort per WhatsApp, Anruf oder E-Mail", "Pkw und Transporter bis 4,5 t"];
+const heroFakten = ["Befund per Video aufs Handy", "WhatsApp, Anruf oder E-Mail", "Pkw & Transporter bis 4,5 t"];
 
 const ablauf = [
   { t: "Anfrage senden", d: "Leistung und Fahrzeug angeben. Das dauert etwa zwei Minuten." },
@@ -72,9 +72,9 @@ export default function Home() {
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80 sm:mt-7 sm:text-xl">
               Inspektion, HU/AU, Reifen und Reparatur für alle Marken. Unser Schwerpunkt ist die Motorinstandsetzung, auch
-              bei Transportern bis 4,5 t.
+              bei Transportern bis 4,5 t.
             </p>
-            <ul className="mt-10 hidden max-w-xl gap-x-8 gap-y-3 sm:grid sm:grid-cols-3 lg:mt-14">
+            <ul className="mt-10 hidden max-w-xl gap-x-8 gap-y-3 sm:grid sm:grid-cols-3 lg:mt-14 lg:grid-cols-1 xl:grid-cols-3">
               {heroFakten.map((t) => (
                 <li key={t} className="flex gap-2.5 text-[0.98rem] leading-snug text-white/90">
                   <svg className="mt-0.5 shrink-0 text-blue" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Leistungen */}
-      <section className="section wrap grid gap-12 lg:grid-cols-12">
+      <section className="section wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
             <h2 className="font-display text-5xl sm:text-6xl">Was wir für Ihr Auto tun</h2>
@@ -110,7 +110,7 @@ export default function Home() {
             <li key={l.slug} className="border-b border-line">
               <Link
                 href={`/leistungen/${l.slug}`}
-                className="group grid gap-2 py-7 sm:grid-cols-[minmax(0,15rem)_1fr_auto] sm:items-baseline sm:gap-8"
+                className="group grid grid-cols-1 gap-2 py-7 sm:grid-cols-[minmax(0,15rem)_1fr_auto] sm:items-baseline sm:gap-8"
               >
                 <h3 className="font-display text-[1.75rem] leading-tight group-hover:text-blue">
                   {l.name}
@@ -272,7 +272,7 @@ export default function Home() {
             <p className="text-sm text-white/60">Öffnungszeiten</p>
             {site.hours.map((h) => (
               <p key={h.days} className="mt-1 font-semibold tabular-nums">
-                {h.short} {h.opens}–{h.closes} Uhr
+                {h.short} {h.opens}–{h.closes} Uhr
               </p>
             ))}
           </div>

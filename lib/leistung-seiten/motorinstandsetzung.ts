@@ -82,7 +82,7 @@ export const seite: LeistungSeite = {
     },
     {
       q: "Ist erhöhter Ölverbrauch schon ein Motorschaden?",
-      a: "Nicht unbedingt. Öl kann außen über undichte Dichtungen verloren gehen oder im Motor verbrennen, etwa über verschlissene Ventilschaftdichtungen, Kolbenringe oder den Turbolader. Wie ernst es ist, zeigt erst die Ursache. Notieren Sie, wie viel Öl Sie auf 1.000 Kilometer nachfüllen, und bringen Sie die Angabe zur Diagnose mit.",
+      a: "Nicht unbedingt. Öl kann außen über undichte Dichtungen verloren gehen oder im Motor verbrennen, etwa über verschlissene Ventilschaftdichtungen, Kolbenringe oder den Turbolader. Wie ernst es ist, zeigt erst die Ursache. Notieren Sie, wie viel Öl Sie auf 1.000 Kilometer nachfüllen, und bringen Sie die Angabe zur Diagnose mit.",
     },
   ],
 };

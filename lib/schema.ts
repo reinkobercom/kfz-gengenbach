@@ -12,7 +12,7 @@ export function businessSchema() {
     legalName: site.legalName,
     alternateName: site.legalName,
     description:
-      "Freie Kfz-Werkstatt in Gengenbach für Pkw und Transporter bis 4,5 t: Inspektion, HU/AU, Reifenservice, Achsvermessung, Reparatur und Diagnose. Spezialisiert auf Motorinstandsetzung.",
+      "Freie Kfz-Werkstatt in Gengenbach für Pkw und Transporter bis 4,5 t: Inspektion, HU/AU, Reifenservice, Achsvermessung, Reparatur und Diagnose. Spezialisiert auf Motorinstandsetzung.",
     url: site.url,
     logo: `${site.url}/brand/logo-full.png`,
     image: `${site.url}/opengraph-image.png`,

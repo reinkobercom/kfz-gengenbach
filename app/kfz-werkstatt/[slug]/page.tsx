@@ -41,7 +41,7 @@ export default async function OrtPage({ params }: PageProps<"/kfz-werkstatt/[slu
         ]}
         h1={o.h1}
         intro={o.intro}
-        fakten={["Befund per Video aufs Handy", "Fester Ansprechpartner", "Pkw und Transporter bis 4,5 t"]}
+        fakten={["Befund per Video aufs Handy", "Fester Ansprechpartner", "Pkw & Transporter bis 4,5 t"]}
         defaultOrt={o.formOrt}
       />
 

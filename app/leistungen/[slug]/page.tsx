@@ -66,9 +66,9 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
         h1={l.h1}
         intro={l.intro}
         bild={l.image.src}
-        fakten={["Alle Marken", "Befund per Video", "Nur nach Ihrer Freigabe"]}
+        fakten={["Alle Marken", "Befund per Video", "Nur mit Freigabe"]}
         defaultLeistung={istTransporter ? undefined : l.key}
-        defaultFahrzeugTyp={istTransporter ? "Transporter bis 4,5 t" : undefined}
+        defaultFahrzeugTyp={istTransporter ? "Transporter bis 4,5 t" : undefined}
         titel={istTransporter ? "Was steht an Ihrem Transporter an?" : undefined}
       >
         {l.partner && (

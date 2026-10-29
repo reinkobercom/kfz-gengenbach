@@ -27,11 +27,11 @@ type Daten = {
   website: string; // Honeypot
 };
 
-const fahrzeugTypen = ["Pkw", "SUV / Geländewagen", "Transporter bis 4,5 t"];
+const fahrzeugTypen = ["Pkw", "SUV / Geländewagen", "Transporter bis 4,5 t"];
 const dringlichkeiten = [
   { v: "dringend", l: "Dringend", d: "Fahrzeug fährt nicht oder kaum" },
   { v: "woche", l: "Diese Woche", d: "Sollte bald erledigt sein" },
-  { v: "bald", l: "In 2–3 Wochen", d: "Termin mit etwas Vorlauf" },
+  { v: "bald", l: "In 2–⁠3 Wochen", d: "Termin mit etwas Vorlauf" },
   { v: "flexibel", l: "Flexibel", d: "Kein Zeitdruck" },
 ];
 const rueckmeldewege = ["WhatsApp", "Anruf", "E-Mail"];

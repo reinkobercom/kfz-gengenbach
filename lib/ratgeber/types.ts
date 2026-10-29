@@ -40,7 +40,7 @@ export type Artikel = {
   keyword: string;
   /** Gemessenes Suchvolumen (SISTRIX, DE, Monat), nur zur Dokumentation */
   suchvolumen: string;
-  /** H1, max. 70 Zeichen */
+  /** H1, max. 70 Zeichen */
   titel: string;
   /** <title>, max. ~60 Zeichen */
   metaTitle: string;
@@ -60,7 +60,7 @@ export type Artikel = {
   kernpunkte: string[];
   /** 5–8 Abschnitte */
   abschnitte: Abschnitt[];
-  /** Zwischen-CTA, erscheint nach dem Abschnitt mit diesem Index (0-basiert, ~40 %) */
+  /** Zwischen-CTA, erscheint nach dem Abschnitt mit diesem Index (0-basiert, ~40 %) */
   zwischenCta: { nachAbschnitt: number; titel: string; text: string };
   /** 4–6 Fragen */
   faq: { q: string; a: string }[];

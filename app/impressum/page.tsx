@@ -14,7 +14,7 @@ export default function Impressum() {
   return (
     <article className="wrap max-w-3xl pb-28 pt-10 lg:pt-14">
       <Breadcrumbs items={[{ name: "Impressum", href: "/impressum" }]} />
-      <h1 className="mt-8 font-display text-6xl font-extrabold">Impressum</h1>
+      <h1 className="mt-8 font-display text-5xl font-extrabold sm:text-6xl">Impressum</h1>
       <div className="mt-10 space-y-8 leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:mb-2">
         <section>
           <h2>Angaben gemäß § 5 DDG</h2>

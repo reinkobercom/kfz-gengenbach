@@ -63,7 +63,7 @@ export default function RatgeberPage() {
                           <Image src={bild.src} alt={bild.alt} fill sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 100vw" className="object-cover" />
                         </div>
                       )}
-                      <p className="mt-5 text-sm text-muted">{lesezeit(a)} Min. Lesezeit</p>
+                      <p className="mt-5 text-sm text-muted">{lesezeit(a)} Min. Lesezeit</p>
                       <h3 className="mt-1 font-display text-3xl leading-tight group-hover:text-blue">{a.titel}</h3>
                       <p className="mt-2 line-clamp-3 text-muted">{a.teaser}</p>
                     </Link>

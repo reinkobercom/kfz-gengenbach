@@ -1,7 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
-  umfangLead: "Für Pkw und Transporter bis 4,5 t, vom saisonalen Radwechsel bis zur Spureinstellung:",
+  umfangLead: "Für Pkw und Transporter bis 4,5 t, vom saisonalen Radwechsel bis zur Spureinstellung:",
   bildEtikett: { titel: "Achsen vermessen", text: "Für sauberen Geradeauslauf." },
   umfangBild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },
   symptome: {
@@ -17,8 +17,8 @@ export const seite: LeistungSeite = {
       "Risse oder Beulen an der Reifenflanke",
     ],
     warnung: {
-      titel: "Profil unter 1,6 mm",
-      text: "Das Hauptprofil muss nach § 36 StVZO am ganzen Umfang mindestens 1,6 mm tief sein. Darunter ist der Reifen nicht mehr zulässig und muss ersetzt werden.",
+      titel: "Profil unter 1,6 mm",
+      text: "Das Hauptprofil muss nach § 36 StVZO am ganzen Umfang mindestens 1,6 mm tief sein. Darunter ist der Reifen nicht mehr zulässig und muss ersetzt werden.",
     },
   },
   arbeitsweise: [
@@ -54,7 +54,7 @@ export const seite: LeistungSeite = {
     karten: [
       {
         titel: "Profil messen",
-        text: "Am genauesten mit einem Profiltiefenmesser an mehreren Stellen der Lauffläche. Die Verschleißanzeiger in den Hauptrillen markieren die gesetzliche Grenze von 1,6 mm.",
+        text: "Am genauesten mit einem Profiltiefenmesser an mehreren Stellen der Lauffläche. Die Verschleißanzeiger in den Hauptrillen markieren die gesetzliche Grenze von 1,6 mm.",
       },
       {
         titel: "Faustregel O bis O",
@@ -69,7 +69,7 @@ export const seite: LeistungSeite = {
   faq: [
     {
       q: "Wie lange dauert eine Achsvermessung?",
-      a: "Die Messung selbst dauert laut AUTO ZEITUNG je nach Verfahren etwa 15 bis 30 Minuten, mit Einstellung rechnet AUTO BILD mit rund einer Stunde. Länger wird es, wenn Einstellschrauben festsitzen oder ein verbogenes Bauteil erst getauscht werden muss.",
+      a: "Die Messung selbst dauert laut AUTO ZEITUNG je nach Verfahren etwa 15 bis 30 Minuten, mit Einstellung rechnet AUTO BILD mit rund einer Stunde. Länger wird es, wenn Einstellschrauben festsitzen oder ein verbogenes Bauteil erst getauscht werden muss.",
     },
     {
       q: "Was ist der Unterschied zwischen Achsvermessung und Spureinstellung?",

@@ -13,7 +13,7 @@ export default function Datenschutz() {
   return (
     <article className="wrap max-w-3xl pb-28 pt-10 lg:pt-14">
       <Breadcrumbs items={[{ name: "Datenschutz", href: "/datenschutz" }]} />
-      <h1 className="mt-8 font-display text-6xl font-extrabold">Datenschutzerklärung</h1>
+      <h1 className="mt-8 font-display text-5xl font-extrabold sm:text-6xl">Datenschutzerklärung</h1>
       <div className="mt-10 space-y-8 leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:mb-2 [&_p+p]:mt-3">
         <section>
           <h2>1. Verantwortlicher</h2>

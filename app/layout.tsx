@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { AttributionTracker } from "@/components/AttributionTracker";
 import { Header } from "@/components/Header";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Footer } from "@/components/Footer";
 import { JsonLd, MobileBar } from "@/components/ui";
 import { businessSchema, websiteSchema } from "@/lib/schema";
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Freie Kfz-Werkstatt in Gengenbach: Inspektion, HU/AU, Reifen, Reparatur und Motorinstandsetzung für Pkw und Transporter bis 4,5 t. Befund per Video.",
+    "Freie Kfz-Werkstatt in Gengenbach: Inspektion, HU/AU, Reifen, Reparatur und Motorinstandsetzung für Pkw und Transporter bis 4,5 t. Befund per Video.",
   applicationName: site.brand,
   authors: [{ name: site.legalName }],
   formatDetection: { telephone: true },
@@ -50,7 +51,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="de" className={`${body.variable} ${display.variable} antialiased`}>
+    <html lang="de" data-scroll-behavior="smooth" className={`${body.variable} ${display.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
         <a href="#inhalt" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:p-3">
           Zum Inhalt springen
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <MobileBar />
         <JsonLd data={[businessSchema(), websiteSchema()]} />
         <AttributionTracker />
+        <ScrollToTop />
         <Analytics />
       </body>
     </html>

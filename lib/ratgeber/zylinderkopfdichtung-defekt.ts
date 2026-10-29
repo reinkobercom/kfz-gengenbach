@@ -20,11 +20,11 @@ export const artikel: Artikel = {
   datePublished: "2026-10-28",
   dateModified: "2026-10-28",
   antwort:
-    "Eine defekte Zylinderkopfdichtung zeigt sich meist an weißem, süßlich riechendem Abgas, Kühlmittelverlust ohne sichtbares Leck, Schaum im Öl oder Kühlwasser und Überhitzung. Sicher ist der Befund erst nach einem CO₂- oder Drucktest. Der Wechsel kostet laut AUTO BILD in freien Werkstätten meist 500 bis 1.500 Euro (Stand Dezember 2025). Weiterfahren riskiert einen Motorschaden.",
+    "Eine defekte Zylinderkopfdichtung zeigt sich meist an weißem, süßlich riechendem Abgas, Kühlmittelverlust ohne sichtbares Leck, Schaum im Öl oder Kühlwasser und Überhitzung. Sicher ist der Befund erst nach einem CO₂- oder Drucktest. Der Wechsel kostet laut AUTO BILD in freien Werkstätten meist 500 bis 1.500 Euro (Stand Dezember 2025). Weiterfahren riskiert einen Motorschaden.",
   kernpunkte: [
     "**Kein Symptom allein beweist den Schaden:** Weißer Dampf und Schaum am Öldeckel entstehen bei Kurzstrecke und Kälte auch ohne Defekt.",
     "**Gewissheit bringen Tests:** CO₂-Test im Kühlsystem, Abdrücken des Kühlsystems sowie Kompressions- oder Druckverlusttest.",
-    "**Kosten laut Fachpresse:** meist 500 bis 1.500 Euro in freien Werkstätten, 1.000 bis 2.500 Euro in Vertragswerkstätten (AUTO BILD, Stand 12/2025). Verbindlich erst nach Diagnose.",
+    "**Kosten laut Fachpresse:** meist 500 bis 1.500 Euro in freien Werkstätten, 1.000 bis 2.500 Euro in Vertragswerkstätten (AUTO BILD, Stand 12/2025). Verbindlich erst nach Diagnose.",
     "**Häufigste Ursache ist Überhitzung,** etwa durch Kühlmittelmangel, Thermostat, Wasserpumpe oder Lüfter. Diese Ursache muss mit behoben werden.",
     "**Weiterfahren verschlimmert den Schaden:** Kühlmittel im Öl, verzogener Zylinderkopf und Lagerschäden können aus einer Dichtungsreparatur einen Motorschaden machen.",
   ],
@@ -165,7 +165,7 @@ export const artikel: Artikel = {
       blocks: [
         {
           type: "p",
-          text: "Der Wechsel der Zylinderkopfdichtung kostet laut AUTO BILD meist zwischen 500 und 2.500 Euro, abhängig von Motor, Werkstattart und Zusatzarbeiten; die AUTO ZEITUNG nennt bis zu 3.500 Euro. Die Dichtung selbst ist günstig. Den Großteil macht die Arbeitszeit aus, weil Steuertrieb, Ansaug- und Abgasseite und der Zylinderkopf abgebaut werden müssen.",
+          text: "Der Wechsel der Zylinderkopfdichtung kostet laut AUTO BILD meist zwischen 500 und 2.500 Euro, abhängig von Motor, Werkstattart und Zusatzarbeiten; die AUTO ZEITUNG nennt bis zu 3.500 Euro. Die Dichtung selbst ist günstig. Den Großteil macht die Arbeitszeit aus, weil Steuertrieb, Ansaug- und Abgasseite und der Zylinderkopf abgebaut werden müssen.",
         },
         {
           type: "table",
@@ -173,17 +173,17 @@ export const artikel: Artikel = {
             "Marktübliche Richtwerte aus öffentlichen Quellen, inklusive Mehrwertsteuer. Keine Preise von KFZ Gengenbach.",
           head: ["Quelle (Stand)", "Bezug", "Richtwert"],
           rows: [
-            ["AUTO BILD (12/2025)", "Freie Werkstatt", "500 bis 1.500 Euro"],
-            ["AUTO BILD (12/2025)", "Vertragswerkstatt", "1.000 bis 2.500 Euro"],
-            ["AUTO BILD (12/2025)", "Material: Dichtung, Schrauben, Öl, Kühlmittel", "100 bis 300 Euro"],
-            ["FairGarage (08/2026)", "Skoda Fabia / Peugeot 207", "ab 533 / ab 738 Euro"],
-            ["FairGarage (08/2026)", "Opel Corsa D / Mercedes C 220 CDI", "ab 1.119 / ab 1.373 Euro"],
-            ["AUTO ZEITUNG (02/2025)", "Gesamtreparatur", "1.500 bis 3.500 Euro"],
+            ["AUTO BILD (12/2025)", "Freie Werkstatt", "500 bis 1.500 Euro"],
+            ["AUTO BILD (12/2025)", "Vertragswerkstatt", "1.000 bis 2.500 Euro"],
+            ["AUTO BILD (12/2025)", "Material: Dichtung, Schrauben, Öl, Kühlmittel", "100 bis 300 Euro"],
+            ["FairGarage (08/2026)", "Skoda Fabia / Peugeot 207", "ab 533 / ab 738 Euro"],
+            ["FairGarage (08/2026)", "Opel Corsa D / Mercedes C 220 CDI", "ab 1.119 / ab 1.373 Euro"],
+            ["AUTO ZEITUNG (02/2025)", "Gesamtreparatur", "1.500 bis 3.500 Euro"],
           ],
         },
         {
           type: "p",
-          text: "Die Arbeitszeit liegt laut FairGarage je nach Motorbauweise bei 6 bis 15 Stunden, das Fahrzeug steht etwa ein bis zwei Tage in der Werkstatt. V- und Boxermotoren haben zwei Zylinderköpfe und damit zwei Dichtungen, das kostet mehr.",
+          text: "Die Arbeitszeit liegt laut FairGarage je nach Motorbauweise bei 6 bis 15 Stunden, das Fahrzeug steht etwa ein bis zwei Tage in der Werkstatt. V- und Boxermotoren haben zwei Zylinderköpfe und damit zwei Dichtungen, das kostet mehr.",
         },
         {
           type: "p",
@@ -295,11 +295,11 @@ export const artikel: Artikel = {
     },
     {
       q: "Wie lange dauert der Wechsel der Zylinderkopfdichtung?",
-      a: "Laut FairGarage liegt die Arbeitszeit je nach Motor bei 6 bis 15 Stunden, das Fahrzeug steht etwa ein bis zwei Tage in der Werkstatt. Muss der Zylinderkopf geplant oder auf Risse geprüft werden, kommt die Bearbeitungszeit hinzu. Ein Termin lässt sich nach der Diagnose konkret planen.",
+      a: "Laut FairGarage liegt die Arbeitszeit je nach Motor bei 6 bis 15 Stunden, das Fahrzeug steht etwa ein bis zwei Tage in der Werkstatt. Muss der Zylinderkopf geplant oder auf Risse geprüft werden, kommt die Bearbeitungszeit hinzu. Ein Termin lässt sich nach der Diagnose konkret planen.",
     },
   ],
   fazit:
-    "Weißer Rauch, sinkender Kühlmittelstand und Schaum am Öldeckel sind Warnzeichen, aber erst ein CO₂- oder Drucktest bestätigt eine defekte Zylinderkopfdichtung. Kondenswasser bei Kurzstrecke sieht ähnlich aus und lässt sich mit einer längeren Fahrt und einem zweiten Blick oft ausschließen. Laut AUTO BILD kostet der Wechsel meist 500 bis 2.500 Euro, verbindlich wird es erst nach der Diagnose. Wer früh handelt, hat die besten Chancen, dass die Dichtung allein reicht. Wer weiterfährt, riskiert Folgeschäden an Kopf, Lagern und Kolben.",
+    "Weißer Rauch, sinkender Kühlmittelstand und Schaum am Öldeckel sind Warnzeichen, aber erst ein CO₂- oder Drucktest bestätigt eine defekte Zylinderkopfdichtung. Kondenswasser bei Kurzstrecke sieht ähnlich aus und lässt sich mit einer längeren Fahrt und einem zweiten Blick oft ausschließen. Laut AUTO BILD kostet der Wechsel meist 500 bis 2.500 Euro, verbindlich wird es erst nach der Diagnose. Wer früh handelt, hat die besten Chancen, dass die Dichtung allein reicht. Wer weiterfährt, riskiert Folgeschäden an Kopf, Lagern und Kolben.",
   quellen: [
     {
       titel: "AUTO BILD: Defekte Zylinderkopfdichtung prüfen und wechseln – Kosten, Symptome, Ursachen (05.12.2025)",

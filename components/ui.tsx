@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site, telHref, waHref } from "@/lib/site";
+import { ohneWitwe } from "@/lib/text";
 
 export { MobileBar } from "./MobileBar";
 
@@ -62,7 +63,7 @@ export function Faq({
 }) {
   return (
     <div className={zentriert ? "mx-auto max-w-3xl" : undefined}>
-      <h2 className={`font-display text-4xl sm:text-5xl ${zentriert ? "text-center" : ""}`}>{titel}</h2>
+      <h2 className={`font-display text-4xl sm:text-5xl ${zentriert ? "text-center" : ""}`}>{ohneWitwe(titel)}</h2>
       <div className="mt-10 border-t border-line">
         {items.map((f) => (
           <details key={f.q} className="group border-b border-line">
@@ -156,7 +157,7 @@ export function CtaBand({
                 </span>
               </a>
             </div>
-            <p className="px-2 pb-1 pt-3 text-center text-xs text-muted">{zeiten} Uhr</p>
+            <p className="px-2 pb-1 pt-3 text-center text-xs text-muted">{zeiten} Uhr</p>
           </div>
         </div>
       </div>
@@ -167,7 +168,7 @@ export function CtaBand({
 /** Kompakte Fakten-Leiste (auch für KI-Suchsysteme gut lesbar) */
 export function Fakten({ items, hell = false }: { items: string[]; hell?: boolean }) {
   return (
-    <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-3">
+    <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
       {items.map((t) => (
         <li key={t} className={`flex gap-3 text-[0.98rem] leading-snug ${hell ? "text-white/90" : ""}`}>
           <svg className="mt-0.5 shrink-0 text-blue" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">

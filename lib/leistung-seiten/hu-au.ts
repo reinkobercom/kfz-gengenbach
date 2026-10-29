@@ -9,7 +9,7 @@ export const seite: LeistungSeite = {
     lead: "Einen Teil der häufigen HU-Mängel sehen Sie in wenigen Minuten selbst. Den Rest prüfen wir auf der Hebebühne.",
     punkte: [
       "Alle Leuchten: Abblend-, Fern- und Bremslicht, Blinker, Kennzeichenleuchte",
-      "Reifen mit mindestens 1,6 mm Profil, ohne Risse oder Beulen",
+      "Reifen mit mindestens 1,6 mm Profil, ohne Risse oder Beulen",
       "Frontscheibe ohne Risse oder Steinschläge im Sichtfeld",
       "Wischerblätter, die nicht schmieren, und Wasser im Waschbehälter",
       "Keine Warnleuchte, die nach dem Start an bleibt",
@@ -54,8 +54,8 @@ export const seite: LeistungSeite = {
     titel: "Wann muss Ihr Fahrzeug zur HU?",
     karten: [
       { titel: "Plakette lesen", text: "Fällig ist die HU bis zum Ende des Monats, der oben auf der Plakette steht. Eine Kulanzfrist gibt es nicht." },
-      { titel: "Pkw: 3 Jahre, dann 2", text: "Die erste HU ist 36 Monate nach der Erstzulassung fällig, danach alle 24 Monate (Anlage VIII StVZO)." },
-      { titel: "Transporter über 3,5 t", text: "Transporter zur Güterbeförderung über 3,5 t bis 7,5 t müssen jedes Jahr zur HU. Bis 3,5 t gilt der Zwei-Jahres-Rhythmus." },
+      { titel: "Pkw: 3 Jahre, dann 2", text: "Die erste HU ist 36 Monate nach der Erstzulassung fällig, danach alle 24 Monate (Anlage VIII StVZO)." },
+      { titel: "Transporter über 3,5 t", text: "Transporter zur Güterbeförderung über 3,5 t bis 7,5 t müssen jedes Jahr zur HU. Bis 3,5 t gilt der Zwei-Jahres-Rhythmus." },
     ],
   },
   faq: [

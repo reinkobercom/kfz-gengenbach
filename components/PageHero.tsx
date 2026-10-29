@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ohneWitwe } from "@/lib/text";
 import { Konfigurator } from "./Konfigurator";
 import { Breadcrumbs, Fakten } from "./ui";
 
@@ -38,7 +39,7 @@ export function PageHero({
       <div className="wrap grid gap-12 pb-16 pt-8 lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-24 lg:pt-14">
         <div className="lg:col-span-6 lg:pr-6">
           <Breadcrumbs items={crumbs} hell />
-          <h1 className="mt-8 font-display text-5xl font-extrabold leading-[0.97] sm:text-6xl lg:text-7xl">{h1}</h1>
+          <h1 className="mt-8 font-display text-5xl font-extrabold leading-[0.97] sm:text-6xl lg:text-7xl">{ohneWitwe(h1)}</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{intro}</p>
           {fakten && (
             <div className="mt-10 max-w-xl">

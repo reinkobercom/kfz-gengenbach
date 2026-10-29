@@ -10,6 +10,7 @@ import { getLeistung } from "@/lib/leistungen";
 import { artikelBild, artikelListe, getArtikel, lesezeit } from "@/lib/ratgeber";
 import { articleSchema } from "@/lib/schema";
 import { ogBasis, site, waHref } from "@/lib/site";
+import { ohneWitwe } from "@/lib/text";
 
 export function generateStaticParams() {
   return artikelListe.map((a) => ({ slug: a.slug }));
@@ -73,7 +74,7 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
             hell
           />
           <p className="mt-10 inline-flex rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">{a.kategorie}</p>
-          <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[0.98] sm:text-6xl">{a.titel}</h1>
+          <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[0.98] sm:text-6xl">{ohneWitwe(a.titel)}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">{a.teaser}</p>
           <p className="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-sm text-white/70">
             <span>
@@ -82,12 +83,12 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
             <span>
               {geaendert ? "Aktualisiert" : "Veröffentlicht"} am <time dateTime={a.dateModified}>{datum(a.dateModified)}</time>
             </span>
-            <span>{minuten} Min. Lesezeit</span>
+            <span>{minuten} Min. Lesezeit</span>
           </p>
         </div>
       </section>
 
-      <div className="section wrap grid gap-12 lg:grid-cols-12 lg:gap-10">
+      <div className="section wrap grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
         {/* Mobil: Inhaltsverzeichnis einklappbar über dem Artikel */}
         <details className="rounded-xl bg-mist p-5 lg:hidden">
           <summary className="cursor-pointer font-semibold">Inhalt dieses Artikels</summary>
@@ -122,7 +123,7 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
             <div key={s.id}>
               <section aria-labelledby={s.id} className="mt-14">
                 <h2 id={s.id} className="font-display text-[2.1rem] leading-[1.05] sm:text-[2.5rem]">
-                  {s.titel}
+                  {ohneWitwe(s.titel)}
                 </h2>
                 <Bloecke blocks={s.blocks} />
               </section>

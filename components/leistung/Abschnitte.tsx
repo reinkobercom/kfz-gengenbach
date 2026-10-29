@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { LeistungSeite } from "@/lib/leistung-seiten";
+import { ohneWitwe } from "@/lib/text";
 
 const Haken = ({ className = "" }: { className?: string }) => (
   <svg className={`shrink-0 ${className}`} width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -38,7 +39,7 @@ export function Umfang({
         )}
       </div>
       <div className="lg:col-span-7">
-        <h2 className="font-display text-4xl sm:text-5xl">Das gehört bei {name} dazu</h2>
+        <h2 className="font-display text-4xl sm:text-5xl">{name}: das gehört dazu</h2>
         {lead && <p className="mt-5 max-w-xl text-lg text-muted">{lead}</p>}
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {punkte.map((p) => (
@@ -89,7 +90,7 @@ export function Vergleich({ v }: { v: NonNullable<LeistungSeite["vergleich"]> })
   return (
     <section className="section wrap">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-display text-4xl sm:text-5xl">{v.titel}</h2>
+        <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(v.titel)}</h2>
         <p className="mt-5 text-lg text-muted">{v.lead}</p>
       </div>
       <div className="relative mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2 md:gap-6">
@@ -139,7 +140,7 @@ export function Wissen({ w }: { w: NonNullable<LeistungSeite["wissen"]> }) {
   return (
     <section className="section wrap">
       <div className="rounded-3xl bg-blue-tint/60 p-6 sm:p-10 lg:p-14">
-        <h2 className="font-display text-4xl sm:text-5xl">{w.titel}</h2>
+        <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(w.titel)}</h2>
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
             {w.karten.map((k) => (
               <li key={k.titel} className="rounded-2xl bg-white p-6">
@@ -167,7 +168,7 @@ export function Ampel({ a, bild }: { a: NonNullable<LeistungSeite["ampel"]>; bil
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-navy/80 to-navy" />
       <div className="section wrap">
         <div className="max-w-2xl">
-          <h2 className="font-display text-4xl sm:text-5xl">{a.titel}</h2>
+          <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(a.titel)}</h2>
           <p className="mt-5 text-lg text-white/75">{a.lead}</p>
         </div>
         <ul className="mt-12 grid gap-4 md:grid-cols-3">
@@ -193,7 +194,7 @@ export function Symptome({ s }: { s: NonNullable<LeistungSeite["symptome"]> }) {
     <section className="section wrap">
       <div className="grid gap-10 rounded-3xl border border-line p-6 sm:p-10 lg:grid-cols-12 lg:gap-14 lg:p-14">
         <div className={s.warnung ? "lg:col-span-7" : "lg:col-span-12"}>
-          <h2 className="font-display text-4xl sm:text-5xl">{s.titel}</h2>
+          <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(s.titel)}</h2>
           <p className="mt-4 max-w-xl text-lg text-muted">{s.lead}</p>
           <ul className={`mt-8 grid gap-x-8 gap-y-3 ${s.warnung ? "sm:grid-cols-1" : "sm:grid-cols-2"}`}>
             {s.punkte.map((p) => (

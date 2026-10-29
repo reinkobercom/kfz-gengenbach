@@ -15,12 +15,12 @@ export const artikel: Artikel = {
   datePublished: "2026-10-28",
   dateModified: "2026-10-28",
   antwort:
-    "Eine Achsvermessung kostet laut AUTO ZEITUNG je nach Fahrzeug etwa 50 bis 150 Euro (Stand Oktober 2025). Muss die Spur anschließend eingestellt werden, nennt die Zeitschrift dafür meist 70 bis 150 Euro. Die Messung selbst dauert rund 15 bis 30 Minuten. Nötig ist sie nach Fahrwerksarbeiten, einem harten Bordsteinkontakt oder bei einseitig abgefahrenen Reifen.",
+    "Eine Achsvermessung kostet laut AUTO ZEITUNG je nach Fahrzeug etwa 50 bis 150 Euro (Stand Oktober 2025). Muss die Spur anschließend eingestellt werden, nennt die Zeitschrift dafür meist 70 bis 150 Euro. Die Messung selbst dauert rund 15 bis 30 Minuten. Nötig ist sie nach Fahrwerksarbeiten, einem harten Bordsteinkontakt oder bei einseitig abgefahrenen Reifen.",
   kernpunkte: [
-    "**Richtwert:** Fachmedien nennen für die Achsvermessung etwa 50 bis 150 Euro, für Kleinwagen eher am unteren, für große SUV eher am oberen Ende.",
+    "**Richtwert:** Fachmedien nennen für die Achsvermessung etwa 50 bis 150 Euro, für Kleinwagen eher am unteren, für große SUV eher am oberen Ende.",
     "**Messen ist nicht Einstellen:** Die Vermessung zeigt die Abweichung, die Einstellung korrigiert sie. Die Einstellung kostet oft extra und hängt vom Aufwand ab.",
     "**Typische Anlässe:** Bordsteinkontakt, Tausch von Spurstange oder Querlenker, Tieferlegung, neue Reifen nach ungleichem Abrieb.",
-    "**Dauer:** Die Messung dauert rund 15 bis 30 Minuten, mit Einstellung etwa eine Stunde, mit Kalibrierung von Assistenzsystemen bis zu zwei Stunden.",
+    "**Dauer:** Die Messung dauert rund 15 bis 30 Minuten, mit Einstellung etwa eine Stunde, mit Kalibrierung von Assistenzsystemen bis zu zwei Stunden.",
     "**Nicht jedes Symptom ist die Spur:** Lenkradzittern deutet eher auf eine Unwucht, Ziehen beim Bremsen eher auf die Bremse.",
   ],
   abschnitte: [
@@ -30,7 +30,7 @@ export const artikel: Artikel = {
       blocks: [
         {
           type: "p",
-          text: "Eine Achsvermessung kostet nach Angaben mehrerer Fachmedien und Werkstattportale meist zwischen 50 und 150 Euro. Den Ausschlag geben drei Dinge: die Fahrzeugklasse, das Messverfahren und die Frage, ob nach der Messung auch eingestellt werden muss. Kleinwagen liegen am unteren Ende, große SUV und Sportwagen am oberen.",
+          text: "Eine Achsvermessung kostet nach Angaben mehrerer Fachmedien und Werkstattportale meist zwischen 50 und 150 Euro. Den Ausschlag geben drei Dinge: die Fahrzeugklasse, das Messverfahren und die Frage, ob nach der Messung auch eingestellt werden muss. Kleinwagen liegen am unteren Ende, große SUV und Sportwagen am oberen.",
         },
         {
           type: "table",
@@ -38,10 +38,10 @@ export const artikel: Artikel = {
             "Veröffentlichte Richtwerte für Achsvermessung und Spureinstellung in Deutschland. Keine Preise von KFZ Gengenbach, sondern Angaben der genannten Quellen.",
           head: ["Quelle (Stand)", "Achsvermessung", "Spureinstellung / mit Einstellung"],
           rows: [
-            ["AUTO ZEITUNG (23.10.2025)", "ca. 50–150 €, reine Spurvermessung teils ab ca. 30 €", "meist 70–150 €"],
-            ["AUTO BILD (20.10.2024)", "ab rund 60 €", "große SUV/Sportwagen inkl. Einstellung meist nicht viel mehr als 150 €"],
-            ["kfzteile24 Magazin (ohne Datum)", "Kleinwagen ab ca. 50 €, Limousinen und SUV ca. 70–140 €", "vorher klären, ob die Einstellung enthalten ist"],
-            ["repareo (ohne Datum)", "ab ca. 25 €; 3D-Verfahren 25–50 €, Laser 60–100 €", "ca. 40–150 €, stark aufwandsabhängig"],
+            ["AUTO ZEITUNG (23.10.2025)", "ca. 50–⁠150 €, reine Spurvermessung teils ab ca. 30 €", "meist 70–⁠150 €"],
+            ["AUTO BILD (20.10.2024)", "ab rund 60 €", "große SUV/Sportwagen inkl. Einstellung meist nicht viel mehr als 150 €"],
+            ["kfzteile24 Magazin (ohne Datum)", "Kleinwagen ab ca. 50 €, Limousinen und SUV ca. 70–⁠140 €", "vorher klären, ob die Einstellung enthalten ist"],
+            ["repareo (ohne Datum)", "ab ca. 25 €; 3D-Verfahren 25–⁠50 €, Laser 60–⁠100 €", "ca. 40–⁠150 €, stark aufwandsabhängig"],
           ],
         },
         {
@@ -115,7 +115,7 @@ export const artikel: Artikel = {
         },
         {
           type: "p",
-          text: "Für vorbeugende Prüfungen gibt es keine gesetzliche Frist. reifen.com empfiehlt eine Kontrolle einmal jährlich oder alle 20.000 Kilometer, AUTO BILD vorsorglich alle zwei Jahre. Ein Schlagloch nach dem Winter oder ein hoher Bordstein in einer engen Ortsdurchfahrt reicht oft schon, damit die Spur nicht mehr stimmt. Wer in Gengenbach und im Kinzigtal ohnehin im Frühjahr die Sommerreifen montieren lässt, kann die Vermessung mit dem [Reifenservice und der Achsvermessung](/leistungen/reifenservice-achsvermessung) in einem Termin verbinden.",
+          text: "Für vorbeugende Prüfungen gibt es keine gesetzliche Frist. reifen.com empfiehlt eine Kontrolle einmal jährlich oder alle 20.000 Kilometer, AUTO BILD vorsorglich alle zwei Jahre. Ein Schlagloch nach dem Winter oder ein hoher Bordstein in einer engen Ortsdurchfahrt reicht oft schon, damit die Spur nicht mehr stimmt. Wer in Gengenbach und im Kinzigtal ohnehin im Frühjahr die Sommerreifen montieren lässt, kann die Vermessung mit dem [Reifenservice und der Achsvermessung](/leistungen/reifenservice-achsvermessung) in einem Termin verbinden.",
         },
         {
           type: "p",
@@ -159,7 +159,7 @@ export const artikel: Artikel = {
       blocks: [
         {
           type: "p",
-          text: "Eine Achsvermessung dauert laut AUTO ZEITUNG etwa 15 bis 30 Minuten, je nach Messverfahren. Das 3D-Verfahren mit Reflektoren und Kamera ist schneller, die Laservermessung kann laut repareo und Quick zwischen 30 Minuten und zwei Stunden dauern. Muss anschließend eingestellt werden, rechnet AUTO BILD mit rund einer Stunde insgesamt.",
+          text: "Eine Achsvermessung dauert laut AUTO ZEITUNG etwa 15 bis 30 Minuten, je nach Messverfahren. Das 3D-Verfahren mit Reflektoren und Kamera ist schneller, die Laservermessung kann laut repareo und Quick zwischen 30 Minuten und zwei Stunden dauern. Muss anschließend eingestellt werden, rechnet AUTO BILD mit rund einer Stunde insgesamt.",
         },
         {
           type: "p",
@@ -182,18 +182,18 @@ export const artikel: Artikel = {
       blocks: [
         {
           type: "p",
-          text: "Eine Achsvermessung lohnt sich, sobald die Reifen sichtbar ungleich abfahren, weil der vorzeitige Reifenverschleiß schnell mehr kostet als die Vermessung. Vergölst schreibt, dass eine falsche Achsgeometrie die Lebensdauer der Reifen im Extremfall um bis zu 80 Prozent verkürzen kann. Wie sich schon ein geringerer Mehrverschleiß auswirkt, zeigt die folgende Rechnung.",
+          text: "Eine Achsvermessung lohnt sich, sobald die Reifen sichtbar ungleich abfahren, weil der vorzeitige Reifenverschleiß schnell mehr kostet als die Vermessung. Vergölst schreibt, dass eine falsche Achsgeometrie die Lebensdauer der Reifen im Extremfall um bis zu 80 Prozent verkürzen kann. Wie sich schon ein geringerer Mehrverschleiß auswirkt, zeigt die folgende Rechnung.",
         },
         {
           type: "table",
           caption:
-            "Beispielrechnung mit angenommenen Werten, nur zur Veranschaulichung: zwei Vorderreifen zu je 100 € (ohne Montage), geplante Laufleistung 40.000 km, wegen verstellter Spur nur 25.000 km.",
+            "Beispielrechnung mit angenommenen Werten, nur zur Veranschaulichung: zwei Vorderreifen zu je 100 € (ohne Montage), geplante Laufleistung 40.000 km, wegen verstellter Spur nur 25.000 km.",
           head: ["Annahme", "Spur korrekt", "Spur verstellt"],
           rows: [
-            ["Laufleistung der Vorderreifen", "40.000 km", "25.000 km"],
-            ["Reifenkosten je 1.000 km (2 × 100 €)", "5,00 €", "8,00 €"],
-            ["Reifenkosten auf 40.000 km", "200 €", "320 €"],
-            ["Mehrkosten nur für Reifen", "–", "120 € zuzüglich zusätzlicher Montage"],
+            ["Laufleistung der Vorderreifen", "40.000 km", "25.000 km"],
+            ["Reifenkosten je 1.000 km (2 × 100 €)", "5,00 €", "8,00 €"],
+            ["Reifenkosten auf 40.000 km", "200 €", "320 €"],
+            ["Mehrkosten nur für Reifen", "–", "120 € zuzüglich zusätzlicher Montage"],
           ],
         },
         {
@@ -210,7 +210,7 @@ export const artikel: Artikel = {
   zwischenCta: {
     nachAbschnitt: 2,
     titel: "Reifen einseitig abgefahren oder Lenkrad schief?",
-    text: "Schicken Sie uns ein Foto der Reifenlauffläche per WhatsApp oder über das Anfrageformular. Wir geben Ihnen eine erste Einschätzung, ob eine Achsvermessung sinnvoll ist, und vermessen Pkw und Transporter bis 4,5 t direkt in Gengenbach.",
+    text: "Schicken Sie uns ein Foto der Reifenlauffläche per WhatsApp oder über das Anfrageformular. Wir geben Ihnen eine erste Einschätzung, ob eine Achsvermessung sinnvoll ist, und vermessen Pkw und Transporter bis 4,5 t direkt in Gengenbach.",
   },
   faq: [
     {
@@ -231,11 +231,11 @@ export const artikel: Artikel = {
     },
     {
       q: "Kann jede Werkstatt eine Achsvermessung durchführen?",
-      a: "Nein, nur Werkstätten mit einem Achsmessstand. Fragen Sie bei Transportern und Wohnmobilen zusätzlich nach, ob der Messstand für Ihr Fahrzeuggewicht und Ihren Radstand ausgelegt ist. Wir vermessen Pkw und Transporter bis 4,5 t zulässiges Gesamtgewicht. Wichtig ist außerdem, dass die Werkstatt die Sollwerte des Herstellers für Ihr Modell hinterlegt hat und Ihnen ein Messprotokoll aushändigt.",
+      a: "Nein, nur Werkstätten mit einem Achsmessstand. Fragen Sie bei Transportern und Wohnmobilen zusätzlich nach, ob der Messstand für Ihr Fahrzeuggewicht und Ihren Radstand ausgelegt ist. Wir vermessen Pkw und Transporter bis 4,5 t zulässiges Gesamtgewicht. Wichtig ist außerdem, dass die Werkstatt die Sollwerte des Herstellers für Ihr Modell hinterlegt hat und Ihnen ein Messprotokoll aushändigt.",
     },
   ],
   fazit:
-    "Eine Achsvermessung kostet laut Fachmedien meist 50 bis 150 Euro, die Einstellung kann hinzukommen. Die Messung dauert rund eine Viertel- bis halbe Stunde, mit Einstellung etwa eine Stunde. Nötig ist sie nach Fahrwerksarbeiten, einem harten Bordsteinkontakt, bei Umbauten und immer dann, wenn das Auto zieht, das Lenkrad schief steht oder die Reifen einseitig abfahren. Zittern, Poltern oder Ziehen beim Bremsen haben dagegen meist andere Ursachen. Bei sichtbar ungleichem Reifenabrieb kann sich die Vermessung schon über die eingesparten Reifen rechnen.",
+    "Eine Achsvermessung kostet laut Fachmedien meist 50 bis 150 Euro, die Einstellung kann hinzukommen. Die Messung dauert rund eine Viertel- bis halbe Stunde, mit Einstellung etwa eine Stunde. Nötig ist sie nach Fahrwerksarbeiten, einem harten Bordsteinkontakt, bei Umbauten und immer dann, wenn das Auto zieht, das Lenkrad schief steht oder die Reifen einseitig abfahren. Zittern, Poltern oder Ziehen beim Bremsen haben dagegen meist andere Ursachen. Bei sichtbar ungleichem Reifenabrieb kann sich die Vermessung schon über die eingesparten Reifen rechnen.",
   quellen: [
     {
       titel: "AUTO ZEITUNG: Achsvermessung – Ablauf, Kosten und wann sie nötig ist (23.10.2025)",

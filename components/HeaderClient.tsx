@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
+import { LogoLink } from "@/components/LogoLink";
 import type { NavData } from "@/lib/navigation";
 import { site, telHref, waHref } from "@/lib/site";
 
@@ -52,9 +53,9 @@ export function HeaderClient({ nav }: { nav: NavData }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-white/95 backdrop-blur-md" onKeyDown={(e) => e.key === "Escape" && schliessen()}>
       <div className="wrap flex h-[4.5rem] items-center justify-between gap-6">
-        <Link href="/" className="shrink-0" aria-label={`${site.brand}, zur Startseite`}>
+        <LogoLink className="shrink-0" label={`${site.brand}, zur Startseite`}>
           <Image src="/brand/logo-bar.png" alt={site.brand} width={1000} height={196} priority className="h-8 w-auto sm:h-9" />
-        </Link>
+        </LogoLink>
 
         <nav aria-label="Hauptnavigation" className="hidden h-full items-stretch gap-1 lg:flex xl:gap-3">
           {eintraege.map((m) => {

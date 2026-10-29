@@ -8,7 +8,7 @@ import { leistungen } from "@/lib/leistungen";
 export const metadata: Metadata = {
   title: "Leistungen der Kfz-Werkstatt in Gengenbach | KFZ Gengenbach",
   description:
-    "Inspektion, HU/AU, Reifen & Achsvermessung, Reparatur, Motorinstandsetzung, Transporter bis 4,5 t, Karosserie, Lack und Fahrzeugverkauf in Gengenbach.",
+    "Inspektion, HU/AU, Reifen & Achsvermessung, Reparatur, Motorinstandsetzung, Transporter bis 4,5 t, Karosserie, Lack und Fahrzeugverkauf in Gengenbach.",
   alternates: { canonical: "/leistungen" },
 };
 
@@ -18,8 +18,8 @@ export default function LeistungenPage() {
       <PageHero
         crumbs={[{ name: "Leistungen", href: "/leistungen" }]}
         h1="Leistungen der Kfz-Werkstatt"
-        intro="Von der Inspektion bis zur Motorinstandsetzung: Wir kümmern uns um Pkw aller Marken und Transporter bis 4,5 t. Karosserie und Lack koordinieren wir mit unserem Partnerbetrieb."
-        fakten={["Alle Marken", "Wartung nach Herstellervorgaben", "Befund per Video"]}
+        intro="Von der Inspektion bis zur Motorinstandsetzung: Wir kümmern uns um Pkw aller Marken und Transporter bis 4,5 t. Karosserie und Lack koordinieren wir mit unserem Partnerbetrieb."
+        fakten={["Alle Marken", "Befund per Video", "Nur mit Freigabe"]}
       />
 
       <section className="section wrap">

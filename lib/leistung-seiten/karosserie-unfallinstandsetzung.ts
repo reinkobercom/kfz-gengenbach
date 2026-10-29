@@ -18,7 +18,7 @@ export const seite: LeistungSeite = {
     ],
     warnung: {
       titel: "Bei Verletzten zuerst helfen",
-      text: "Erste Hilfe leisten und den Rettungsdienst unter 112 rufen. Alles andere kommt danach.",
+      text: "Erste Hilfe leisten und den Rettungsdienst unter 112 rufen. Alles andere kommt danach.",
     },
   },
   ablauf: [
@@ -34,7 +34,7 @@ export const seite: LeistungSeite = {
       titel: "Haftpflichtschaden",
       punkte: [
         "Ansprüche gehen an die Versicherung des Unfallgegners",
-        "Bis ca. 1.000 Euro reichen oft Kostenvoranschlag und Fotos",
+        "Bis ca. 1.000 Euro reichen oft Kostenvoranschlag und Fotos",
         "Bei größeren Schäden ein Gutachten, Sachverständigen frei wählbar",
         "Das Gutachten zahlt die Gegenseite, wenn sie voll haftet",
       ],

@@ -40,7 +40,7 @@ export const orte: Ort[] = [
       },
       {
         q: "Betreuen Sie auch Firmenfahrzeuge aus Offenburg?",
-        a: "Ja, Pkw und Transporter bis 4,5 t. Nennen Sie in der Anfrage die Anzahl der Fahrzeuge.",
+        a: "Ja, Pkw und Transporter bis 4,5 t. Nennen Sie in der Anfrage die Anzahl der Fahrzeuge.",
       },
     ],
   },
@@ -59,7 +59,7 @@ export const orte: Ort[] = [
       "Aus Zell am Harmersbach, Unterharmersbach, Oberharmersbach und Nordrach fahren Sie talauswärts Richtung Biberach und dort auf die B33 nach Gengenbach.",
     absaetze: [
       "Wer im Tal wohnt, fährt viel bergauf und bergab. Das beansprucht Bremsen, Kupplung und im Winter die Reifen stärker als im Flachland. Beim Service schauen wir deshalb besonders auf diese Verschleißteile und sagen Ihnen offen, was wirklich ansteht.",
-      "Viele Betriebe im Tal sind mit Transportern unterwegs. Sprinter und andere Transporter bis 4,5 t warten und reparieren wir genauso wie Pkw.",
+      "Viele Betriebe im Tal sind mit Transportern unterwegs. Sprinter und andere Transporter bis 4,5 t warten und reparieren wir genauso wie Pkw.",
     ],
     schwerpunkte: ["reparatur-diagnose", "reifenservice-achsvermessung", "transporter-sprinter", "motorinstandsetzung"],
     faq: [

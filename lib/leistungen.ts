@@ -26,7 +26,7 @@ export const leistungen: Leistung[] = [
     h1: "Motorinstandsetzung in Gengenbach",
     metaTitle: "Motorinstandsetzung Gengenbach & Ortenau | KFZ Gengenbach",
     metaDescription:
-      "Motorschaden, Ölverbrauch, Steuerkette oder Zylinderkopf: Motorinstandsetzung in Gengenbach für Pkw und Transporter bis 4,5 t. Anfrage in 2 Minuten.",
+      "Motorschaden, Ölverbrauch, Steuerkette oder Zylinderkopf: Motorinstandsetzung in Gengenbach für Pkw und Transporter bis 4,5 t. Anfrage in 2 Minuten.",
     intro:
       "Die Motorinstandsetzung ist unser Schwerpunkt. Bevor ein Austauschmotor fällig wird, prüfen wir, was sich am vorhandenen Motor sinnvoll reparieren lässt, und zeigen Ihnen den Befund per Video.",
     image: { src: u("1486262715619-67b85e0b08d3"), alt: "Geöffneter Motorraum mit Motorblock" },
@@ -53,7 +53,7 @@ export const leistungen: Leistung[] = [
       },
       {
         q: "Arbeiten Sie auch an Transportern?",
-        a: "Ja, an Transportern und Sprintern bis 4,5 t zulässiges Gesamtgewicht. Lkw nehmen wir nicht an.",
+        a: "Ja, an Transportern und Sprintern bis 4,5 t zulässiges Gesamtgewicht. Lkw nehmen wir nicht an.",
       },
     ],
   },
@@ -99,7 +99,7 @@ export const leistungen: Leistung[] = [
       },
       {
         q: "Warten Sie auch Transporter und Wohnmobile?",
-        a: "Ja, Transporter, Sprinter und Wohnmobile bis 4,5 t zulässiges Gesamtgewicht warten wir genauso nach Herstellervorgaben.",
+        a: "Ja, Transporter, Sprinter und Wohnmobile bis 4,5 t zulässiges Gesamtgewicht warten wir genauso nach Herstellervorgaben.",
       },
     ],
   },
@@ -144,7 +144,7 @@ export const leistungen: Leistung[] = [
     h1: "Reifenservice und Achsvermessung in Gengenbach",
     metaTitle: "Reifenwechsel & Achsvermessung Gengenbach | KFZ Gengenbach",
     metaDescription:
-      "Reifenwechsel, Reifenmontage, Wuchten und Achsvermessung in Gengenbach. Für Pkw und Transporter bis 4,5 t. Termin unverbindlich anfragen.",
+      "Reifenwechsel, Reifenmontage, Wuchten und Achsvermessung in Gengenbach. Für Pkw und Transporter bis 4,5 t. Termin unverbindlich anfragen.",
     intro:
       "Ob saisonaler Radwechsel oder neue Reifen: Wir montieren, wuchten und vermessen die Achsen, damit Ihr Fahrzeug sauber geradeaus läuft und die Reifen gleichmäßig abfahren.",
     image: { src: u("1764015805414-df7de89d405b"), alt: "Mechaniker wechselt ein Rad mit dem Schlagschrauber" },
@@ -201,21 +201,21 @@ export const leistungen: Leistung[] = [
       },
       {
         q: "Reparieren Sie alle Marken?",
-        a: "Ja, wir arbeiten an Pkw aller Marken sowie an Transportern bis 4,5 t.",
+        a: "Ja, wir arbeiten an Pkw aller Marken sowie an Transportern bis 4,5 t.",
       },
     ],
   },
   {
     slug: "transporter-sprinter",
     key: "transporter",
-    name: "Transporter & Sprinter bis 4,5 t",
-    short: "Wartung, Reparatur und Motorarbeiten an Transportern, Sprintern und Wohnmobilen bis 4,5 t.",
+    name: "Transporter & Sprinter bis 4,5 t",
+    short: "Wartung, Reparatur und Motorarbeiten an Transportern, Sprintern und Wohnmobilen bis 4,5 t.",
     h1: "Transporter- und Sprinter-Werkstatt in Gengenbach",
     metaTitle: "Sprinter & Transporter Werkstatt Gengenbach | KFZ Gengenbach",
     metaDescription:
-      "Werkstatt für Sprinter, Transporter und Kastenwagen bis 4,5 t in Gengenbach: Inspektion, Reparatur, Motorinstandsetzung. Jetzt anfragen.",
+      "Werkstatt für Sprinter, Transporter und Kastenwagen bis 4,5 t in Gengenbach: Inspektion, Reparatur, Motorinstandsetzung. Jetzt anfragen.",
     intro:
-      "Ein Transporter, der steht, kostet jeden Tag Geld. Wir warten und reparieren Sprinter und andere Transporter bis 4,5 t zulässiges Gesamtgewicht und melden uns schnell mit einem Termin.",
+      "Ein Transporter, der steht, kostet jeden Tag Geld. Wir warten und reparieren Sprinter und andere Transporter bis 4,5 t zulässiges Gesamtgewicht und melden uns schnell mit einem Termin.",
     image: { src: u("1688619103602-35c5b27a6619"), alt: "Weißer Transporter auf einer kurvigen Landstraße" },
     umfang: [
       "Inspektion und Ölservice",
@@ -225,13 +225,13 @@ export const leistungen: Leistung[] = [
       "HU/AU-Vorbereitung",
     ],
     text: [
-      "Wir arbeiten an Transportern, Kastenwagen und Wohnmobilen auf Transporterbasis bis 4,5 t. Für Lkw sind wir nicht ausgestattet.",
+      "Wir arbeiten an Transportern, Kastenwagen und Wohnmobilen auf Transporterbasis bis 4,5 t. Für Lkw sind wir nicht ausgestattet.",
       "Für Gewerbekunden stimmen wir Termine so ab, dass das Fahrzeug möglichst kurz ausfällt. Schreiben Sie dazu einfach in die Anfrage, wann der Transporter verfügbar ist.",
     ],
     faq: [
       {
         q: "Bis zu welchem Gewicht arbeiten Sie?",
-        a: "Bis 4,5 t zulässiges Gesamtgewicht. Lkw darüber nehmen wir nicht an.",
+        a: "Bis 4,5 t zulässiges Gesamtgewicht. Lkw darüber nehmen wir nicht an.",
       },
       {
         q: "Betreuen Sie auch mehrere Firmenfahrzeuge?",
