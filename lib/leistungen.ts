@@ -74,7 +74,7 @@ export const leistungen: Leistung[] = [
       "Ölwechsel mit Filter nach Freigabe des Herstellers",
       "Bremsflüssigkeit, Kühlmittel und Filter",
       "Zahnriemen- und Steuerkettenwechsel nach Intervall",
-      "Batterieprüfung",
+      "Klimaservice und Batterieprüfung",
     ],
     text: [
       "Sie haben einen festen Ansprechpartner. Den Wartungsumfang klären wir vorab, damit Sie wissen, was gemacht wird, bevor das Auto auf der Bühne steht.",
@@ -117,13 +117,12 @@ export const leistungen: Leistung[] = [
     image: { src: u("1771340012378-3c86cb649193"), alt: "Mechaniker prüft einen Motorraum bei geöffneter Haube" },
     umfang: [
       "Vorabcheck nach den Prüfpunkten der Hauptuntersuchung",
-      "Abgasuntersuchung (AU)",
       "Behebung von Mängeln an Licht, Bremsen, Fahrwerk und Reifen",
-      "Hauptuntersuchung durch eine amtlich anerkannte Prüforganisation",
+      "HU und AU durch die KÜS, Prüfstelle direkt nebenan",
     ],
     text: [
       "Die meisten Fahrzeuge fallen wegen Kleinigkeiten durch: defekte Leuchtmittel, ausgeschlagene Gelenke, verschlissene Bremsen. Beim Vorabcheck finden wir solche Punkte, bevor sie zur Nachprüfung führen.",
-      "Gefundene Mängel beheben wir nach Ihrer Freigabe im selben Termin. Die Hauptuntersuchung selbst nimmt eine amtlich anerkannte Prüforganisation ab.",
+      "Gefundene Mängel beheben wir nach Ihrer Freigabe im selben Termin. HU und AU nimmt die KÜS ab, ihre Prüfstelle liegt direkt neben unserer Werkstatt.",
     ],
     faq: [
       {
@@ -189,6 +188,8 @@ export const leistungen: Leistung[] = [
       "Fahrwerk, Stoßdämpfer und Lenkung",
       "Auspuff, Katalysator und Partikelfilter",
       "Elektrik, Batterie, Lichtmaschine und Anlasser",
+      "Hybrid- und Elektrofahrzeuge (Hochvolt-Qualifikation bis Stufe 3)",
+      "Airbag- und Rückhaltesysteme",
     ],
     text: [
       "Ein ausgelesener Fehlercode ist ein Hinweis, keine Diagnose. Wir prüfen die betroffenen Bauteile, bevor wir etwas tauschen. Das spart Ihnen Teile, die gar nicht defekt sind.",
@@ -223,6 +224,7 @@ export const leistungen: Leistung[] = [
       "Motor- und Turbolader-Instandsetzung",
       "Reifenservice und Achsvermessung",
       "HU/AU-Vorbereitung",
+      "Hebebühnen bis 6 t, auch für Dreiachser auf Ducato-Basis",
     ],
     text: [
       "Wir arbeiten an Transportern, Kastenwagen und Wohnmobilen auf Transporterbasis bis 4,5 t. Für Lkw sind wir nicht ausgestattet.",
@@ -309,7 +311,7 @@ export const leistungen: Leistung[] = [
     metaDescription:
       "Neu- und Gebrauchtwagen in Gengenbach von Ihrer Kfz-Werkstatt: vor dem Verkauf durchgesehen, ehrlich beschrieben. Suchauftrag unverbindlich anfragen.",
     intro:
-      "Sie suchen ein Fahrzeug? Wir vermitteln Neu- und Gebrauchtwagen und sehen uns jedes Fahrzeug vor dem Verkauf in unserer Werkstatt an.",
+      "Sie suchen ein Fahrzeug? Wir verkaufen eigene Neu- und Gebrauchtwagen und sehen uns jedes Fahrzeug vor dem Verkauf in unserer Werkstatt an.",
     image: { src: u("1492144534655-ae79c964c9d7"), alt: "Weißes Auto vor heller Wand" },
     umfang: [
       "Gebrauchtwagen, vor dem Verkauf durchgesehen",

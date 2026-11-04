@@ -60,6 +60,10 @@ export const seite: LeistungSeite = {
   },
   faq: [
     {
+      q: "Arbeiten Sie auch an Hybrid- und Elektroautos?",
+      a: "Ja. Unser Team hat die Hochvolt-Qualifikation bis Stufe 3 und darf damit an Hybrid- und Elektrofahrzeugen arbeiten. Sachkunde für Klimaanlagen und Airbag-Systeme ist ebenfalls vorhanden.",
+    },
+    {
       q: "Reicht es nicht, den Fehlerspeicher auszulesen?",
       a: "Meist nicht. Der Fehlerspeicher zeigt, welches System eine Abweichung meldet, aber nicht immer, welches Bauteil defekt ist. Ein Fehler zur Lambdasonde kann zum Beispiel auch an einer Undichtigkeit oder an einem Kabel liegen. Deshalb prüfen wir die Ursache, bevor wir Teile tauschen.",
     },

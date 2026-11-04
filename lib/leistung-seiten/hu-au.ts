@@ -1,7 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
-  fakten: ["Vorabcheck vor der HU", "Mängel vorher beheben", "Fälligkeit per Foto klären"],
+  fakten: ["Vorabcheck vor der HU", "Mängel vorher beheben", "KÜS-Prüfstelle nebenan"],
   umfangLead: "Vorabcheck, Reparatur und Prüfung folgen in einem Termin aufeinander. Dazu gehören:",
   bildEtikett: { titel: "Vorabcheck vor der HU", text: "Mängel finden, bevor geprüft wird." },
   umfangBild: { src: "https://images.unsplash.com/photo-1760317890314-e964ffd7e6a6?auto=format&fit=crop&w=1200&q=70", alt: "Nahaufnahme einer Bremsscheibe mit Bremssattel" },
@@ -25,7 +25,7 @@ export const seite: LeistungSeite = {
     { titel: "Fälligkeit klären", text: "Ein Foto der Plakette per WhatsApp reicht, dann planen wir den Termin." },
     { titel: "Vorabcheck", text: "Wir prüfen das Fahrzeug nach den Prüfpunkten der HU, von Licht bis Fahrwerk." },
     { titel: "Mängel beheben", text: "Befunde sehen Sie per Foto oder Video. Behoben wird nach Ihrer Freigabe im selben Termin." },
-    { titel: "Hauptuntersuchung", text: "Die Prüfung nimmt eine amtlich anerkannte Prüforganisation ab. Ohne erhebliche Mängel gibt es die neue Plakette." },
+    { titel: "Hauptuntersuchung", text: "HU und AU nimmt die KÜS ab, ihre Prüfstelle ist direkt nebenan. Ohne erhebliche Mängel gibt es die neue Plakette." },
   ],
   vergleich: {
     titel: "Mit Vorabcheck oder direkt zur Prüfung?",

@@ -163,7 +163,7 @@ export const artikel: Artikel = {
         },
         {
           type: "p",
-          text: "Bei KFZ Gengenbach läuft die [Hauptuntersuchung](/leistungen/hu-au) nach diesem Muster: Vorabcheck, Mängel nach Ihrer Freigabe im selben Termin beheben, dann die Prüfung durch die Prüforganisation. Wer aus Gengenbach, Offenburg oder dem Kinzigtal kommt, spricht dabei direkt mit dem Inhaber und bekommt Befunde per Foto oder Video aufs Handy.",
+          text: "Bei KFZ Gengenbach läuft die [Hauptuntersuchung](/leistungen/hu-au) nach diesem Muster: Vorabcheck, Mängel nach Ihrer Freigabe im selben Termin beheben, dann die Prüfung durch die KÜS, deren Prüfstelle direkt neben der Werkstatt liegt. Wer aus Gengenbach, Offenburg oder dem Kinzigtal kommt, spricht dabei direkt mit dem Inhaber und bekommt Befunde per Foto oder Video aufs Handy.",
         },
       ],
     },

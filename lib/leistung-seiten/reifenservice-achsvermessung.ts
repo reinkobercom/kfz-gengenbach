@@ -2,7 +2,7 @@ import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
   fakten: ["Wechseln und Wuchten", "Achsvermessung", "Alle Marken"],
-  umfangLead: "Vom saisonalen Radwechsel bis zur Spureinstellung:",
+  umfangLead: "Für Pkw und Transporter bis 4,5 t, vom saisonalen Radwechsel bis zur Spureinstellung:",
   bildEtikett: { titel: "Achsen vermessen", text: "Für sauberen Geradeauslauf." },
   umfangBild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },
   symptome: {

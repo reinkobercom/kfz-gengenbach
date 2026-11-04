@@ -48,7 +48,7 @@ export const seite: LeistungSeite = {
     },
     {
       q: "Übernehmen Sie auch die HU für Transporter?",
-      a: "Wir bereiten die HU/AU vor: Vorabcheck nach den Prüfpunkten der Hauptuntersuchung, dann beheben wir gefundene Mängel nach Ihrer Freigabe. Die Hauptuntersuchung selbst nimmt eine amtlich anerkannte Prüforganisation ab. Über 3,5 t ist sie bei Transportern zur Güterbeförderung jedes Jahr fällig.",
+      a: "Wir bereiten die HU/AU vor: Vorabcheck nach den Prüfpunkten der Hauptuntersuchung, dann beheben wir gefundene Mängel nach Ihrer Freigabe. Die Hauptuntersuchung nimmt die KÜS ab, deren Prüfstelle direkt neben unserer Werkstatt liegt. Über 3,5 t ist sie bei Transportern zur Güterbeförderung jedes Jahr fällig.",
     },
   ],
 };
