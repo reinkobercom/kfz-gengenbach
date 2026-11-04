@@ -63,7 +63,7 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
     <>
       {/* Kopfbereich mit Titelbild, dunkle Überlagerung für Lesbarkeit */}
       <section className="relative isolate overflow-hidden bg-navy text-white">
-        <Image src={bild.src} alt="" fill priority sizes="100vw" className="-z-10 object-cover opacity-30" />
+        <Image src={bild.src} alt="" fill loading="eager" fetchPriority="high" sizes="100vw" className="-z-10 object-cover opacity-30" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/50" aria-hidden="true" />
         <div className="wrap pb-16 pt-8 lg:pb-24 lg:pt-12">
           <Breadcrumbs
@@ -197,7 +197,12 @@ export default async function ArtikelPage({ params }: PageProps<"/ratgeber/[slug
           {/* Abschlussbox: wer schreibt, Hinweis, zwei CTAs */}
           <aside className="mt-14 rounded-2xl bg-navy p-6 text-white sm:p-8">
             <div className="flex items-center gap-4">
-              <div className="grid size-14 shrink-0 place-items-center rounded-full bg-blue font-display text-xl font-bold">MJ</div>
+              <div className="grid size-14 shrink-0 place-items-center rounded-full bg-blue font-display text-xl font-bold">
+                {site.owner
+                  .split(" ")
+                  .map((t) => t[0])
+                  .join("")}
+              </div>
               <div>
                 <p className="font-semibold">{site.owner}</p>
                 <p className="text-sm text-white/70">

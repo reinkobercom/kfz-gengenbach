@@ -295,7 +295,7 @@ export const artikel: Artikel = {
     },
     {
       q: "Wie lange dauert der Wechsel der Zylinderkopfdichtung?",
-      a: "Laut FairGarage liegt die Arbeitszeit je nach Motor bei 6 bis 15 Stunden, das Fahrzeug steht etwa ein bis zwei Tage in der Werkstatt. Muss der Zylinderkopf geplant oder auf Risse geprüft werden, kommt die Bearbeitungszeit hinzu. Ein Termin lässt sich nach der Diagnose konkret planen.",
+      a: "Laut FairGarage liegt die Arbeitszeit je nach Motor bei 6 bis 15 Stunden, das Fahrzeug steht etwa ein bis zwei Tage in der Werkstatt. Muss der Zylinderkopf plan geschliffen oder auf Risse geprüft werden, kommt die Bearbeitungszeit hinzu. Ein Termin lässt sich nach der Diagnose konkret planen.",
     },
   ],
   fazit:

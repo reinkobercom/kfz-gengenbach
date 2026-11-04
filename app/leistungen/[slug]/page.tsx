@@ -10,6 +10,7 @@ import { getLeistung, leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
 import { serviceSchema } from "@/lib/schema";
 import { ogBasis } from "@/lib/site";
+import { trenne } from "@/lib/text";
 
 /** Ablauf für Leistungen ohne eigenen */
 const STANDARD_ABLAUF = [
@@ -110,7 +111,7 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
                     <Image src={w.image.src} alt={w.image.alt} fill sizes="(min-width: 768px) 370px, 100vw" className="object-cover" />
                   </div>
                   <div className="p-6">
-                    <h3 className="font-display text-2xl group-hover:text-blue">{w.name}</h3>
+                    <h3 className="font-display text-2xl group-hover:text-blue">{trenne(w.name)}</h3>
                     <p className="mt-2 text-[0.96rem] text-muted">{w.short}</p>
                   </div>
                 </Link>

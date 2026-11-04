@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site, telHref, waHref } from "@/lib/site";
-import { ohneWitwe } from "@/lib/text";
+import { ohneMarkdown, ohneWitwe } from "@/lib/text";
+import { Inline } from "./ratgeber/Inhalt";
 
 export { MobileBar } from "./MobileBar";
 
@@ -76,7 +77,9 @@ export function Faq({
                 +
               </span>
             </summary>
-            <p className="max-w-[65ch] pb-7 text-muted">{f.a}</p>
+            <p className="max-w-[65ch] pb-7 text-muted">
+              <Inline text={f.a} />
+            </p>
           </details>
         ))}
       </div>
@@ -87,7 +90,7 @@ export function Faq({
           mainEntity: items.map((f) => ({
             "@type": "Question",
             name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
+            acceptedAnswer: { "@type": "Answer", text: ohneMarkdown(f.a) },
           })),
         }}
       />
@@ -126,7 +129,7 @@ export function CtaBand({
       <div aria-hidden="true" className="absolute -right-24 top-0 -z-10 hidden h-full w-[38rem] skew-x-[-18deg] bg-gradient-to-b from-blue/25 to-transparent lg:block" />
       <div className="section wrap grid gap-12 lg:grid-cols-12 lg:items-center">
         <div className="text-center lg:col-span-6 lg:text-left">
-          <h2 className="font-display text-5xl sm:text-6xl">{titel}</h2>
+          <h2 className="font-display text-5xl sm:text-6xl">{ohneWitwe(titel)}</h2>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/75 lg:mx-0">{text}</p>
         </div>
         <div className="lg:col-span-5 lg:col-start-8">

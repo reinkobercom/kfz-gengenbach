@@ -6,6 +6,7 @@ import { CtaBand, Faq } from "@/components/ui";
 import { leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
 import { einzugsgebiet, mapsHref, site } from "@/lib/site";
+import { trenne } from "@/lib/text";
 
 export const metadata: Metadata = {
   title: "Kfz-Werkstatt Gengenbach | Motorinstandsetzung, Inspektion, HU/AU",
@@ -55,7 +56,8 @@ export default function Home() {
           src={img("1727893119356-1702fe921cf9")}
           alt=""
           fill
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
           className="-z-20 object-cover"
         />
@@ -113,7 +115,7 @@ export default function Home() {
                 className="group flex items-center justify-between gap-4 py-4 sm:grid sm:grid-cols-[minmax(0,15rem)_1fr_auto] sm:items-baseline sm:gap-8 sm:py-7"
               >
                 <h3 className="font-display text-2xl leading-tight group-hover:text-blue sm:text-[1.75rem]">
-                  {l.name}
+                  {trenne(l.name)}
                   {l.key === "motor" && <span className="ml-3 align-middle font-sans text-sm font-semibold text-blue">Schwerpunkt</span>}
                 </h3>
                 {/* Kurzbeschreibung erst ab 640 px, mobil reicht der Name */}

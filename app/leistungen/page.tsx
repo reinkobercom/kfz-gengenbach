@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand } from "@/components/ui";
 import { leistungen } from "@/lib/leistungen";
+import { trenne } from "@/lib/text";
 
 export const metadata: Metadata = {
   title: "Leistungen der Kfz-Werkstatt in Gengenbach | KFZ Gengenbach",
@@ -32,7 +33,7 @@ export default function LeistungenPage() {
                   <Image src={l.image.src} alt={l.image.alt} fill sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 96px" className="object-cover" />
                 </div>
                 <div className="min-w-0">
-                  <h2 className="font-display text-2xl leading-tight group-hover:text-blue sm:mt-5 sm:text-3xl">{l.name}</h2>
+                  <h2 className="font-display text-2xl leading-tight group-hover:text-blue sm:mt-5 sm:text-3xl">{trenne(l.name)}</h2>
                   <p className="mt-1 line-clamp-2 text-[0.95rem] text-muted sm:mt-2 sm:line-clamp-none sm:text-base">{l.short}</p>
                   {l.partner && <p className="mt-1 hidden text-sm text-muted sm:block">Über unseren Partnerbetrieb</p>}
                 </div>

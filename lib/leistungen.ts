@@ -61,7 +61,7 @@ export const leistungen: Leistung[] = [
     slug: "inspektion-wartung",
     key: "inspektion",
     name: "Inspektion & Wartung",
-    short: "Inspektion nach Herstellervorgaben, Ölservice und Verschleißteile, ohne Garantieverlust.",
+    short: "Inspektion nach Herstellervorgaben, Ölservice und Verschleißteile. So bleibt die Herstellergarantie erhalten.",
     h1: "Inspektion und Wartung in Gengenbach",
     metaTitle: "Inspektion & Ölwechsel Gengenbach | KFZ Gengenbach",
     metaDescription:
@@ -106,7 +106,7 @@ export const leistungen: Leistung[] = [
   {
     slug: "hu-au",
     key: "hu",
-    name: "HU / AU",
+    name: "HU/AU",
     short: "Vorabcheck, Mängelbehebung und Hauptuntersuchung in einem Termin.",
     h1: "HU und AU in Gengenbach",
     metaTitle: "TÜV / HU & AU Gengenbach | KFZ Gengenbach",
@@ -128,7 +128,7 @@ export const leistungen: Leistung[] = [
     faq: [
       {
         q: "Wann ist meine HU fällig?",
-        a: "Das steht auf der Plakette am hinteren Kennzeichen und im Fahrzeugschein. Neufahrzeuge müssen nach drei Jahren zur ersten HU, danach alle zwei Jahre.",
+        a: "Das steht auf der Plakette am hinteren Kennzeichen und im Fahrzeugschein. Neue Pkw müssen nach drei Jahren zur ersten HU, danach alle zwei Jahre. Für Transporter gelten je nach Zulassung andere Fristen.",
       },
       {
         q: "Was passiert, wenn mein Auto Mängel hat?",
@@ -335,7 +335,7 @@ export const getLeistung = (slug: string) => leistungen.find((l) => l.slug === s
 /** Auswahl im Konfigurator (Reihenfolge = Anzeige) */
 export const anfrageLeistungen = [
   { key: "inspektion", label: "Inspektion & Ölwechsel" },
-  { key: "hu", label: "HU / AU" },
+  { key: "hu", label: "HU/AU" },
   { key: "reparatur", label: "Reparatur & Diagnose" },
   { key: "motor", label: "Motorinstandsetzung" },
   { key: "reifen", label: "Reifen & Achsvermessung" },

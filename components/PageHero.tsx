@@ -33,7 +33,7 @@ export function PageHero({
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-navy text-white">
-      <Image src={bild} alt="" fill priority sizes="100vw" className="-z-20 object-cover" />
+      <Image src={bild} alt="" fill loading="eager" fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-navy/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-navy/95 lg:via-navy/75 lg:to-navy/30" />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-navy/70 to-transparent" />
       <div className="wrap grid gap-12 pb-16 pt-8 lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-24 lg:pt-14">

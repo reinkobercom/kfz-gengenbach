@@ -20,7 +20,7 @@ export default function RatgeberPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-navy text-white">
-        {titelbild && <Image src={titelbild.src} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-70" />}
+        {titelbild && <Image src={titelbild.src} alt="" fill loading="eager" fetchPriority="high" sizes="100vw" className="-z-20 object-cover opacity-70" />}
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
         <div className="wrap pb-16 pt-8 lg:pb-24 lg:pt-12">
           <Breadcrumbs items={[{ name: "Ratgeber", href: "/ratgeber" }]} hell />

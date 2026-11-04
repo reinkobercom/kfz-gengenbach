@@ -7,6 +7,7 @@ import { useState, type ReactNode } from "react";
 import { LogoLink } from "@/components/LogoLink";
 import type { NavData } from "@/lib/navigation";
 import { site, telHref, waHref } from "@/lib/site";
+import { trenne } from "@/lib/text";
 
 type MenuKey = "leistungen";
 
@@ -54,7 +55,7 @@ export function HeaderClient({ nav }: { nav: NavData }) {
     <header className="sticky top-0 z-40 border-b border-line/70 bg-white/95 backdrop-blur-md" onKeyDown={(e) => e.key === "Escape" && schliessen()}>
       <div className="wrap flex h-[4.5rem] items-center justify-between gap-6">
         <LogoLink className="shrink-0" label={`${site.brand}, zur Startseite`}>
-          <Image src="/brand/logo-bar.png" alt={site.brand} width={1000} height={196} priority className="h-8 w-auto sm:h-9" />
+          <Image src="/brand/logo-bar.png" alt={site.brand} width={1000} height={196} loading="eager" sizes="184px" className="h-8 w-auto sm:h-9" />
         </LogoLink>
 
         <nav aria-label="Hauptnavigation" className="hidden h-full items-stretch gap-1 lg:flex xl:gap-3">
@@ -210,7 +211,7 @@ function MobilMenue({ nav }: { nav: NavData }) {
                 {g.links.map((l) => (
                   <li key={l.href}>
                     <Link href={l.href} className="block py-2 text-lg hover:text-blue">
-                      {l.label}
+                      {trenne(l.label)}
                     </Link>
                   </li>
                 ))}

@@ -7,6 +7,7 @@ import { getAttributionPayload } from "@/lib/attribution-client";
 import { anfrageLeistungen } from "@/lib/leistungen";
 import { Turnstile, turnstileAktiv } from "./Turnstile";
 import { einzugsgebiet, site, telHref, waHref } from "@/lib/site";
+import { trenne } from "@/lib/text";
 
 type Daten = {
   leistung: string;
@@ -196,7 +197,11 @@ export function Konfigurator({
             Danke, Ihre Anfrage ist angekommen.
           </h2>
           <p className="mt-3 max-w-prose text-muted">
-            Wir melden uns per {d.rueckmeldung} bei Ihnen
+            {d.rueckmeldung === "Anruf"
+              ? "Wir rufen Sie an"
+              : d.rueckmeldung === "E-Mail"
+                ? "Wir antworten Ihnen per E-Mail"
+                : "Wir melden uns per WhatsApp bei Ihnen"}
             {d.dringlichkeit === "dringend" ? ", bei dringenden Fällen so schnell es geht" : ""}. Möchten Sie direkt Fotos
             oder ein Video vom Problem schicken? Dann am einfachsten per WhatsApp.
           </p>
@@ -242,7 +247,7 @@ export function Konfigurator({
                         aktiv ? "border-blue bg-blue-tint" : "border-line hover:border-navy"
                       }`}
                     >
-                      {l.label}
+                      {trenne(l.label)}
                     </button>
                   );
                 })}
@@ -289,7 +294,7 @@ export function Konfigurator({
                           d.fahrzeugTyp === t ? "border-blue bg-blue-tint" : "border-line hover:border-navy"
                         }`}
                       >
-                        {t}
+                        {trenne(t)}
                       </button>
                     ))}
                   </div>

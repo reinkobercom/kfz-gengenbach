@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui";
 import { site } from "@/lib/site";
+import { trenne } from "@/lib/text";
 
 export const metadata: Metadata = {
   description: "Datenschutzerklärung von KFZ Gengenbach: welche Daten die Website verarbeitet, zu welchem Zweck und welche Rechte Sie haben.",
@@ -13,7 +14,7 @@ export default function Datenschutz() {
   return (
     <article className="wrap max-w-3xl pb-28 pt-10 lg:pt-14">
       <Breadcrumbs items={[{ name: "Datenschutz", href: "/datenschutz" }]} />
-      <h1 className="mt-8 font-display text-5xl font-extrabold sm:text-6xl">Datenschutzerklärung</h1>
+      <h1 className="mt-8 font-display text-5xl font-extrabold sm:text-6xl">{trenne("Datenschutzerklärung")}</h1>
       <div className="mt-10 space-y-8 leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:mb-2 [&_p+p]:mt-3">
         <section>
           <h2>1. Verantwortlicher</h2>

@@ -58,13 +58,8 @@
   }
   /* Lange deutsche Komposita (Motorinstandsetzung, Datenschutzerklärung) auf
      schmalen Bildschirmen trennen, statt sie allein auf eine Zeile zu stellen */
-  @media (max-width: 639px) {
-    h1,
-    h2,
-    h3 {
-      hyphens: auto;
-    }
-  }
+  /* Lange Fachwörter tragen feste Trennstellen (lib/text.ts → trenne), keine automatische
+     Silbentrennung: die trennt deutsche Komposita oft an der falschen Stelle. */
   /* Kurze Texte in schmalen Feldern gleichmäßig auf die Zeilen verteilen */
   th,
   td,

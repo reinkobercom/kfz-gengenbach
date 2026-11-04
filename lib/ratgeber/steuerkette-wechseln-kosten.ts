@@ -16,10 +16,10 @@ export const artikel: Artikel = {
   dateModified: "2026-10-28",
 
   antwort:
-    "Ein Steuerkettenwechsel kostet laut Vergleichsportalen meist zwischen rund 600 und 2.500 Euro, je nach Motor und Einbaulage. Teuer ist vor allem die Arbeitszeit: drei bis vier Stunden im günstigen Fall, über 20 Stunden, wenn der Motor ausgebaut werden muss. Typisches Warnzeichen ist ein Rasseln in den ersten Sekunden nach dem Kaltstart.",
+    "Ein Steuerkettenwechsel kostet laut Vergleichsportalen meist zwischen rund 600 und 2.000 Euro, bei aufwendigen Motoren bis rund 2.500 Euro. Teuer ist vor allem die Arbeitszeit: drei bis vier Stunden im günstigen Fall, über 20 Stunden, wenn der Motor ausgebaut werden muss. Typisches Warnzeichen ist ein Rasseln in den ersten Sekunden nach dem Kaltstart.",
 
   kernpunkte: [
-    "**Kosten:** Die Kette selbst kostet oft unter 100 bis rund 150 Euro, den Großteil der Rechnung macht die Arbeitszeit aus.",
+    "**Kosten:** Die Kette selbst kostet oft etwa 100 bis 150 Euro, den Großteil der Rechnung macht die Arbeitszeit aus.",
     "**Symptome:** Rasseln nach dem Kaltstart, unruhiger Motorlauf, Motorkontrollleuchte und Fehlercodes zur Korrelation von Kurbel- und Nockenwelle.",
     "**Umfang:** Gewechselt wird in der Regel der komplette Satz mit Spanner, Gleit- und Spannschienen und Kettenrädern.",
     "**Risiko:** Springt die Kette über, treffen bei den meisten modernen Motoren Ventile und Kolben aufeinander. Das ist ein Motorschaden.",
@@ -282,7 +282,7 @@ export const artikel: Artikel = {
   ],
 
   fazit:
-    "Eine gelängte Steuerkette kündigt sich fast immer an, meist durch Rasseln in den ersten Sekunden nach dem Kaltstart oder einen Korrelationsfehler im Fehlerspeicher. Wer dann zeitnah handelt, bezahlt einen Steuerkettensatz plus Arbeitszeit, laut Vergleichsportalen meist zwischen rund 600 und 2.000 Euro. Wer wartet, riskiert, dass die Kette überspringt und aus einer planbaren Reparatur ein Motorschaden wird. Ein Video vom Kaltstart und eine Diagnose am Motor klären, welcher Fall vorliegt und ob sich die Reparatur für Ihr Fahrzeug lohnt.",
+    "Eine gelängte Steuerkette kündigt sich fast immer an, meist durch Rasseln in den ersten Sekunden nach dem Kaltstart oder einen Korrelationsfehler im Fehlerspeicher. Wer dann zeitnah handelt, bezahlt einen Steuerkettensatz plus Arbeitszeit, laut Vergleichsportalen meist zwischen rund 600 und 2.000 Euro, bei aufwendigen Motoren bis rund 2.500 Euro. Wer wartet, riskiert, dass die Kette überspringt und aus einer planbaren Reparatur ein Motorschaden wird. Ein Video vom Kaltstart und eine Diagnose am Motor klären, welcher Fall vorliegt und ob sich die Reparatur für Ihr Fahrzeug lohnt.",
 
   quellen: [
     {

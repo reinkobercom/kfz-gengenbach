@@ -193,7 +193,7 @@ export const artikel: Artikel = {
             ["Laufleistung der Vorderreifen", "40.000 km", "25.000 km"],
             ["Reifenkosten je 1.000 km (2 × 100 €)", "5,00 €", "8,00 €"],
             ["Reifenkosten auf 40.000 km", "200 €", "320 €"],
-            ["Mehrkosten nur für Reifen", "–", "120 € zuzüglich zusätzlicher Montage"],
+            ["Mehrkosten nur für Reifen", "–", "120 € plus Montage"],
           ],
         },
         {

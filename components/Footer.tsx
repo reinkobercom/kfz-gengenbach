@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { LogoLink } from "@/components/LogoLink";
 import { leistungen } from "@/lib/leistungen";
 import { mapsHref, site, telHref, waHref } from "@/lib/site";
+import { trenne } from "@/lib/text";
 
 const service = [
   { href: "/leistungen", label: "Alle Leistungen" },
@@ -44,7 +45,7 @@ export function Footer() {
             {leistungen.map((l) => (
               <li key={l.slug}>
                 <Link href={`/leistungen/${l.slug}`} className="hover:text-blue">
-                  {l.name}
+                  {trenne(l.name)}
                 </Link>
               </li>
             ))}

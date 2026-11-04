@@ -21,9 +21,9 @@ export const site = {
     region: "Baden-Württemberg",
     country: "DE",
   },
-  // Koordinaten Gengenbach (Ortsmitte). Für das Schema bitte durch die exakte
-  // Werkstatt-Position ersetzen, sobald das Google-Unternehmensprofil steht.
-  geo: { lat: 48.4044, lng: 8.0153 },
+  // Gebäude Am Winzerkeller 1 laut OpenStreetMap (04.11.2026). Mit dem Pin im
+  // Google-Unternehmensprofil abgleichen, sobald es bestätigt ist.
+  geo: { lat: 48.39987, lng: 8.011 },
   hours: [
     { days: "Montag bis Freitag", short: "Mo–Fr", opens: "08:00", closes: "17:00", schema: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] },
     { days: "Samstag", short: "Sa", opens: "08:00", closes: "13:00", schema: ["Saturday"] },

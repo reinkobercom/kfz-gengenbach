@@ -40,7 +40,7 @@ export function Umfang({
         )}
       </div>
       <div className="lg:col-span-7 lg:self-center">
-        <h2 className="font-display text-4xl sm:text-5xl">{name}: das gehört dazu</h2>
+        <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(`${name}: das gehört dazu`)}</h2>
         {lead && <p className="mt-5 max-w-xl text-lg text-muted">{lead}</p>}
         <ul className="mt-8 grid gap-2.5 sm:grid-cols-2 sm:gap-3">
           {punkte.map((p) => (
