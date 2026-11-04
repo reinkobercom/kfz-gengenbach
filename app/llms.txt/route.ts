@@ -5,7 +5,7 @@ import { einzugsgebiet, site } from "@/lib/site";
 
 // Kompakte Zusammenfassung für KI-Suchsysteme (llms.txt-Konvention)
 export function GET() {
-  const body = `# ${site.brand} (${site.legalName})
+  const body = `# ${site.brand}
 
 > Freie Kfz-Werkstatt in ${site.address.city} (Ortenaukreis, Baden-Württemberg) für Pkw aller Marken und Transporter bis 4,5 t. Schwerpunkt: Motorinstandsetzung. Befunde werden Kundinnen und Kunden per Video aufs Handy geschickt.
 

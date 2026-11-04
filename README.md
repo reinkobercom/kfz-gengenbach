@@ -1,6 +1,6 @@
 # kfz-gengenbach.de
 
-Website der Kfz-Werkstatt KFZ Gengenbach (KFZ Technik Michael Jakob), Next.js 16, statisch generiert, gehostet auf Vercel.
+Website der Kfz-Werkstatt KFZ Gengenbach (Einzelunternehmen, Inhaber Michael Peter), Next.js 16, statisch generiert, gehostet auf Vercel.
 
 ## Inhalte pflegen
 

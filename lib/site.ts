@@ -5,8 +5,10 @@
 export const site = {
   url: "https://www.kfz-gengenbach.de",
   brand: "KFZ Gengenbach",
-  legalName: "KFZ Technik Michael Jakob",
-  owner: "Michael Jakob",
+  // Stand 04.11.2026: Einzelunternehmen. Ab Januar 2027 geplant als „KFZ Gengenbach UG (haftungsbeschränkt)“
+  // oder GmbH – dann Rechtsform, Registergericht, HRB-Nummer und Geschäftsführer im Impressum ergänzen.
+  legalName: "KFZ Gengenbach",
+  owner: "Michael Peter",
   tagline: "Kfz-Technik & Service",
   phone: "+49 1516 7844565",
   phoneDisplay: "01516 7844565",
@@ -29,8 +31,9 @@ export const site = {
   // Pflichtangaben Impressum für zulassungspflichtiges Handwerk.
   // Leere Felder werden nicht angezeigt – bitte vor Livegang ergänzen.
   impressum: {
-    ustId: "", // z. B. "DE123456789"
-    berufsbezeichnung: "", // z. B. "Kfz-Techniker-Meister, verliehen in Deutschland"
+    ustId: "DE362917728",
+    // Kein Meistertitel (Meisterkurs läuft), Betriebsleitung durch angestellten Meister: keine eigene Berufsbezeichnung.
+    berufsbezeichnung: "",
     kammer: "", // z. B. "Handwerkskammer Freiburg, Bismarckallee 6, 79098 Freiburg"
     handwerksrolle: "", // Eintragungsnummer der Handwerksrolle
   },
