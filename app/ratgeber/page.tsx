@@ -5,6 +5,7 @@ import { Breadcrumbs, CtaBand, JsonLd } from "@/components/ui";
 import { artikelBild, artikelListe, kategorien, lesezeit } from "@/lib/ratgeber";
 import { businessId } from "@/lib/schema";
 import { site } from "@/lib/site";
+import { ohneWitwe } from "@/lib/text";
 
 export const metadata: Metadata = {
   title: "Kfz-Ratgeber: Symptome, Kosten, Prüfungen | KFZ Gengenbach",
@@ -52,20 +53,23 @@ export default function RatgeberPage() {
             <h2 id={kid} className="border-b border-line pb-4 font-display text-3xl">
               {k}
             </h2>
-            <ul className="mt-8 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">
               {liste.map((a) => {
                 const bild = artikelBild(a);
                 return (
                   <li key={a.slug}>
-                    <Link href={`/ratgeber/${a.slug}`} className="group block">
+                    {/* Mobil: Zeile mit kleinem Bild, ab 640 px Karte */}
+                    <Link href={`/ratgeber/${a.slug}`} className="group flex items-center gap-4 sm:block">
                       {bild && (
-                        <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-mist">
-                          <Image src={bild.src} alt={bild.alt} fill sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                        <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-xl bg-mist sm:aspect-[16/10] sm:w-auto">
+                          <Image src={bild.src} alt={bild.alt} fill sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 96px" className="object-cover" />
                         </div>
                       )}
-                      <p className="mt-5 text-sm text-muted">{lesezeit(a)} Min. Lesezeit</p>
-                      <h3 className="mt-1 font-display text-3xl leading-tight group-hover:text-blue">{a.titel}</h3>
-                      <p className="mt-2 line-clamp-3 text-muted">{a.teaser}</p>
+                      <div className="min-w-0">
+                        <p className="text-sm text-muted sm:mt-5">{lesezeit(a)}&nbsp;Min. Lesezeit</p>
+                        <h3 className="mt-1 font-display text-xl leading-tight group-hover:text-blue sm:text-3xl">{ohneWitwe(a.titel)}</h3>
+                        <p className="mt-2 hidden text-muted sm:line-clamp-3">{a.teaser}</p>
+                      </div>
                     </Link>
                   </li>
                 );

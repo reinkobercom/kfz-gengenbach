@@ -24,7 +24,7 @@ export default function EinzugsgebietPage() {
 
       <section className="section wrap">
         <h2 className="font-display text-4xl sm:text-5xl">Wählen Sie Ihren Ort</h2>
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {[
             { href: "/", name: "Gengenbach", orte: gengenbach, hinweis: "Hier ist die Werkstatt" },
             ...orte.map((o) => ({ href: `/kfz-werkstatt/${o.slug}`, name: o.name, orte: o.orte, hinweis: "" })),
@@ -32,17 +32,17 @@ export default function EinzugsgebietPage() {
             <li key={o.href}>
               <Link
                 href={o.href}
-                className="group flex h-full flex-col justify-between gap-8 rounded-2xl border-[1.5px] border-line p-6 transition-colors hover:border-blue hover:bg-blue-tint/40 sm:p-7"
+                className="group flex h-full items-center justify-between gap-4 rounded-2xl border-[1.5px] border-line p-4 transition-colors hover:border-blue hover:bg-blue-tint/40 sm:flex-col sm:items-stretch sm:gap-8 sm:p-7"
               >
                 <span>
                   {o.hinweis && (
                     <span className="mb-3 inline-flex rounded-full bg-blue px-2.5 py-0.5 text-xs font-semibold text-white">{o.hinweis}</span>
                   )}
-                  <span className="block font-display text-3xl font-bold leading-tight group-hover:text-blue">{o.name}</span>
-                  <span className="mt-3 block leading-snug text-muted">{o.orte.join(", ")}</span>
+                  <span className="block font-display text-2xl font-bold leading-tight group-hover:text-blue sm:text-3xl">{o.name}</span>
+                  <span className="mt-1 block text-sm leading-snug text-muted sm:mt-3 sm:text-base">{o.orte.join(", ")}</span>
                 </span>
-                <span className="inline-flex items-center justify-between gap-2 border-t border-line pt-4 font-semibold text-blue">
-                  {o.href === "/" ? "Zur Werkstatt" : `Werkstatt für ${o.name}`}
+                <span className="inline-flex items-center justify-between gap-2 font-semibold text-blue sm:border-t sm:border-line sm:pt-4">
+                  <span className="hidden sm:inline">{o.href === "/" ? "Zur Werkstatt" : `Werkstatt für ${o.name}`}</span>
                   <span className="grid size-9 place-items-center rounded-full bg-blue-tint transition-colors group-hover:bg-blue group-hover:text-white" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
                       <path d="M4 10h12m-5-5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

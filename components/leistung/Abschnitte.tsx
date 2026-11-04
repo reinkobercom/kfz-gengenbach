@@ -25,7 +25,7 @@ export function Umfang({
   return (
     <section className="section wrap grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
       {/* Bild streckt sich auf die Höhe der Textspalte (kein Leerraum neben dem Text) */}
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-mist lg:col-span-5 lg:aspect-auto lg:min-h-[18rem]">
+      <div className="relative hidden overflow-hidden rounded-2xl bg-mist lg:col-span-5 lg:block lg:min-h-[18rem]">
         <Image src={bild.src} alt={bild.alt} fill sizes="(min-width: 1024px) 460px, 100vw" className="object-cover" />
         {etikett && (
           <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm sm:inset-x-6 sm:bottom-6">
@@ -92,7 +92,7 @@ export function Vergleich({ v }: { v: NonNullable<LeistungSeite["vergleich"]> })
         <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(v.titel)}</h2>
         <p className="mt-5 text-lg text-muted">{v.lead}</p>
       </div>
-      <div className="relative mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2 md:gap-6">
+      <div className="wischleiste relative mt-12 max-w-5xl sm:mx-auto sm:gap-4 md:grid-cols-2 md:gap-6">
         <div className="rounded-2xl border border-line p-7">
           <p className="font-display text-2xl font-bold">{trenne(v.links.titel)}</p>
           <ul className="mt-5 space-y-3">
@@ -140,7 +140,7 @@ export function Wissen({ w }: { w: NonNullable<LeistungSeite["wissen"]> }) {
     <section className="bg-blue text-white">
       <div className="section wrap">
         <h2 className="mx-auto max-w-3xl text-center font-display text-4xl sm:text-5xl">{ohneWitwe(w.titel)}</h2>
-        <ul className="wischleiste mx-auto mt-12 max-w-5xl sm:gap-4 md:grid-cols-3">
+        <ul className="wischleiste mt-12 max-w-5xl sm:mx-auto sm:gap-4 md:grid-cols-3">
           {w.karten.map((k) => (
             <li key={k.titel} className="rounded-2xl bg-white p-6 text-navy">
               <p className="font-display text-xl font-bold">{trenne(k.titel)}</p>
@@ -170,7 +170,7 @@ export function Ampel({ a, bild }: { a: NonNullable<LeistungSeite["ampel"]>; bil
           <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(a.titel)}</h2>
           <p className="mt-5 text-lg text-white/75">{a.lead}</p>
         </div>
-        <ul className="mt-12 grid gap-4 md:grid-cols-3">
+        <ul className="wischleiste mt-12 sm:grid-cols-3 sm:gap-4">
           {a.stufen.map((s) => (
             <li key={s.stufe} className={`rounded-2xl border-t-4 bg-white/[0.06] p-6 backdrop-blur-sm ${AMPEL[s.stufe].rand}`}>
               <p className="flex items-center gap-3 font-display text-2xl font-bold">

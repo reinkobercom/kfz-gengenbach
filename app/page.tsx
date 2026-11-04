@@ -156,7 +156,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-navy-soft lg:col-span-6 lg:aspect-auto lg:min-h-[18rem]">
+          <div className="relative hidden overflow-hidden rounded-2xl bg-navy-soft lg:col-span-6 lg:block lg:min-h-[18rem]">
             <Image
               src={img("1615906655593-ad0386982a0f", 1200)}
               alt="Mechaniker arbeitet am Motor eines Fahrzeugs"

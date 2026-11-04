@@ -47,7 +47,7 @@ export default async function OrtPage({ params }: PageProps<"/kfz-werkstatt/[slu
 
       <section className="section wrap grid gap-14 lg:grid-cols-12">
         <div className="lg:col-span-6">
-          <h2 className="font-display text-4xl sm:text-5xl">Warum Kundschaft aus {o.name} zu uns kommt</h2>
+          <h2 className="font-display text-4xl sm:text-5xl">Ihre Werkstatt für {o.name}</h2>
           <div className="prose-k mt-8 text-lg text-muted">
             {o.absaetze.map((t) => (
               <p key={t.slice(0, 20)}>{t}</p>
@@ -73,13 +73,13 @@ export default async function OrtPage({ params }: PageProps<"/kfz-werkstatt/[slu
 
       <section className="bg-mist">
         <div className="section wrap">
-          <h2 className="max-w-2xl font-display text-4xl sm:text-5xl">Häufig angefragt aus {o.name}</h2>
+          <h2 className="max-w-2xl font-display text-4xl sm:text-5xl">Leistungen für {o.name}</h2>
           <ul className="mt-12 grid gap-x-8 border-t border-line sm:grid-cols-2">
             {schwerpunkte.map((l) => (
               <li key={l.slug} className="border-b border-line">
                 <Link href={`/leistungen/${l.slug}`} className="group block py-6">
                   <h3 className="font-display text-[1.75rem] group-hover:text-blue">{l.name}</h3>
-                  <p className="mt-1 text-muted">{l.short}</p>
+                  <p className="mt-1 hidden text-muted sm:block">{l.short}</p>
                 </Link>
               </li>
             ))}
