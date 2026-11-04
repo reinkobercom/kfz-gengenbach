@@ -13,7 +13,14 @@ export type LeistungSeite = {
   /** Bild neben dem Leistungsumfang; das Leistungsbild selbst steht schon im Hero */
   umfangBild: { src: string; alt: string };
   /** „Woran Sie es merken“: Anzeichen als Checkliste, optional mit Warnkasten */
-  symptome?: { titel: string; lead: string; punkte: string[]; warnung?: { titel: string; text: string } };
+  symptome?: {
+    titel: string;
+    lead: string;
+    punkte: string[];
+    warnung?: { titel: string; text: string };
+    /** Foto neben den Anzeichen (nicht dasselbe wie Hero- und Umfangbild) */
+    bild: { src: string; alt: string };
+  };
   /** Ersetzt die Absätze unter „So arbeiten wir“ (Standard: text aus lib/leistungen.ts) */
   arbeitsweise?: string[];
   /** Ablauf „So arbeiten wir“, 3–4 Schritte */

@@ -8,8 +8,7 @@ import { RatgeberKarten } from "@/components/RatgeberKarten";
 import { CtaBand, Faq, JsonLd } from "@/components/ui";
 import { leistungSeiten } from "@/lib/leistung-seiten";
 import { getLeistung, leistungen } from "@/lib/leistungen";
-import { orte } from "@/lib/orte";
-import { ratgeberFuer } from "@/lib/ratgeber";
+import { artikelListe, ratgeberFuer } from "@/lib/ratgeber";
 import { serviceSchema } from "@/lib/schema";
 import { anfrageLink, ogBasis } from "@/lib/site";
 import { trenne } from "@/lib/text";
@@ -94,12 +93,6 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
 
       {seite?.wissen && <Wissen w={seite.wissen} />}
 
-      <RatgeberKarten artikel={ratgeberFuer(l.slug)} />
-
-      <section className="section wrap">
-        <Faq items={faq} titel={`Fragen zu ${l.name}`} zentriert />
-      </section>
-
       <section className="bg-mist">
         <div className="section wrap">
           <div className="flex flex-wrap items-end justify-between gap-6">
@@ -108,35 +101,34 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
               Alle Leistungen
             </Link>
           </div>
-          <ul className="wischleiste mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {weitere.map((w) => (
               <li key={w.slug}>
-                <Link href={`/leistungen/${w.slug}`} className="group block h-full overflow-hidden rounded-2xl bg-white ring-1 ring-line hover:ring-blue">
-                  <div className="relative aspect-[16/10] bg-mist">
-                    <Image src={w.image.src} alt={w.image.alt} fill sizes="(min-width: 768px) 370px, 100vw" className="object-cover" />
+                {/* Mobil: Zeile mit kleinem Bild, ab 640 px Karte */}
+                <Link
+                  href={`/leistungen/${w.slug}`}
+                  className="group flex h-full items-center gap-4 overflow-hidden rounded-2xl bg-white p-3 ring-1 ring-line hover:ring-blue sm:block sm:p-0"
+                >
+                  <div className="relative aspect-square w-20 shrink-0 overflow-hidden rounded-xl bg-mist sm:aspect-[16/10] sm:w-auto sm:rounded-none">
+                    <Image src={w.image.src} alt={w.image.alt} fill sizes="(min-width: 768px) 370px, 80px" className="object-cover" />
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-2xl group-hover:text-blue">{trenne(w.name)}</h3>
-                    <p className="mt-2 text-[0.96rem] text-muted">{w.short}</p>
+                  <div className="min-w-0 sm:p-6">
+                    <h3 className="font-display text-xl leading-tight group-hover:text-blue sm:text-2xl">{trenne(w.name)}</h3>
+                    <p className="mt-1 line-clamp-2 text-sm text-muted sm:mt-2 sm:line-clamp-none sm:text-[0.96rem]">{w.short}</p>
                   </div>
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="mt-12 flex flex-wrap items-center gap-2">
-            <span className="mr-2 font-semibold">{l.name} auch für:</span>
-            {orte.map((o) => (
-              <Link
-                key={o.slug}
-                href={`/kfz-werkstatt/${o.slug}`}
-                className="rounded-full border-[1.5px] border-line bg-white px-4 py-1.5 text-sm font-semibold hover:border-blue hover:text-blue"
-              >
-                {o.name}
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
+
+      <section className="section wrap">
+        <Faq items={faq} titel={`Fragen zu ${l.name}`} zentriert />
+      </section>
+
+      {/* Alle Ratgeber, die zur Leistung passenden zuerst */}
+      <RatgeberKarten artikel={[...ratgeberFuer(l.slug), ...artikelListe.filter((a) => !ratgeberFuer(l.slug).includes(a))]} />
 
       <CtaBand titel={`${l.name}: Anfrage in zwei Minuten.`} href={anfrage} />
       <JsonLd data={serviceSchema(l.name, `/leistungen/${l.slug}`, l.metaDescription)} />

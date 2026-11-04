@@ -6,6 +6,7 @@ export const seite: LeistungSeite = {
   bildEtikett: { titel: "Ein Ansprechpartner", text: "Von der Schadensaufnahme bis zur Rückgabe: wir." },
   umfangBild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },
   symptome: {
+    bild: { src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=70", alt: "Weißes Auto vor heller Wand" },
     titel: "Was jetzt zu tun ist",
     lead: "Erst die Unfallstelle sichern, dann den Schaden festhalten. Die Schritte folgen den Empfehlungen des ADAC.",
     punkte: [

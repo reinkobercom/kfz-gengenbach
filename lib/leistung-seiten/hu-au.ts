@@ -6,6 +6,7 @@ export const seite: LeistungSeite = {
   bildEtikett: { titel: "Vorabcheck vor der HU", text: "Mängel finden, bevor geprüft wird." },
   umfangBild: { src: "https://images.unsplash.com/photo-1760317890314-e964ffd7e6a6?auto=format&fit=crop&w=1200&q=70", alt: "Nahaufnahme einer Bremsscheibe mit Bremssattel" },
   symptome: {
+    bild: { src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet im Motorraum eines Fahrzeugs" },
     titel: "Das können Sie vor dem Termin checken",
     lead: "Einen Teil der häufigen HU-Mängel sehen Sie in wenigen Minuten selbst. Den Rest prüfen wir auf der Hebebühne.",
     punkte: [

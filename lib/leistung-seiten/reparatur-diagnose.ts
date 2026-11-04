@@ -6,6 +6,7 @@ export const seite: LeistungSeite = {
   bildEtikett: { titel: "Erst prüfen, dann tauschen", text: "Bauteile werden geprüft, bevor wir sie ersetzen." },
   umfangBild: { src: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet am Motor eines Fahrzeugs" },
   symptome: {
+    bild: { src: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker prüft einen Motorraum bei geöffneter Haube" },
     titel: "Woran Sie es merken",
     lead: "Viele Defekte kündigen sich an. Mit diesen Anzeichen sollten Sie vorbeikommen:",
     punkte: [

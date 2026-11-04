@@ -4,7 +4,7 @@ import { artikelBild, lesezeit, type Artikel } from "@/lib/ratgeber";
 import { ohneWitwe } from "@/lib/text";
 
 /** Artikel-Karten „Aus dem Ratgeber“ (mobil wischbar) */
-export function RatgeberKarten({ artikel, titel = "Aus dem Ratgeber" }: { artikel: Artikel[]; titel?: string }) {
+export function RatgeberKarten({ artikel, titel = "Hilfreiche Ratgeber" }: { artikel: Artikel[]; titel?: string }) {
   if (!artikel.length) return null;
   const spalten = artikel.length >= 4 ? "lg:grid-cols-4" : artikel.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2";
   return (
@@ -15,7 +15,7 @@ export function RatgeberKarten({ artikel, titel = "Aus dem Ratgeber" }: { artike
           Alle Artikel
         </Link>
       </div>
-      <ul className={`wischleiste mt-10 sm:grid-cols-2 sm:gap-6 ${spalten} ${artikel.length < 3 ? "lg:max-w-4xl" : ""}`}>
+      <ul className={`mt-10 ${artikel.length > 3 ? "wischleiste sm:gap-6" : "grid gap-4 sm:gap-6"} sm:grid-cols-2 ${spalten} ${artikel.length < 3 ? "lg:max-w-4xl" : ""}`}>
         {artikel.map((a) => {
           const bild = artikelBild(a);
           return (

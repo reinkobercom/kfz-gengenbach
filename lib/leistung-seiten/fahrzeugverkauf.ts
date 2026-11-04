@@ -6,6 +6,7 @@ export const seite: LeistungSeite = {
   bildEtikett: { titel: "Vorher durchgesehen", text: "In unserer Werkstatt, vor dem Verkauf." },
   umfangBild: { src: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker prüft einen Motorraum bei geöffneter Haube" },
   symptome: {
+    bild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },
     titel: "Das sollten Sie uns sagen",
     lead: "Je genauer die Anfrage, desto besser passen die Angebote. Diese Angaben helfen uns:",
     punkte: [

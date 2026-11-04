@@ -6,6 +6,7 @@ export const seite: LeistungSeite = {
   bildEtikett: { titel: "Achsen vermessen", text: "Für sauberen Geradeauslauf." },
   umfangBild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },
   symptome: {
+    bild: { src: "https://images.unsplash.com/photo-1760317890314-e964ffd7e6a6?auto=format&fit=crop&w=1200&q=70", alt: "Nahaufnahme einer Bremsscheibe mit Bremssattel" },
     titel: "Anzeichen an Reifen und Lenkung",
     lead: "Diese Anzeichen deuten auf verstellte Achsen, eine Unwucht oder verschlissene Reifen hin. Was dahintersteckt, klären wir am Fahrzeug.",
     punkte: [

@@ -6,6 +6,7 @@ export const seite: LeistungSeite = {
   bildEtikett: { titel: "Zustand dokumentiert", text: "Foto und Video vom geöffneten Motor." },
   umfangBild: { src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet im Motorraum eines Fahrzeugs" },
   symptome: {
+    bild: { src: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet am Motor eines Fahrzeugs" },
     titel: "Woran Sie es merken",
     lead: "Ein Motorschaden kündigt sich oft an. Diese Anzeichen sollten Sie prüfen lassen:",
     punkte: [

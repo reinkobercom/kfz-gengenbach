@@ -25,7 +25,7 @@ export function Umfang({
   return (
     <section className="section wrap grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
       {/* Bild streckt sich auf die Höhe der Textspalte (kein Leerraum neben dem Text) */}
-      <div className="relative hidden overflow-hidden rounded-2xl bg-mist lg:col-span-5 lg:block lg:min-h-[18rem]">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-mist lg:col-span-5 lg:aspect-auto lg:min-h-[18rem]">
         <Image src={bild.src} alt={bild.alt} fill sizes="(min-width: 1024px) 460px, 100vw" className="object-cover" />
         {etikett && (
           <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm sm:inset-x-6 sm:bottom-6">
@@ -68,7 +68,7 @@ export function Arbeitsweise({ absaetze, schritte }: { absaetze: string[]; schri
             ))}
           </div>
         </div>
-        <ol className={`wischleiste mt-12 sm:grid-cols-2 sm:gap-4 ${schritte.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
+        <ol className={`mt-12 ${schritte.length > 3 ? "wischleiste sm:gap-4" : "grid gap-4"} sm:grid-cols-2 ${schritte.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {schritte.map((s, i) => (
             <li key={s.titel} className="rounded-2xl bg-white p-6 ring-1 ring-line">
               <span className="grid size-12 place-items-center rounded-full bg-blue font-display text-xl font-bold text-white" aria-hidden="true">
@@ -92,7 +92,7 @@ export function Vergleich({ v }: { v: NonNullable<LeistungSeite["vergleich"]> })
         <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(v.titel)}</h2>
         <p className="mt-5 text-lg text-muted">{v.lead}</p>
       </div>
-      <div className="wischleiste relative mt-12 max-w-5xl sm:mx-auto sm:gap-4 md:grid-cols-2 md:gap-6">
+      <div className="relative mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2 md:gap-6">
         <div className="rounded-2xl border border-line p-7">
           <p className="font-display text-2xl font-bold">{trenne(v.links.titel)}</p>
           <ul className="mt-5 space-y-3">
@@ -140,7 +140,7 @@ export function Wissen({ w }: { w: NonNullable<LeistungSeite["wissen"]> }) {
     <section className="bg-blue text-white">
       <div className="section wrap">
         <h2 className="mx-auto max-w-3xl text-center font-display text-4xl sm:text-5xl">{ohneWitwe(w.titel)}</h2>
-        <ul className="wischleiste mt-12 max-w-5xl sm:mx-auto sm:gap-4 md:grid-cols-3">
+        <ul className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-3">
           {w.karten.map((k) => (
             <li key={k.titel} className="rounded-2xl bg-white p-6 text-navy">
               <p className="font-display text-xl font-bold">{trenne(k.titel)}</p>
@@ -170,7 +170,7 @@ export function Ampel({ a, bild }: { a: NonNullable<LeistungSeite["ampel"]>; bil
           <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(a.titel)}</h2>
           <p className="mt-5 text-lg text-white/75">{a.lead}</p>
         </div>
-        <ul className="wischleiste mt-12 sm:grid-cols-3 sm:gap-4">
+        <ul className="mt-12 grid gap-4 md:grid-cols-3">
           {a.stufen.map((s) => (
             <li key={s.stufe} className={`rounded-2xl border-t-4 bg-white/[0.06] p-6 backdrop-blur-sm ${AMPEL[s.stufe].rand}`}>
               <p className="flex items-center gap-3 font-display text-2xl font-bold">
@@ -187,38 +187,40 @@ export function Ampel({ a, bild }: { a: NonNullable<LeistungSeite["ampel"]>; bil
   );
 }
 
-/** „Woran Sie es merken“: Kopf mittig, Anzeichen als Kacheln, Warnhinweis als Leiste darunter */
+/**
+ * „Woran Sie es merken“: Text mit ruhiger Liste links, Foto rechts (gespiegelt zum
+ * Leistungsumfang darüber), Warnhinweis unter der Liste.
+ */
 export function Symptome({ s }: { s: NonNullable<LeistungSeite["symptome"]> }) {
   return (
-    <section className="section wrap">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(s.titel)}</h2>
-        <p className="mt-5 text-lg text-muted">{s.lead}</p>
+    <section className="section wrap grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-mist lg:order-2 lg:col-span-5 lg:aspect-auto lg:min-h-[18rem]">
+        <Image src={s.bild.src} alt={s.bild.alt} fill sizes="(min-width: 1024px) 460px, 100vw" className="object-cover" />
       </div>
-      {/* Umbrechende Reihe, letzte Reihe mittig: keine einzelne Kachel am linken Rand */}
-      <ul className="mx-auto mt-12 flex max-w-5xl flex-wrap justify-center gap-2.5 sm:gap-3">
-        {s.punkte.map((p) => (
-          <li
-            key={p}
-            className="flex w-full gap-3 rounded-xl bg-blue-tint px-4 py-3.5 font-medium leading-snug sm:w-[calc(50%-0.375rem)] sm:p-4 lg:w-[calc((100%-1.5rem)/3)]"
-          >
-            <span className="mt-1.5 size-2 shrink-0 rounded-full bg-blue" aria-hidden="true" />
-            {p}
-          </li>
-        ))}
-      </ul>
-      {s.warnung && (
-        <aside className="mx-auto mt-6 flex max-w-5xl gap-4 rounded-2xl bg-[#c53030] p-6 text-white sm:items-center sm:p-7">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
-            <path d="M12 3l10 18H2L12 3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-            <path d="M12 10v5M12 18v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-          <p>
-            <span className="block font-display text-2xl font-bold">{s.warnung.titel}</span>
-            <span className="mt-1 block text-white/90">{s.warnung.text}</span>
-          </p>
-        </aside>
-      )}
+      <div className="lg:order-1 lg:col-span-7 lg:self-center">
+        <h2 className="font-display text-4xl sm:text-5xl">{ohneWitwe(s.titel)}</h2>
+        <p className="mt-5 max-w-xl text-lg text-muted">{s.lead}</p>
+        <ul className="mt-8 grid gap-x-8 sm:grid-cols-2">
+          {s.punkte.map((p) => (
+            <li key={p} className="flex gap-3 border-b border-line py-3 leading-snug">
+              <span className="mt-1.5 size-2 shrink-0 rounded-full bg-blue" aria-hidden="true" />
+              {trenne(p)}
+            </li>
+          ))}
+        </ul>
+        {s.warnung && (
+          <aside className="mt-8 flex gap-4 rounded-2xl bg-[#c53030] p-5 text-white sm:p-6">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="mt-0.5 shrink-0">
+              <path d="M12 3l10 18H2L12 3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+              <path d="M12 10v5M12 18v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <p>
+              <span className="block font-display text-2xl font-bold">{s.warnung.titel}</span>
+              <span className="mt-1 block text-white/90">{s.warnung.text}</span>
+            </p>
+          </aside>
+        )}
+      </div>
     </section>
   );
 }
