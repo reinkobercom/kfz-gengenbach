@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { LeistungSeite } from "@/lib/leistung-seiten";
-import { ohneWitwe } from "@/lib/text";
+import { ohneWitwe, trenne } from "@/lib/text";
 
 const Haken = ({ className = "" }: { className?: string }) => (
   <svg className={`shrink-0 ${className}`} width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -94,12 +94,12 @@ export function Vergleich({ v }: { v: NonNullable<LeistungSeite["vergleich"]> })
       </div>
       <div className="relative mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-2 md:gap-6">
         <div className="rounded-2xl border border-line p-7">
-          <p className="font-display text-2xl font-bold">{v.links.titel}</p>
+          <p className="font-display text-2xl font-bold">{trenne(v.links.titel)}</p>
           <ul className="mt-5 space-y-3">
             {v.links.punkte.map((p) => (
               <li key={p} className="flex gap-3 text-muted">
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-navy/40" aria-hidden="true" />
-                {p}
+                {trenne(p)}
               </li>
             ))}
           </ul>
@@ -111,12 +111,12 @@ export function Vergleich({ v }: { v: NonNullable<LeistungSeite["vergleich"]> })
           {v.mitte ?? "="}
         </span>
         <div className="rounded-2xl bg-navy p-7 text-white">
-          <p className="font-display text-2xl font-bold">{v.rechts.titel}</p>
+          <p className="font-display text-2xl font-bold">{trenne(v.rechts.titel)}</p>
           <ul className="mt-5 space-y-3">
             {v.rechts.punkte.map((p) => (
               <li key={p} className="flex gap-3">
                 <Haken className="mt-0.5 text-blue" />
-                {p}
+                {trenne(p)}
               </li>
             ))}
           </ul>
@@ -143,7 +143,7 @@ export function Wissen({ w }: { w: NonNullable<LeistungSeite["wissen"]> }) {
         <ul className="wischleiste mx-auto mt-12 max-w-5xl sm:gap-4 md:grid-cols-3">
           {w.karten.map((k) => (
             <li key={k.titel} className="rounded-2xl bg-white p-6 text-navy">
-              <p className="font-display text-xl font-bold">{k.titel}</p>
+              <p className="font-display text-xl font-bold">{trenne(k.titel)}</p>
               <p className="mt-2 text-[0.96rem] text-muted">{k.text}</p>
             </li>
           ))}

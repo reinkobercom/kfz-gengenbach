@@ -1,6 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
+  fakten: ["Ein Ansprechpartner", "Über unseren Partnerbetrieb", "Einschätzung per Foto"],
   umfangLead: "Technik und Koordination übernehmen wir, die Karosseriearbeiten führt unser Partnerbetrieb aus. Dazu gehören:",
   bildEtikett: { titel: "Ein Ansprechpartner", text: "Von der Schadensaufnahme bis zur Rückgabe: wir." },
   umfangBild: { src: "https://images.unsplash.com/photo-1727893119356-1702fe921cf9?auto=format&fit=crop&w=1200&q=70", alt: "Werkstatthalle mit Hebebühnen" },

@@ -1,8 +1,9 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
-  umfangLead: "Jedes Fahrzeug, das wir anbieten, prüfen wir vorher technisch. Zum Angebot gehören:",
-  bildEtikett: { titel: "Technisch geprüft", text: "Jedes Fahrzeug vor dem Verkauf." },
+  fakten: ["Neu- und Gebrauchtwagen", "Vor dem Verkauf durchgesehen", "Persönliche Beratung"],
+  umfangLead: "Jedes Fahrzeug, das wir anbieten, sehen wir uns vorher in der Werkstatt an. Zum Angebot gehören:",
+  bildEtikett: { titel: "Vorher durchgesehen", text: "In unserer Werkstatt, vor dem Verkauf." },
   umfangBild: { src: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker prüft einen Motorraum bei geöffneter Haube" },
   symptome: {
     titel: "Das sollten Sie uns sagen",
@@ -41,8 +42,8 @@ export const seite: LeistungSeite = {
       a: "Nein. Sie beschreiben, was Sie suchen, und wir melden uns mit passenden Angeboten. Ob Sie eines davon kaufen, entscheiden Sie selbst, nachdem Sie unsere Einschätzung zum Fahrzeug kennen.",
     },
     {
-      q: "Was heißt bei Ihnen technisch geprüft?",
-      a: "Wir sehen uns das Fahrzeug vor dem Verkauf in unserer Werkstatt an, so wie wir es für uns selbst tun würden. Was uns dabei auffällt, sagen wir Ihnen vor dem Kauf, auch Kleinigkeiten. So wissen Sie, in welchem Zustand das Fahrzeug ist.",
+      q: "Was heißt „vor dem Verkauf durchgesehen“?",
+      a: "Wir sehen uns das Fahrzeug vor dem Verkauf in unserer Werkstatt an. Was uns dabei auffällt, sagen wir Ihnen vor dem Kauf, auch Kleinigkeiten. So wissen Sie, in welchem Zustand das Fahrzeug ist.",
     },
     {
       q: "Bekomme ich das Fahrzeug mit frischem Service?",

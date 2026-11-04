@@ -112,7 +112,6 @@ export function Konfigurator({
     }
     if (step === 2) {
       if (!d.dringlichkeit) return "Bitte wählen Sie, wie dringend es ist.";
-      if (!d.ort) return "Bitte wählen Sie Ihren Wohnort.";
     }
     if (step === 3) {
       if (d.name.trim().length < 2) return "Bitte geben Sie Ihren Namen an.";
@@ -176,7 +175,7 @@ export function Konfigurator({
             <span className="text-sm text-white/80">
               {status === "done" ? "Gesendet" : `Schritt ${step + 1} von 4: ${schritte[step]}`}
             </span>
-            <span className="hidden text-sm text-white/80 sm:inline">ohne Preisangaben, unverbindlich</span>
+            <span className="hidden text-sm text-white/80 sm:inline">kostenlos und unverbindlich</span>
           </div>
           <div className="mt-2.5 flex gap-1" aria-hidden="true">
             {schritte.map((s, i) => (
@@ -387,7 +386,7 @@ export function Konfigurator({
               </div>
               <div>
                 <label className="label" htmlFor={`${id}-ort`}>
-                  Ihr Wohnort
+                  Ihr Wohnort <span className="font-normal text-muted">(optional)</span>
                 </label>
                 <select id={`${id}-ort`} className="field" value={d.ort} onChange={(e) => set("ort", e.target.value)}>
                   <option value="">Bitte wählen</option>

@@ -74,7 +74,7 @@ export const leistungen: Leistung[] = [
       "Ölwechsel mit Filter nach Freigabe des Herstellers",
       "Bremsflüssigkeit, Kühlmittel und Filter",
       "Zahnriemen- und Steuerkettenwechsel nach Intervall",
-      "Klimaservice und Batterieprüfung",
+      "Batterieprüfung",
     ],
     text: [
       "Sie haben einen festen Ansprechpartner. Den Wartungsumfang klären wir vorab, damit Sie wissen, was gemacht wird, bevor das Auto auf der Bühne steht.",
@@ -303,16 +303,16 @@ export const leistungen: Leistung[] = [
     slug: "fahrzeugverkauf",
     key: "verkauf",
     name: "Fahrzeugverkauf",
-    short: "Neu- und Gebrauchtwagen aus der Hand einer Werkstatt, technisch geprüft.",
+    short: "Neu- und Gebrauchtwagen aus der Hand einer Werkstatt, vor dem Verkauf durchgesehen.",
     h1: "Fahrzeugverkauf in Gengenbach",
     metaTitle: "Gebrauchtwagen & Neuwagen Gengenbach | KFZ Gengenbach",
     metaDescription:
-      "Neu- und Gebrauchtwagen in Gengenbach von Ihrer Kfz-Werkstatt: technisch geprüft, ehrlich beschrieben. Suchauftrag unverbindlich anfragen.",
+      "Neu- und Gebrauchtwagen in Gengenbach von Ihrer Kfz-Werkstatt: vor dem Verkauf durchgesehen, ehrlich beschrieben. Suchauftrag unverbindlich anfragen.",
     intro:
-      "Sie suchen ein Fahrzeug? Wir vermitteln Neu- und Gebrauchtwagen und prüfen jedes Fahrzeug vorher technisch, so wie wir es für uns selbst tun würden.",
+      "Sie suchen ein Fahrzeug? Wir vermitteln Neu- und Gebrauchtwagen und sehen uns jedes Fahrzeug vor dem Verkauf in unserer Werkstatt an.",
     image: { src: u("1492144534655-ae79c964c9d7"), alt: "Weißes Auto vor heller Wand" },
     umfang: [
-      "Gebrauchtwagen, technisch geprüft",
+      "Gebrauchtwagen, vor dem Verkauf durchgesehen",
       "Neuwagen auf Anfrage",
       "Suchauftrag nach Ihren Vorgaben",
       "Übergabe mit frischem Service auf Wunsch",

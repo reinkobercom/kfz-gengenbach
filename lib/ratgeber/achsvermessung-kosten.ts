@@ -210,7 +210,7 @@ export const artikel: Artikel = {
   zwischenCta: {
     nachAbschnitt: 2,
     titel: "Reifen einseitig abgefahren oder Lenkrad schief?",
-    text: "Schicken Sie uns ein Foto der Reifenlauffläche per WhatsApp oder über das Anfrageformular. Wir geben Ihnen eine erste Einschätzung, ob eine Achsvermessung sinnvoll ist, und vermessen Pkw und Transporter bis 4,5 t direkt in Gengenbach.",
+    text: "Schicken Sie uns ein Foto der Reifenlauffläche per WhatsApp oder über das Anfrageformular. Wir geben Ihnen eine erste Einschätzung, ob eine Achsvermessung sinnvoll ist. Bei Transportern klären wir vorab, ob das Fahrzeug auf unseren Messstand passt.",
   },
   faq: [
     {
@@ -231,7 +231,7 @@ export const artikel: Artikel = {
     },
     {
       q: "Kann jede Werkstatt eine Achsvermessung durchführen?",
-      a: "Nein, nur Werkstätten mit einem Achsmessstand. Fragen Sie bei Transportern und Wohnmobilen zusätzlich nach, ob der Messstand für Ihr Fahrzeuggewicht und Ihren Radstand ausgelegt ist. Wir vermessen Pkw und Transporter bis 4,5 t zulässiges Gesamtgewicht. Wichtig ist außerdem, dass die Werkstatt die Sollwerte des Herstellers für Ihr Modell hinterlegt hat und Ihnen ein Messprotokoll aushändigt.",
+      a: "Nein, nur Werkstätten mit einem Achsmessstand. Fragen Sie bei Transportern und Wohnmobilen zusätzlich nach, ob der Messstand für Ihr Fahrzeuggewicht und Ihren Radstand ausgelegt ist. Bei Transportern klären wir vorab, ob das Fahrzeug auf unseren Messstand passt. Wichtig ist außerdem, dass die Werkstatt die Sollwerte des Herstellers für Ihr Modell hinterlegt hat und Ihnen ein Messprotokoll aushändigt.",
     },
   ],
   fazit:

@@ -1,6 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
+  fakten: ["Alle Marken", "Diagnose mit Tester", "Nur mit Ihrer Freigabe"],
   umfangLead: "Erst suchen wir die Ursache, dann reparieren wir, was wirklich defekt ist. Dazu gehören:",
   bildEtikett: { titel: "Erst prüfen, dann tauschen", text: "Bauteile werden geprüft, bevor wir sie ersetzen." },
   umfangBild: { src: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet am Motor eines Fahrzeugs" },

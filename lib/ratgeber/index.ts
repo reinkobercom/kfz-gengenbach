@@ -48,3 +48,16 @@ export function lesezeit(a: Artikel): number {
   const woerter = texte.join(" ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(woerter / 200));
 }
+
+/**
+ * Artikel, die auf einer Leistungsseite als „Aus dem Ratgeber“ erscheinen:
+ * der direkt verknüpfte Artikel plus thematisch passende.
+ */
+const WEITERE_ZUORDNUNG: Record<string, string[]> = {
+  "reparatur-diagnose": ["steuerkette-wechseln-kosten", "zylinderkopfdichtung-defekt"],
+  "inspektion-wartung": ["tuev-abgelaufen-strafe"],
+  "transporter-sprinter": ["tuev-abgelaufen-strafe", "steuerkette-wechseln-kosten"],
+};
+
+export const ratgeberFuer = (leistungSlug: string) =>
+  artikelListe.filter((a) => a.leistung === leistungSlug || WEITERE_ZUORDNUNG[leistungSlug]?.includes(a.slug));

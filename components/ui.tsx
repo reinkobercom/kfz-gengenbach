@@ -171,9 +171,10 @@ export function CtaBand({
 /** Kompakte Fakten-Leiste (auch für KI-Suchsysteme gut lesbar) */
 export function Fakten({ items, hell = false }: { items: string[]; hell?: boolean }) {
   return (
-    <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+    // Jeder Punkt bleibt einzeilig; passt er nicht mehr in die Reihe, rückt er als Ganzes in die nächste
+    <ul className="flex flex-col gap-x-7 gap-y-2.5 sm:flex-row sm:flex-wrap">
       {items.map((t) => (
-        <li key={t} className={`flex gap-3 text-[0.98rem] leading-snug ${hell ? "text-white/90" : ""}`}>
+        <li key={t} className={`flex gap-2.5 whitespace-nowrap text-[0.98rem] leading-snug ${hell ? "text-white/90" : ""}`}>
           <svg className="mt-0.5 shrink-0 text-blue" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

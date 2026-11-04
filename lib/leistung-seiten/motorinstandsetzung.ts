@@ -1,6 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
+  fakten: ["Alle Marken", "Befund per Video", "Erst prüfen, dann tauschen"],
   umfangLead: "Wir setzen gezielt die Baugruppe instand, die den Schaden verursacht. Typische Arbeiten am Motor:",
   bildEtikett: { titel: "Zustand dokumentiert", text: "Foto und Video vom geöffneten Motor." },
   umfangBild: { src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet im Motorraum eines Fahrzeugs" },
@@ -22,7 +23,7 @@ export const seite: LeistungSeite = {
     },
   },
   arbeitsweise: [
-    "Am Motor gehen wir in fester Reihenfolge vor: Ursache finden, Befund zeigen, dann reparieren. Wir zerlegen nur so weit wie nötig und dokumentieren den Zustand per Foto und Video.",
+    "Am Motor gehen wir in fester Reihenfolge vor: Ursache finden, Befund zeigen, dann reparieren.",
     "Welche Reparatur sich für Ihr Fahrzeug lohnt, besprechen wir anhand des Befunds. Erst nach Ihrer Freigabe geht es weiter.",
   ],
   ablauf: [

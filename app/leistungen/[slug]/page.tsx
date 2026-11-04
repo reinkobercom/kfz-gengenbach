@@ -4,10 +4,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Ampel, Arbeitsweise, Symptome, Umfang, Vergleich, Wissen } from "@/components/leistung/Abschnitte";
 import { PageHero } from "@/components/PageHero";
+import { RatgeberKarten } from "@/components/RatgeberKarten";
 import { CtaBand, Faq, JsonLd } from "@/components/ui";
 import { leistungSeiten } from "@/lib/leistung-seiten";
 import { getLeistung, leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
+import { ratgeberFuer } from "@/lib/ratgeber";
 import { serviceSchema } from "@/lib/schema";
 import { ogBasis } from "@/lib/site";
 import { trenne } from "@/lib/text";
@@ -67,7 +69,7 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
         h1={l.h1}
         intro={l.intro}
         bild={l.image.src}
-        fakten={["Alle Marken", "Befund per Video", "Nur mit Freigabe"]}
+        fakten={seite?.fakten ?? ["Alle Marken", "Befund per Video", "Nur mit Ihrer Freigabe"]}
         defaultLeistung={istTransporter ? undefined : l.key}
         defaultFahrzeugTyp={istTransporter ? "Transporter bis 4,5 t" : undefined}
         titel={istTransporter ? "Was steht an Ihrem Transporter an?" : undefined}
@@ -90,6 +92,8 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
       {seite?.ampel && <Ampel a={seite.ampel} bild={AMPEL_BILD} />}
 
       {seite?.wissen && <Wissen w={seite.wissen} />}
+
+      <RatgeberKarten artikel={ratgeberFuer(l.slug)} />
 
       <section className="section wrap">
         <Faq items={faq} titel={`Fragen zu ${l.name}`} zentriert />

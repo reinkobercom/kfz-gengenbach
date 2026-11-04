@@ -25,6 +25,8 @@ export function ohneMarkdown(text: string): string {
  * („Motorin-standsetzung“), ohne Trennung brechen sie mitten im Wort um.
  */
 const TRENNSTELLEN: Record<string, string> = {
+  Komplettinstandsetzung: "Komplett\u00adinstand\u00adsetzung",
+  Teilinstandsetzung: "Teil\u00adinstand\u00adsetzung",
   Motorinstandsetzung: "Motor\u00adinstand\u00adsetzung",
   Unfallinstandsetzung: "Unfall\u00adinstand\u00adsetzung",
   Achsvermessung: "Achs\u00advermessung",

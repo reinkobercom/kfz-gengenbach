@@ -1,6 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
+  fakten: ["Bis 4,5 t Gesamtgewicht", "Sprinter und Kastenwagen", "Befund per Video"],
   umfangLead: "Vom Ölservice bis zum Motor: An Transportern bis 4,5 t zulässiges Gesamtgewicht übernehmen wir unter anderem:",
   bildEtikett: { titel: "Bis 4,5 t Gesamtgewicht", text: "Transporter, Sprinter und Wohnmobile." },
   umfangBild: { src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker arbeitet im Motorraum eines Fahrzeugs" },

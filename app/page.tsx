@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Konfigurator } from "@/components/Konfigurator";
+import { RatgeberKarten } from "@/components/RatgeberKarten";
 import { CtaBand, Faq } from "@/components/ui";
 import { leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
+import { artikelListe } from "@/lib/ratgeber";
 import { einzugsgebiet, mapsHref, site } from "@/lib/site";
 import { trenne } from "@/lib/text";
 
@@ -27,10 +29,6 @@ const faq = [
   {
     q: "Verliere ich die Herstellergarantie in einer freien Werkstatt?",
     a: "Nein, solange die Wartung nach Herstellervorgaben mit passenden Teilen erfolgt und im Serviceheft dokumentiert wird. Genau so arbeiten wir.",
-  },
-  {
-    q: "Wie läuft die Rückmeldung per Video ab?",
-    a: "Fällt uns bei der Arbeit etwas auf, filmen wir die Stelle und schicken Ihnen das Video per WhatsApp. Sie sehen selbst, worum es geht, und entscheiden, ob wir es mit erledigen.",
   },
   {
     q: "Wo finde ich die Werkstatt?",
@@ -235,7 +233,7 @@ export default function Home() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-5xl sm:text-6xl">Für Gengenbach und das mittlere Kinzigtal</h2>
           <p className="mt-6 text-lg text-muted">
-            Unsere Kundschaft kommt aus Gengenbach und den Ortsteilen, aus Offenburg, dem Harmersbachtal und dem Kinzigtal
+            Wir sind für Gengenbach und die Ortsteile da, für Offenburg, das Harmersbachtal und das Kinzigtal
             bis Steinach.
           </p>
         </div>
@@ -292,6 +290,8 @@ export default function Home() {
           </Link>
         </p>
       </section>
+
+      <RatgeberKarten artikel={artikelListe} />
 
       <section className="section wrap">
         <Faq items={faq} zentriert />

@@ -1,6 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
+  fakten: ["Smart Repair", "Teil- und Bauteillackierung", "Einschätzung per Foto"],
   umfangLead: "Ob punktuell ausgebessert oder das Bauteil lackiert wird, entscheidet der Schaden. Über unseren Partnerbetrieb möglich sind:",
   bildEtikett: { titel: "Foto genügt", text: "Ein Bild vom Schaden reicht für die erste Einschätzung." },
   umfangBild: { src: "https://images.unsplash.com/photo-1632605170384-c3f4d89162a3?auto=format&fit=crop&w=1200&q=70", alt: "Fahrzeug in einer Karosseriewerkstatt" },

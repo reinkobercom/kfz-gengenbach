@@ -1,6 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
+  fakten: ["Vorabcheck vor der HU", "Mängel vorher beheben", "Fälligkeit per Foto klären"],
   umfangLead: "Vorabcheck, Reparatur und Prüfung folgen in einem Termin aufeinander. Dazu gehören:",
   bildEtikett: { titel: "Vorabcheck vor der HU", text: "Mängel finden, bevor geprüft wird." },
   umfangBild: { src: "https://images.unsplash.com/photo-1760317890314-e964ffd7e6a6?auto=format&fit=crop&w=1200&q=70", alt: "Nahaufnahme einer Bremsscheibe mit Bremssattel" },
@@ -19,7 +20,6 @@ export const seite: LeistungSeite = {
   },
   arbeitsweise: [
     "Unser Teil ist die Vorbereitung: Mängel finden, mit Ihnen besprechen und nach Ihrer Freigabe beheben. Sie haben dabei einen Ansprechpartner vom Vorabcheck bis zur Plakette.",
-    "Die Hauptuntersuchung selbst nimmt eine amtlich anerkannte Prüforganisation ab.",
   ],
   ablauf: [
     { titel: "Fälligkeit klären", text: "Ein Foto der Plakette per WhatsApp reicht, dann planen wir den Termin." },

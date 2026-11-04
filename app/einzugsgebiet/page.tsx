@@ -19,7 +19,7 @@ export default function EinzugsgebietPage() {
       <PageHero
         crumbs={[{ name: "Einzugsgebiet", href: "/einzugsgebiet" }]}
         h1="Ihre Werkstatt für Gengenbach und Umgebung"
-        intro="Die Werkstatt liegt in Gengenbach an der B33. Zu uns kommen Kundinnen und Kunden aus der Stadt und den Ortsteilen, aus Offenburg, dem Harmersbachtal und dem Kinzigtal bis Steinach."
+        intro="Die Werkstatt liegt in Gengenbach an der B33. Wir sind für die Stadt und die Ortsteile da, für Offenburg, das Harmersbachtal und das Kinzigtal bis Steinach."
       />
 
       <section className="section wrap">

@@ -1,6 +1,7 @@
 import type { LeistungSeite } from "./types";
 
 export const seite: LeistungSeite = {
+  fakten: ["Alle Marken", "Nach Herstellervorgabe", "Serviceheft wird gepflegt"],
   umfangLead: "Wir arbeiten den Wartungsplan Ihres Fahrzeugs ab, nicht eine Pauschalliste. Dazu gehören je nach Intervall:",
   bildEtikett: { titel: "Eintrag ins Serviceheft", text: "Jede Inspektion wird dokumentiert." },
   umfangBild: { src: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?auto=format&fit=crop&w=1200&q=70", alt: "Mechaniker prüft einen Motorraum bei geöffneter Haube" },

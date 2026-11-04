@@ -5,6 +5,8 @@
  */
 export type LeistungSeite = {
   /** Ein Satz über der Umfangsliste */
+  /** Drei kurze Stichpunkte im Seitenkopf (je höchstens etwa 25 Zeichen) */
+  fakten: [string, string, string];
   umfangLead: string;
   /** Kurzes Etikett auf dem Bild */
   bildEtikett: { titel: string; text: string };
