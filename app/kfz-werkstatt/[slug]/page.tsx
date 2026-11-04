@@ -6,7 +6,7 @@ import { CtaBand, Faq, JsonLd } from "@/components/ui";
 import { getLeistung, leistungen } from "@/lib/leistungen";
 import { getOrt, orte } from "@/lib/orte";
 import { serviceSchema } from "@/lib/schema";
-import { mapsHref, ogBasis, ogStandardBild, site } from "@/lib/site";
+import { anfrageLink, mapsHref, ogBasis, ogStandardBild, site } from "@/lib/site";
 
 export function generateStaticParams() {
   return orte.map((o) => ({ slug: o.slug }));
@@ -42,7 +42,8 @@ export default async function OrtPage({ params }: PageProps<"/kfz-werkstatt/[slu
         h1={o.h1}
         intro={o.intro}
         fakten={["Befund per Video aufs Handy", "Fester Ansprechpartner", "Pkw & Transporter bis 4,5 t"]}
-        defaultOrt={o.formOrt}
+        anfrageHref={anfrageLink({ ort: o.formOrt })}
+        waText={`Hallo, ich komme aus ${o.name} und habe eine Frage:`}
       />
 
       <section className="section wrap grid gap-14 lg:grid-cols-12">
@@ -120,7 +121,7 @@ export default async function OrtPage({ params }: PageProps<"/kfz-werkstatt/[slu
         </div>
       </section>
 
-      <CtaBand titel={`Anfrage aus ${o.name}`} />
+      <CtaBand titel={`Anfrage aus ${o.name}`} href={anfrageLink({ ort: o.formOrt })} />
       <JsonLd
         data={serviceSchema(`Kfz-Werkstatt für ${o.name}`, `/kfz-werkstatt/${o.slug}`, o.metaDescription, o.orte)}
       />

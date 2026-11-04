@@ -297,7 +297,7 @@ export default function Home() {
         <Faq items={faq} zentriert />
       </section>
 
-      <CtaBand />
+      <CtaBand href="#anfrage" />
     </>
   );
 }

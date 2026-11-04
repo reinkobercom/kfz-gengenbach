@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { site, telHref, waHref } from "@/lib/site";
+import { hatFormular, site, telHref, waHref } from "@/lib/site";
 
 /** Fixierte Aktionsleiste auf dem Smartphone. Blendet sich aus, solange das Formular sichtbar ist. */
 export function MobileBar() {
@@ -22,7 +22,6 @@ export function MobileBar() {
     return () => io.disconnect();
   }, [pathname]);
 
-  const hatForm = pathname !== "/impressum" && pathname !== "/datenschutz";
 
   return (
     <div
@@ -32,7 +31,7 @@ export function MobileBar() {
       aria-hidden={formSichtbar}
     >
       <div className="grid grid-cols-[1fr_auto_auto] gap-2">
-        <Link href={hatForm ? "#anfrage" : "/#anfrage"} className="btn btn-primary min-h-12" tabIndex={formSichtbar ? -1 : 0}>
+        <Link href={hatFormular(pathname) ? "#anfrage" : "/kontakt#anfrage"} className="btn btn-primary min-h-12" tabIndex={formSichtbar ? -1 : 0}>
           Anfrage starten
         </Link>
         <a

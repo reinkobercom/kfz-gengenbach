@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import { LogoLink } from "@/components/LogoLink";
 import type { NavData } from "@/lib/navigation";
-import { site, telHref, waHref } from "@/lib/site";
+import { hatFormular, site, telHref, waHref } from "@/lib/site";
 import { trenne } from "@/lib/text";
 
 type MenuKey = "leistungen";
@@ -46,6 +46,8 @@ export function HeaderClient({ nav }: { nav: NavData }) {
   const schliessen = () => setMega(null);
 
   const aktiv = (prefix: string[]) => prefix.some((p) => pathname.startsWith(p));
+  // Auf Seiten mit Formular nur dorthin springen, sonst zur Kontaktseite
+  const anfrageZiel = hatFormular(pathname) ? "#anfrage" : "/kontakt#anfrage";
 
   const eintraege: { key: MenuKey; href: string; label: string; prefix: string[]; panel: ReactNode }[] = [
     { key: "leistungen", href: "/leistungen", label: "Leistungen", prefix: ["/leistungen"], panel: <LeistungenPanel nav={nav} /> },
@@ -107,7 +109,7 @@ export function HeaderClient({ nav }: { nav: NavData }) {
           <a href={telHref} className="hidden font-semibold tabular-nums hover:text-blue md:block">
             {site.phoneDisplay}
           </a>
-          <Link href="/#anfrage" className="btn btn-primary ml-3 hidden min-h-11 sm:inline-flex">
+          <Link href={anfrageZiel} className="btn btn-primary ml-3 hidden min-h-11 sm:inline-flex">
             Anfrage starten
           </Link>
           <button
@@ -165,7 +167,7 @@ function LeistungenPanel({ nav }: { nav: NavData }) {
           </p>
         </div>
         <div className="mt-6 grid gap-2">
-          <Link href="/#anfrage" className="btn btn-primary min-h-11 text-[0.95rem]">
+          <Link href="/kontakt#anfrage" className="btn btn-primary min-h-11 text-[0.95rem]">
             Anfrage starten
           </Link>
           <a href={waHref("Hallo, ich habe ein Problem mit meinem Motor:")} target="_blank" rel="noopener" className="btn min-h-11 border-[1.5px] border-white/25 text-[0.95rem] hover:border-white">
@@ -223,7 +225,7 @@ function MobilMenue({ nav }: { nav: NavData }) {
           Kontakt
         </Link>
         <div className="mt-6 grid gap-2">
-          <Link href="/#anfrage" className="btn btn-primary w-full">
+          <Link href="/kontakt#anfrage" className="btn btn-primary w-full">
             Anfrage starten
           </Link>
           <a href={telHref} className="btn btn-ghost w-full tabular-nums">

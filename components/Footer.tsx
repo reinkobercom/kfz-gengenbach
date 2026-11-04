@@ -11,7 +11,7 @@ const service = [
   { href: "/ratgeber", label: "Ratgeber" },
   { href: "/einzugsgebiet", label: "Einzugsgebiet" },
   { href: "/kontakt", label: "Kontakt & Anfahrt" },
-  { href: "/#anfrage", label: "Anfrage starten" },
+  { href: "/kontakt#anfrage", label: "Anfrage starten" },
 ];
 
 const Icon = ({ children }: { children: ReactNode }) => (
@@ -34,7 +34,7 @@ export function Footer() {
             Freie Kfz-Werkstatt in {site.address.city} für Pkw aller Marken und Transporter bis 4,5 t. Schwerpunkt
             Motorinstandsetzung, Befund per Video aufs Handy.
           </p>
-          <Link href="/#anfrage" className="btn btn-primary mt-6 min-h-11 text-[0.95rem]">
+          <Link href="/kontakt#anfrage" className="btn btn-primary mt-6 min-h-11 text-[0.95rem]">
             Anfrage starten
           </Link>
         </div>

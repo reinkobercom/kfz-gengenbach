@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function Kontakt() {
   return (
     <PageHero
+      formular
       crumbs={[{ name: "Kontakt", href: "/kontakt" }]}
       h1="Kontakt und Anfahrt"
       intro="Am schnellsten geht es über das Anfrageformular oder per WhatsApp. Fotos und Videos vom Problem helfen uns bei der ersten Einschätzung."

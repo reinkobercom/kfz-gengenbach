@@ -91,6 +91,29 @@ export function Konfigurator({
     requestId.current = crypto.randomUUID();
   }, []);
 
+  // Vorauswahl aus dem Link übernehmen (/kontakt?leistung=…&ort=…&fahrzeug=transporter),
+  // damit „Anfrage starten“ auf Leistungs- und Ortsseiten keinen Schritt kostet
+  useEffect(() => {
+    if (defaultLeistung) return;
+    const q = new URLSearchParams(window.location.search);
+    const leistung = q.get("leistung");
+    const ort = q.get("ort");
+    const transporter = q.get("fahrzeug") === "transporter";
+    const gueltigeLeistung = anfrageLeistungen.some((l) => l.key === leistung) ? leistung : null;
+    const gueltigerOrt = ort && (einzugsgebiet as readonly string[]).includes(ort) ? ort : null;
+    if (!gueltigeLeistung && !gueltigerOrt && !transporter) return;
+    const t = requestAnimationFrame(() => {
+      setD((p) => ({
+        ...p,
+        ...(gueltigeLeistung ? { leistung: gueltigeLeistung } : {}),
+        ...(gueltigerOrt ? { ort: gueltigerOrt } : {}),
+        ...(transporter ? { fahrzeugTyp: fahrzeugTypen[2] } : {}),
+      }));
+      if (gueltigeLeistung) setStep(1);
+    });
+    return () => cancelAnimationFrame(t);
+  }, [defaultLeistung]);
+
   // Fokus beim Schrittwechsel auf die Überschrift setzen (Tastatur & Screenreader)
   useEffect(() => {
     const stand = `${step}-${status}`;

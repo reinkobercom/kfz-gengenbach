@@ -79,7 +79,7 @@ export default function RatgeberPage() {
         );
       })}
 
-      <CtaBand titel="Ihr Fahrzeug zeigt eines dieser Symptome?" href="/#anfrage" />
+      <CtaBand titel="Ihr Fahrzeug zeigt eines dieser Symptome?"  />
       <JsonLd
         data={{
           "@context": "https://schema.org",

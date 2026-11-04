@@ -11,7 +11,7 @@ import { getLeistung, leistungen } from "@/lib/leistungen";
 import { orte } from "@/lib/orte";
 import { ratgeberFuer } from "@/lib/ratgeber";
 import { serviceSchema } from "@/lib/schema";
-import { ogBasis } from "@/lib/site";
+import { anfrageLink, ogBasis } from "@/lib/site";
 import { trenne } from "@/lib/text";
 
 /** Ablauf für Leistungen ohne eigenen */
@@ -58,6 +58,8 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
   const weitere = leistungen.filter((x) => x.slug !== l.slug).slice(0, 3);
   const seite = leistungSeiten[l.slug];
   const faq = [...l.faq, ...(seite?.faq ?? [])];
+  // „Anfrage starten“ öffnet das Formular auf der Kontaktseite mit dieser Leistung vorausgewählt
+  const anfrage = istTransporter ? anfrageLink({ fahrzeug: "transporter" }) : anfrageLink({ leistung: l.key });
 
   return (
     <>
@@ -70,9 +72,8 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
         intro={l.intro}
         bild={l.image.src}
         fakten={seite?.fakten ?? ["Alle Marken", "Befund per Video", "Nur mit Ihrer Freigabe"]}
-        defaultLeistung={istTransporter ? undefined : l.key}
-        defaultFahrzeugTyp={istTransporter ? "Transporter bis 4,5 t" : undefined}
-        titel={istTransporter ? "Was steht an Ihrem Transporter an?" : undefined}
+        anfrageHref={anfrage}
+        waText={`Hallo, ich habe eine Frage zu ${l.name}:`}
       >
         {l.partner && (
           <p className="mt-8 max-w-xl rounded-xl bg-white/10 px-5 py-4 text-[0.98rem] backdrop-blur-sm">
@@ -137,7 +138,7 @@ export default async function LeistungPage({ params }: PageProps<"/leistungen/[s
         </div>
       </section>
 
-      <CtaBand titel={`${l.name}: Anfrage in zwei Minuten.`} />
+      <CtaBand titel={`${l.name}: Anfrage in zwei Minuten.`} href={anfrage} />
       <JsonLd data={serviceSchema(l.name, `/leistungen/${l.slug}`, l.metaDescription)} />
     </>
   );

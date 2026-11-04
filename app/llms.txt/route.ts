@@ -30,7 +30,7 @@ ${orte.map((o) => `- [${o.name}](${site.url}/kfz-werkstatt/${o.slug})`).join("\n
 ${artikelListe.map((a) => `- [${a.titel}](${site.url}/ratgeber/${a.slug}): ${a.teaser}`).join("\n")}
 
 ## Anfrage
-- [Online-Anfrage](${site.url}/#anfrage): Leistung, Fahrzeug, Dringlichkeit und Kontakt in vier Schritten. Preise werden individuell nach Anfrage genannt.
+- [Online-Anfrage](${site.url}/kontakt#anfrage): Leistung, Fahrzeug, Dringlichkeit und Kontakt in vier Schritten. Preise werden individuell nach Anfrage genannt.
 `;
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

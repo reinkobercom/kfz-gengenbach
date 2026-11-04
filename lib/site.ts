@@ -92,3 +92,20 @@ export const indexierbar = (() => {
 export const ogBasis = { type: "website", locale: "de_DE", siteName: site.brand } as const;
 /** Standard-Vorschaubild (app/opengraph-image.png) */
 export const ogStandardBild = { url: "/opengraph-image.png", width: 1200, height: 630 };
+
+/**
+ * Link zum Anfrageformular auf der Kontaktseite. Optional mit Vorauswahl, die das
+ * Formular beim Laden übernimmt (Leistung, Ort, Transporter).
+ */
+export function anfrageLink(vorauswahl: { leistung?: string; ort?: string; fahrzeug?: "transporter" } = {}) {
+  const q = new URLSearchParams();
+  if (vorauswahl.leistung) q.set("leistung", vorauswahl.leistung);
+  if (vorauswahl.ort) q.set("ort", vorauswahl.ort);
+  if (vorauswahl.fahrzeug) q.set("fahrzeug", vorauswahl.fahrzeug);
+  const s = q.toString();
+  return `/kontakt${s ? `?${s}` : ""}#anfrage`;
+}
+
+/** Seiten, auf denen das Anfrageformular selbst steht: Buttons springen dort nur zum Formular */
+export const hatFormular = (pathname: string) =>
+  pathname === "/" || pathname === "/kontakt" || /^\/ratgeber\/[^/]+$/.test(pathname);
